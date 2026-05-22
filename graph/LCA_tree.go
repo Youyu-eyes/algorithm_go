@@ -1,4 +1,4 @@
-package Data_Structrue
+package graph
 
 import "math/bits"
 
