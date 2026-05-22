@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"math"
 )
 
 const (
@@ -76,4 +77,12 @@ func sum[T int | int64 | float64](nums []T) T {
 		total += v
 	}
 	return total
+}
+
+func isqrt(x int) int {
+	rt := int(math.Sqrt(float64(x))) // 可能会算多一点点
+	if rt*rt > x {
+		rt--
+	}
+	return rt
 }
