@@ -17,39 +17,68 @@ leetcode 周赛 2292 Guardian，详见周赛号 [三笠](https://leetcode.cn/u/m
     - 定长滑窗
     - 不定长滑窗
       - [越长越合法](https://leetcode.cn/problems/number-of-substrings-containing-all-three-characters/)
+      
       - [越短越合法](https://leetcode.cn/problems/subarray-product-less-than-k/description/)
-      - [恰好型滑窗](https://leetcode.cn/problems/binary-subarrays-with-sum/description/)
+
+      - [恰好型滑窗](https://leetcode.cn/problems/binary-subarrays-with-sum/solutions/3972630/xiao-bai-si-lu-qia-hao-xing-hua-dong-chu-pk3z/)
 
   - 二分
+    - 二分答案（最小化最大/最大化最小）
+
   - 双指针
     - 分组循环
-    - 双指针优化二分
+    - [双指针优化二分](https://leetcode.cn/problems/longest-balanced-substring-after-one-swap/solutions/3950956/xiao-bai-si-lu-qian-zhui-he-fen-lei-tao-2e77c/)
 
 - [位运算](https://github.com/Youyu-eyes/algorithm_go/tree/master/bitwise)
+
   - [位运算与集合论](https://leetcode.cn/discuss/post/3571304/cong-ji-he-lun-dao-wei-yun-suan-chang-ji-enve/)
+
   - [LogTrick](https://github.com/Youyu-eyes/algorithm_go/blob/master/bitwise/log_trick.go)
+
   - [线性基](https://github.com/Youyu-eyes/algorithm_go/blob/master/bitwise/xorBasis.go)
 
+  - 拆位法
+
+  - 试填法
+
+  - 结论
+    - [区间按位或](https://github.com/Youyu-eyes/codeforces-classification/blob/main/bitwise%20operation/conclusion/bitwise%20OR%20of%20interval.md)
+
 - [数据结构](https://github.com/Youyu-eyes/algorithm_go/tree/master/Data_Structrue)
+
   - [双端队列](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/deque.go)
+
   - [单调栈](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/monotonic_stack.go)
+
   - [懒删除堆](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/lazy_heap.go)
+
   - [树状数组](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/fenwick_tree.go)
+
   - 线段树
     - [普通线段树](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/segment_tree.go)
     - [Lazy 线段树](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/segment_tree_lazy.go)
     - [李超线段树](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/segment_tree_lichao.go)
     - 线段树动态开点
     - [可持久化线段树（主席树）](https://leetcode.cn/problems/minimum-operations-to-equalize-subarrays/solutions/3845357/zhong-wei-shu-tan-xin-ke-chi-jiu-hua-xia-etpv/)
-  - [ST 表]()
+
+  - [ST 表](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/sparse_table.go)
     - 一维 ST 表
     - 二维 ST 表
     - ST 表下标版本
-    - [fast ST 表]()
-  - [字典树]()
+    - [fast ST 表](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/sparse_table_fast.go)
+
+  - [字典树](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/Trie.go)
     - 普通字典树
     - 01 字典树
     - 可持久化字典树
+
+  - 根号算法
+    - 分块
+    - 莫队算法
+      - 普通莫队
+      - 带修莫队
+      - 树上莫队
+      - [回滚莫队](https://leetcode.cn/problems/threshold-majority-queries/description/)
 
 - [动态规划](https://github.com/Youyu-eyes/algorithm_go/tree/master/DP)
   - 背包问题
@@ -77,19 +106,18 @@ leetcode 周赛 2292 Guardian，详见周赛号 [三笠](https://leetcode.cn/u/m
   - 前后缀分解
   - [DP 输出具体方案](https://codeforces.com/contest/474/problem/E)
   - DP 优化
-    - 滚动最值优化
+    - [滚动最值优化](https://github.com/Youyu-eyes/codeforces-classification/blob/main/DP/DP%20Optimization/Rolling%20Extremum%20Optimization/1945D.%20Seraphim%20the%20Owl.py)
     - [前缀和优化](https://leetcode.cn/problems/find-the-count-of-monotonic-pairs-ii/solutions/3972184/xiao-bai-si-lu-dai-biao-ti-qian-zhui-he-mmtnj/)
     - 数据结构优化
-      - ST 表优化 RMQ
+      - [ST 表优化 RMQ](https://github.com/Youyu-eyes/codeforces-classification/blob/main/DP/DP%20Optimization/Data%20Structrue%20Optimization/372C.%20Watching%20Fireworks%20is%20Fun.go)
       - 单调栈优化
-      - 单调队列优化
+      - [单调队列优化](https://leetcode.cn/problems/delivering-boxes-from-storage-to-ports/solutions/3939052/xiao-bai-si-lu-chang-wen-hua-fen-xing-dp-1csd/)
       - 线段树/树状数组优化
-        - [二维偏序](https://codeforces.com/problemset/problem/2167/G)
+        - [二维偏序](https://leetcode.cn/problems/best-team-with-no-conflicts/solutions/3970519/xiao-bai-si-lu-er-wei-pian-xu-pai-xu-xia-v3uc/)
         - [李超线段树优化](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/segment_tree_lichao.go)
           - [例题](https://leetcode.cn/problems/climbing-stairs-ii/solutions/3968349/xiao-bai-si-lu-jian-dan-dp-li-chao-xian-rxrkg/)
-    - 凸包优化
+    - [凸包优化](https://github.com/Youyu-eyes/algorithm_go/blob/master/DP/Convex_Hull_Trick.go)
       - [例题](https://leetcode.cn/problems/minimum-partition-score/description/)
-      - [凸包模板](https://github.com/Youyu-eyes/algorithm_go/blob/master/DP/Convex_Hull_Trick.go)
     - 矩阵快速幂优化
     - [WQS 二分优化](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/solutions/536396/yi-chong-ji-yu-wqs-er-fen-de-you-xiu-zuo-x36r/)
     - CDQ 分治优化
@@ -101,17 +129,19 @@ leetcode 周赛 2292 Guardian，详见周赛号 [三笠](https://leetcode.cn/u/m
       - [Dijkstra](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/dijkstra.go)
       - [bellman-ford](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/bellman_ford.go)
       - [SPFA](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/SPFA.go)
+        - 差分约束系统
 
     - 全源最短路
       - [floyd](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/floyd.go)
     - 同余最短路
-    - 差分约束
+    
     - 分层图最短路
   
   - [并查集](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/union_find.go)
     - 普通并查集
     - 中介并查集
     - 带权并查集
+    - 置换环问题
 
   - [拓扑序](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/topo_sort.go)
 
@@ -127,7 +157,8 @@ leetcode 周赛 2292 Guardian，详见周赛号 [三笠](https://leetcode.cn/u/m
 
   - 网络流
     - 最大最小费用流
-    - 带权二分图最大匹配
+    - 二分图最大匹配
+    - 带权二分图最大完美匹配
 
   - LCA 最近公共祖先
     - [树上倍增](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/LCA_tree.go)
@@ -137,3 +168,24 @@ leetcode 周赛 2292 Guardian，详见周赛号 [三笠](https://leetcode.cn/u/m
   - [DFS 时间戳](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/DFS%20time_stamp.go)
 
 - [数学](https://github.com/Youyu-eyes/algorithm_go/blob/master/math/math.go)
+  - 预处理
+    - 素数（埃氏筛）
+    - 质因数分解
+    - 因子
+    - 阶乘及逆元
+  - 质数判别
+  - 离散化
+  - 二维凸包
+  - 矩阵乘法
+  - 快速幂
+    - 矩阵快速幂
+  - 组合数学
+    - 卡特兰数
+
+- 贪心
+  - [中位数贪心](https://leetcode.cn/problems/minimum-amount-of-time-to-fill-cups/description/)
+  - [交换论证法](https://leetcode.cn/problems/minimum-processing-time/description/)
+  - 反悔贪心
+
+- 其他
+  - [io模板](https://github.com/Youyu-eyes/algorithm_go/blob/master/io_and_other/io.go)
