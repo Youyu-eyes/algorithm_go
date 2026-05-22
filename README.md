@@ -94,7 +94,7 @@ leetcode 周赛 2292 Guardian，详见周赛号 [三笠](https://leetcode.cn/u/m
     - 数据结构优化
       - [ST 表优化 RMQ](https://github.com/Youyu-eyes/codeforces-classification/blob/main/DP/DP%20Optimization/Data%20Structrue%20Optimization/372C.%20Watching%20Fireworks%20is%20Fun.go)
       - 单调栈优化
-      - [单调队列优化](https://leetcode.cn/problems/delivering-boxes-from-storage-to-ports/solutions/3939052/xiao-bai-si-lu-chang-wen-hua-fen-xing-dp-1csd/)
+      - [单调队列优化](https://leetcode.cn/problems/delivering-boxes-from-storage-to-ports/solutions/3972756/xiao-bai-si-lu-hua-fen-xing-dpqian-zhui-a4jeb/)
       - 线段树/树状数组优化
         - [二维偏序](https://leetcode.cn/problems/best-team-with-no-conflicts/solutions/3970519/xiao-bai-si-lu-er-wei-pian-xu-pai-xu-xia-v3uc/)
         - [李超线段树优化](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/segment_tree_lichao.go)
