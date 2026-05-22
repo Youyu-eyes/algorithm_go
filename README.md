@@ -1,8 +1,29 @@
-# Go 语言算法模板
+# 三笠 の 算法模板
+
+
+leetcode 入门一年，leetcode 搜索 [忧郁小眼神](https://leetcode.cn/u/youyu-eyes/) \
+leetcode 周赛 2292 Guardian，详见周赛号 [三笠](https://leetcode.cn/u/mikasha/)
 
 整理一下常用的算法竞赛模板及对应的例题
 
+> 大部分是基础算法
+  图论，高级数据结构，数论与计算几何（除凸包外）没有涉及
+  字符串算法完全没有涉及
+
 ## 算法分类
+
+- 基础算法
+  - 滑动窗口
+    - 定长滑窗
+    - 不定长滑窗
+      - [越长越合法](https://leetcode.cn/problems/number-of-substrings-containing-all-three-characters/)
+      - [越短越合法](https://leetcode.cn/problems/subarray-product-less-than-k/description/)
+      - [恰好型滑窗](https://leetcode.cn/problems/binary-subarrays-with-sum/description/)
+
+  - 二分
+  - 双指针
+    - 分组循环
+    - 双指针优化二分
 
 - [位运算](https://github.com/Youyu-eyes/algorithm_go/tree/master/bitwise)
   - [位运算与集合论](https://leetcode.cn/discuss/post/3571304/cong-ji-he-lun-dao-wei-yun-suan-chang-ji-enve/)
@@ -10,6 +31,25 @@
   - [线性基](https://github.com/Youyu-eyes/algorithm_go/blob/master/bitwise/xorBasis.go)
 
 - [数据结构](https://github.com/Youyu-eyes/algorithm_go/tree/master/Data_Structrue)
+  - [双端队列](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/deque.go)
+  - [单调栈](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/monotonic_stack.go)
+  - [懒删除堆](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/lazy_heap.go)
+  - [树状数组](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/fenwick_tree.go)
+  - 线段树
+    - [普通线段树](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/segment_tree.go)
+    - [Lazy 线段树](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/segment_tree_lazy.go)
+    - [李超线段树](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/segment_tree_lichao.go)
+    - 线段树动态开点
+    - [可持久化线段树（主席树）](https://leetcode.cn/problems/minimum-operations-to-equalize-subarrays/solutions/3845357/zhong-wei-shu-tan-xin-ke-chi-jiu-hua-xia-etpv/)
+  - [ST 表]()
+    - 一维 ST 表
+    - 二维 ST 表
+    - ST 表下标版本
+    - [fast ST 表]()
+  - [字典树]()
+    - 普通字典树
+    - 01 字典树
+    - 可持久化字典树
 
 - [动态规划](https://github.com/Youyu-eyes/algorithm_go/tree/master/DP)
   - 背包问题
@@ -53,3 +93,47 @@
     - 矩阵快速幂优化
     - [WQS 二分优化](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/solutions/536396/yi-chong-ji-yu-wqs-er-fen-de-you-xiu-zuo-x36r/)
     - CDQ 分治优化
+
+- [图论](https://github.com/Youyu-eyes/algorithm_go/tree/master/graph)
+  - 最短路
+    - 单源最短路
+      - [0-1 BFS](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/bfs_01.go)
+      - [Dijkstra](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/dijkstra.go)
+      - [bellman-ford](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/bellman_ford.go)
+      - [SPFA](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/SPFA.go)
+
+    - 全源最短路
+      - [floyd](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/floyd.go)
+    - 同余最短路
+    - 差分约束
+    - 分层图最短路
+  
+  - [并查集](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/union_find.go)
+    - 普通并查集
+    - 中介并查集
+    - 带权并查集
+
+  - [拓扑序](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/topo_sort.go)
+
+  - [二分图染色](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/bipartite.go)
+  
+  - 欧拉路径/回路
+    - Hierholzer
+  
+  - 连通分量
+    - Tarjan
+
+  - [最小生成树](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/minimum_spanning_tree.go)
+
+  - 网络流
+    - 最大最小费用流
+    - 带权二分图最大匹配
+
+  - LCA 最近公共祖先
+    - [树上倍增](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/LCA_tree.go)
+    - 树链剖分
+      - 轻重链剖分
+  
+  - [DFS 时间戳](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/DFS%20time_stamp.go)
+
+- [数学](https://github.com/Youyu-eyes/algorithm_go/blob/master/math/math.go)
