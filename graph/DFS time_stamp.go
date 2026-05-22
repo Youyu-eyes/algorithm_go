@@ -7,13 +7,13 @@ func timeStamp(n int, g [][]int) ([]int, []int) {
 	var dfs func(int, int)
 	dfs = func(x, fa int) {
 		clock++
-		in[x] = clock // 递
+		in[x] = clock
 		for _, y := range g[x] {
 			if y != fa {
 				dfs(y, x)
 			}
 		}
-		out[x] = clock // 归
+		out[x] = clock
 	}
 	dfs(0, -1)
 
