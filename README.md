@@ -4,6 +4,13 @@
 
 ## 算法分类
 
+- [位运算](https://github.com/Youyu-eyes/algorithm_go/tree/master/bitwise)
+  - [位运算与集合论](https://leetcode.cn/discuss/post/3571304/cong-ji-he-lun-dao-wei-yun-suan-chang-ji-enve/)
+  - [LogTrick](https://github.com/Youyu-eyes/algorithm_go/blob/master/bitwise/log_trick.go)
+  - [线性基](https://github.com/Youyu-eyes/algorithm_go/blob/master/bitwise/xorBasis.go)
+
+- [数据结构](https://github.com/Youyu-eyes/algorithm_go/tree/master/Data_Structrue)
+
 - [动态规划](https://github.com/Youyu-eyes/algorithm_go/tree/master/DP)
   - 背包问题
     - [0 - 1背包](https://leetcode.cn/problems/target-sum/description/)
