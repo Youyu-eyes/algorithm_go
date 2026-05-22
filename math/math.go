@@ -196,7 +196,7 @@ func convexHull(points []Vec) []Vec {
 type matrix [][]int
 
 // 返回矩阵 a 和矩阵 b 相乘的结果，若 mod > 0 则取模
-func mul(a, b matrix, mod int) matrix {
+func matMul(a, b matrix, mod int) matrix {
 	n, m := len(a), len(b[0])
 	c := make(matrix, n)
 	for i := 0; i < n; i++ {
@@ -218,7 +218,7 @@ func mul(a, b matrix, mod int) matrix {
 }
 
 // 计算 A^n * f0，若 mod > 0 则所有乘法取模
-func powMul(a matrix, n int, f0 matrix, mod int) matrix {
+func matQpow(a matrix, n int, f0 matrix, mod int) matrix {
 	res := make(matrix, len(f0))
 	for i := range f0 {
 		res[i] = make([]int, len(f0[i]))
@@ -227,9 +227,9 @@ func powMul(a matrix, n int, f0 matrix, mod int) matrix {
 
 	for n > 0 {
 		if n&1 == 1 {
-			res = mul(a, res, mod) // 左乘 A
+			res = matMul(a, res, mod) // 左乘 A
 		}
-		a = mul(a, a, mod) // A 自乘
+		a = matMul(a, a, mod) // A 自乘
 		n >>= 1
 	}
 	return res
