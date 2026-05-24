@@ -4,6 +4,7 @@ package Data_Structrue
 func leftGreater(nums []int) []int {
 	n := len(nums)
 	left := make([]int, n)
+	for i := range left { left[i] = -1 }
 	st := []int{-1} // 哨兵
 	for i, x := range nums {
 		for len(st) > 1 && nums[st[len(st)-1]] <= x { // 如果求严格小于，改成 >=
@@ -19,6 +20,7 @@ func leftGreater(nums []int) []int {
 func rightGreater(nums []int) []int {
 	n := len(nums)
 	right := make([]int, n)
+	for i := range right { right[i] = n }
 	st := []int{n} // 哨兵
 	for i := n - 1; i >= 0; i-- {
 		x := nums[i]
