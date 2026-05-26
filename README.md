@@ -6,12 +6,12 @@ leetcode 周赛 2292 Guardian，详见周赛号 [三笠](https://leetcode.cn/u/m
 
 整理一下常用的算法竞赛模板及对应的例题
 
-> 大部分是基础算法
-  图论，高级数据结构，数论与计算几何（除凸包外）没有涉及
+> 大部分是基础算法\
+  图论，高级数据结构，数论与计算几何（除凸包外）没有涉及\
   字符串算法完全没有涉及
 
 ## Go 语言基础
-[Go 语言快速入门](https://gobyexample-cn.github.io/)
+[Go 语言快速入门](https://gobyexample-cn.github.io/)\
 [Go 语言常用函数](https://github.com/Youyu-eyes/algorithm_go/blob/master/Go_NOTE/note.md)
 
 ## 算法分类
