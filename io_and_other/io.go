@@ -18,9 +18,17 @@ var (
 )
 
 // n := II()
-func II() (x int) {
-	fmt.Fscan(in, &x)
-	return
+func II() int {
+    n := 0
+    b, _ := in.ReadByte()
+    for b < '0' || b > '9' { // 跳过非数字
+        b, _ = in.ReadByte()
+    }
+    for b >= '0' && b <= '9' { // 解析数字
+        n = n*10 + int(b-'0')
+        b, _ = in.ReadByte()
+    }
+    return n
 }
 
 // n := IF()
