@@ -20,13 +20,24 @@ var (
 // n := II()
 func II() int {
     n := 0
+    neg := false
     b, _ := in.ReadByte()
-    for b < '0' || b > '9' { // 跳过非数字
+
+    for b < '0' || b > '9' {
+        if b == '-' {
+            neg = true
+            b, _ = in.ReadByte()
+            break
+        }
         b, _ = in.ReadByte()
     }
-    for b >= '0' && b <= '9' { // 解析数字
+
+    for b >= '0' && b <= '9' {
         n = n*10 + int(b-'0')
         b, _ = in.ReadByte()
+    }
+    if neg {
+        n = -n
     }
     return n
 }
