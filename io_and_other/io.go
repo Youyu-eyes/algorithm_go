@@ -33,7 +33,7 @@ func II() int {
     }
 
     for b >= '0' && b <= '9' {
-        n = n*10 + int(b-'0')
+        n = n*10 + int(b&15)
         b, _ = in.ReadByte()
     }
     if neg {
