@@ -34,6 +34,7 @@ leetcode 周赛 2292 Guardian，详见周赛号 [三笠](https://leetcode.cn/u/m
   - 试填法
   - 结论
     - [区间按位或](https://github.com/Youyu-eyes/codeforces-classification/blob/main/bitwise%20operation/conclusion/bitwise%20OR%20of%20interval.md)
+    - [英文字符与位运算](https://github.com/Youyu-eyes/codeforces-classification/blob/main/bitwise%20operation/conclusion/string_bit.md)
 
 - [数据结构](https://github.com/Youyu-eyes/algorithm_go/tree/master/Data_Structrue)
   - [双端队列](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/deque.go)
