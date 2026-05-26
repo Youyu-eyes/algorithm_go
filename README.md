@@ -12,7 +12,7 @@ leetcode 周赛 2292 Guardian，详见周赛号 [三笠](https://leetcode.cn/u/m
 
 ## Go 语言基础
 [Go 语言快速入门](https://gobyexample-cn.github.io/)
-[Go 语言常用函数]()
+[Go 语言常用函数](https://github.com/Youyu-eyes/algorithm_go/blob/master/Go_NOTE/note.md)
 
 ## 算法分类
 
