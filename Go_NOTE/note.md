@@ -24,11 +24,11 @@
 | **使用静态映射表进行稳定排序**<br>（如按元音出现次数的负值排序） | 使用 `slices.SortStableFunc`：<br>`slices.SortStableFunc(vowels, func(a, b byte) int {`<br> `return cmp.Compare(-cnt[mp[a]], -cnt[mp[b]])`<br>`})`<br> |
 
 # 二分
-slices.BinarySearch(s, v)
-手写二分注意写成 left + (right - left) >> 1 防止溢出
+`slices.BinarySearch(s, v)`
+手写二分注意写成 `left + (right - left) >> 1` 防止溢出
 
-没有 accumulate，sum，abs
-对整个切片取 max 为 slices.Max
+没有 `accumulate`，`sum`，`abs`
+对整个切片取 `max` 为 `slices.Max`
 
 # 运算优先级
 在 Go 中，位运算符与算术运算符的优先级从高到低排列如下：
@@ -51,19 +51,19 @@ if !vis[x] {
     y := g[x]
 }
 ```
-这里的 y 只能在这个 `if` 分支中成立
+这里的 $y$ 只能在这个 `if` 分支中成立
 
 # 字符串
 
-strings.Repeat(a, n)：相当于 python 字符串乘法，生成长度为 n 的 a 字符串，注意 a 是 string 而非 byte，需要 "" 而不是 ''
-unicode.IsUpper(c)：判断 c 是否为大写字母，注意 c 的数据类型是 rune 而非 byte
+`strings.Repeat(a, n)`：相当于 python 字符串乘法，生成长度为 $n$ 的 `a` 字符串，注意 `a` 是 **string** 而非 **byte**，需要 "" 而不是 ''；
+`unicode.IsUpper(c)`：判断 `c` 是否为大写字母，注意 `c` 的数据类型是 `rune` 而非 `byte`
 
 # 位运算
 
-bit.Len(uint(x))       位长度
-bit.OnesCount(uint(x)) 置位数
+`bit.Len(uint(x))`       位长度
+`bit.OnesCount(uint(x))` 置位数
 
-&^ 位清空运算，
+`&^` 位清空运算，`c &^32` 等价于 `c & ~32`，~表示补码
 
 # leetcode 函数题
-如果在循环内一定有输出，不一定需要最后 return，则需要在最后加上 panic("impossible")，详见 3613
+如果在循环内一定有输出，不一定需要最后 `return`，则需要在最后加上 `panic("impossible")`，详见 [lc3613](https://leetcode.cn/problems/minimize-maximum-component-cost/description/)
