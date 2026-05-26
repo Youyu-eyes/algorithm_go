@@ -1,4 +1,7 @@
 [Go 语言快速入门](https://gobyexample-cn.github.io/)
+# io 效率测试
+[Codeforces 13E-Holes](https://codeforces.com/problemset/problem/13/E)
+[Codeforces 372C-Watching Fireworks is Fun](https://codeforces.com/contest/372/problem/C)
 
 # 类型转换
 | 函数 | 作用 |
