@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"math"
+	"strings"
 )
 
 const (
@@ -104,4 +105,13 @@ func isqrt(x int) int {
 		rt--
 	}
 	return rt
+}
+
+func ReverseString(s string) string {
+    var b strings.Builder
+    b.Grow(len(s))
+    for i := len(s) - 1; i >= 0; i-- {
+        b.WriteByte(s[i])
+    }
+    return b.String()
 }
