@@ -59,5 +59,56 @@ func (q deque[T]) get(i int) T {
 	return q.r[i-len(q.l)]
 }
 
+// insert 在逻辑索引 idx 处插入 val (0 <= idx <= q.size())
+func (q *deque[T]) insert(val T, idx int) {
+	if idx == 0 {
+		q.pushFront(val)
+		return
+	}
+	if idx == q.size() {
+		q.pushBack(val)
+		return
+	}
+
+	if idx <= len(q.l) {
+		pos := len(q.l) - idx
+		var zero T
+		q.l = append(q.l, zero)
+		copy(q.l[pos+1:], q.l[pos:len(q.l)-1])
+		q.l[pos] = val
+	} else {
+		ridx := idx - len(q.l)
+		if ridx == 0 {
+			q.r = append([]T{val}, q.r...)
+		} else {
+			var zero T
+			q.r = append(q.r, zero)
+			copy(q.r[ridx+1:], q.r[ridx:len(q.r)-1])
+			q.r[ridx] = val
+		}
+	}
+}
+
+// erase 删除逻辑索引 idx 处的元素 (0 <= idx < q.size())
+func (q *deque[T]) erase(idx int) {
+	if idx < len(q.l) {
+		pos := len(q.l) - 1 - idx
+		if pos == len(q.l)-1 {
+			q.l = q.l[:len(q.l)-1]
+		} else {
+			copy(q.l[pos:], q.l[pos+1:])
+			q.l = q.l[:len(q.l)-1]
+		}
+	} else {
+		ridx := idx - len(q.l)
+		if ridx == 0 {
+			q.r = q.r[1:]
+		} else {
+			copy(q.r[ridx:], q.r[ridx+1:])
+			q.r = q.r[:len(q.r)-1]
+		}
+	}
+}
+
 // 初始化
 // intQueue := deque[int]{}
