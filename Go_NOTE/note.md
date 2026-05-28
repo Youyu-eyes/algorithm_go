@@ -30,8 +30,23 @@
 `slices.BinarySearch(s, v)`
 手写二分注意写成 `left + (right - left) >> 1` 防止溢出
 
+# 内部函数
 没有 `accumulate`，`sum`，`abs`
 对整个切片取 `max` 为 `slices.Max`
+
+# 翻转
+切片：`slices.Reverse(nums)`
+字符串没有相关内置函数，手动实现一个
+```go
+func ReverseString(s string) string {
+    var b strings.Builder
+    b.Grow(len(s))
+    for i := len(s) - 1; i >= 0; i-- {
+        b.WriteByte(s[i])
+    }
+    return b.String()
+}
+```
 
 # 运算优先级
 在 Go 中，位运算符与算术运算符的优先级从高到低排列如下：
