@@ -62,7 +62,7 @@ leetcode 周赛 2292 Guardian，详见周赛号 [三笠](https://leetcode.cn/u/m
     - 可持久化字典树
   - 根号算法
     - [分块](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/sqrt_decomposition.go)
-    - 莫队算法
+    - [莫队算法](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/Mo.go)
       - 普通莫队
       - 带修莫队
       - 树上莫队
