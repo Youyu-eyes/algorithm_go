@@ -13,7 +13,8 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
 
 ## Go 语言基础
 [Go 语言快速入门](https://gobyexample-cn.github.io/)\
-[Go 语言常用函数](https://github.com/Youyu-eyes/algorithm_go/blob/master/Go_NOTE/note.md)
+[Go 语言常用函数](https://github.com/Youyu-eyes/algorithm_go/blob/master/Go_NOTE/note.md)\
+[Go 语言数据结构](https://github.com/topxeq/gods)
 
 ## 算法分类
 
