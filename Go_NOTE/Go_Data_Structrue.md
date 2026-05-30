@@ -1,4 +1,9 @@
 # 红黑树
+```go
+import (
+	rbt "github.com/emirpasic/gods/v2/trees/redblacktree"
+)
+```
 
 ### 外部接口汇总
 
