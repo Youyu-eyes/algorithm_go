@@ -49,15 +49,15 @@ func Mo(a []int, queries [][]int) {
 
 		}
 
+		// 左端点左移
+		for ; l > b.l; l-- {
+
+		}
+
 		// 右端点左移
 		// 开区间，先左移再删除
 		for r > b.r {
 			r--
-
-		}
-
-		// 左端点左移
-		for ; l > b.l; l-- {
 
 		}
 
