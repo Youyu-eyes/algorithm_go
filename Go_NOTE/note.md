@@ -83,5 +83,9 @@ if !vis[x] {
 
 `&^` 位清空运算，`c &^32` 等价于 `c & ~32`，~表示补码
 
-# leetcode 函数题
+# 杂项 & 技巧
+
+## leetcode 函数题
 如果在循环内一定有输出，不一定需要最后 `return`，则需要在最后加上 `panic("impossible")`，详见 [lc3613](https://leetcode.cn/problems/minimize-maximum-component-cost/description/)
+
+请不要用哈希表统计数字出现次数，请一定一定用数组！！！哈希表的常数达到无法想象
