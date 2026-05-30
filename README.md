@@ -168,4 +168,5 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
   - 反悔贪心
 
 - 其他
-  - [io模板](https://github.com/Youyu-eyes/algorithm_go/blob/master/io_and_other/io.go)
+  - [io模板](https://github.com/Youyu-eyes/algorithm_go/blob/master/io/io.go)
+  - [严格众数]
