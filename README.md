@@ -5,7 +5,7 @@ leetcode 入门一年，leetcode 搜索 [忧郁小眼神](https://leetcode.cn/u/
 leetcode 周赛 2300 Guardian，详见周赛号 [三笠](https://leetcode.cn/u/mikasha/)
 
 整理一下常用的算法竞赛模板及对应的例题\
-codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](https://github.com/Youyu-eyes/codeforces-classification)\
+codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](https://github.com/Youyu-eyes/codeforces-classification)
 
 > 大部分是基础算法\
   图论，高级数据结构，数论与计算几何（除凸包外）没有涉及\
