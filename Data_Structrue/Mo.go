@@ -26,8 +26,8 @@ func Mo(a []int, queries [][]int) {
 	
 	ans := make([]int, q)
 	for Q := 0; Q < q; Q++ {
-		l, r := queries[Q][0], queries[Q][1] + 1
-		qs = append(qs, query{l / B, l - 1, r, Q})
+		l, r := queries[Q][0] - 1, queries[Q][1] + 1
+		qs = append(qs, query{l / B, l, r, Q})
 	}
 
 	// 奇偶排序优化
