@@ -42,7 +42,9 @@ func Mo(a []int, queries [][]int) {
 		return cmp.Compare(a.r, b.r)
 	})
 
-	l, r, res := B - 1, B, 0
+	// 初始化左右端点
+	l, r, res := -1, 0, 0
+
 	for _, b := range qs {		
 		// 右端点右移
 		for ; r < b.r; r++ {
