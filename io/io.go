@@ -59,12 +59,6 @@ func Print(a ...any)            { fmt.Fprint(out, a...) }
 func Println(a ...any)          { fmt.Fprintln(out, a...) }
 func Printf(f string, a ...any) { fmt.Fprintf(out, f, a...) }
 
-
-func solve() {
-
-}
-
-
 func main() {
 	in = bufio.NewReader(os.Stdin)
 	out = bufio.NewWriter(os.Stdout)
@@ -76,7 +70,6 @@ func main() {
 		solve()
 	}
 }
-
 
 func abs[T int | int64 | float64](x T) T {
 	if x >= 0 { return x }
@@ -114,4 +107,11 @@ func ReverseString(s string) string {
         b.WriteByte(s[i])
     }
     return b.String()
+}
+
+// ----------------- io 模板结束 ----------------- //
+// ----------------- 主函数部分  ----------------- //
+
+func solve() {
+
 }
