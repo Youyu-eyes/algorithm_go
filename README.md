@@ -39,7 +39,7 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
   - 拆位法
   - 试填法
   - 结论
-    - [区间按位或](https://github.com/Youyu-eyes/codeforces-classification/blob/main/bitwise%20operation/conclusion/bitwise%20OR%20of%20interval.md)
+    - [区间按位或](https://github.com/Youyu-eyes/codeforces-classification/blob/main/bitwise_operation/conclusion/bitwise_OR_of_interval.md)
     - [英文字符与位运算](https://github.com/Youyu-eyes/codeforces-classification/blob/main/bitwise%20operation/conclusion/string_bit.md)
 
 - [数据结构](https://github.com/Youyu-eyes/algorithm_go/tree/master/Data_Structrue)
@@ -145,7 +145,7 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - [树上倍增](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/LCA_tree.go)
     - 树链剖分
       - 轻重链剖分
-  - [DFS 时间戳](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/DFS%20time_stamp.go)
+  - [DFS 时间戳](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/DFS_time_stamp.go)
 
 - [数学](https://github.com/Youyu-eyes/algorithm_go/blob/master/math/math.go)
   - 预处理
