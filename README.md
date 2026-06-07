@@ -40,7 +40,7 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
   - 试填法
   - 结论
     - [区间按位或](https://github.com/Youyu-eyes/codeforces-classification/blob/main/bitwise_operation/conclusion/bitwise_OR_of_interval.md)
-    - [英文字符与位运算](https://github.com/Youyu-eyes/codeforces-classification/blob/main/bitwise%20operation/conclusion/string_bit.md)
+    - [英文字符与位运算](https://github.com/Youyu-eyes/codeforces-classification/blob/main/bitwise_operation/conclusion/string_bit.md)
 
 - [数据结构](https://github.com/Youyu-eyes/algorithm_go/tree/master/Data_Structrue)
   - [双端队列](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/deque.go)
@@ -96,10 +96,10 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
   - 前后缀分解
   - [DP 输出具体方案](https://codeforces.com/contest/474/problem/E)
   - DP 优化
-    - [滚动最值优化](https://github.com/Youyu-eyes/codeforces-classification/blob/main/DP/DP%20Optimization/Rolling%20Extremum%20Optimization/1945D.%20Seraphim%20the%20Owl.py)
+    - [滚动最值优化](https://github.com/Youyu-eyes/codeforces-classification/blob/main/DP/DP_Optimization/Rolling_Extremum_Optimization/1945D_Seraphim_the_Owl.py)
     - [前缀和优化](https://leetcode.cn/problems/find-the-count-of-monotonic-pairs-ii/solutions/3972184/xiao-bai-si-lu-dai-biao-ti-qian-zhui-he-mmtnj/)
     - 数据结构优化
-      - [ST 表优化 RMQ](https://github.com/Youyu-eyes/codeforces-classification/blob/main/DP/DP%20Optimization/Data%20Structrue%20Optimization/372C.%20Watching%20Fireworks%20is%20Fun.go)
+      - [ST 表优化 RMQ](https://github.com/Youyu-eyes/codeforces-classification/blob/main/DP/DP_Optimization/Data_Structrue_Optimization/372C_Watching_Fireworks_is_Fun.go)
       - 单调栈优化
       - [单调队列优化](https://leetcode.cn/problems/maximum-sum-of-m-non-overlapping-subarrays-i/)
       - 线段树/树状数组优化
@@ -129,7 +129,7 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - 中介并查集
     - 带权并查集
     - 置换环问题
-      - [置换环分解](https://github.com/Youyu-eyes/codeforces-classification/blob/main/graph%20theory/permutation%20cycle/cycle%20decomposition.md)
+      - [置换环分解](https://github.com/Youyu-eyes/codeforces-classification/blob/main/graph_theory/permutation_cycle/cycle_decomposition.md)
   - [拓扑序](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/topo_sort.go)
   - [二分图染色](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/bipartite.go)
   - 欧拉路径/回路
