@@ -170,4 +170,4 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
 
 - 其他
   - [io模板](https://github.com/Youyu-eyes/algorithm_go/blob/master/io/io.go)
-  - [严格众数](https://github.com/Youyu-eyes/algorithm_go/blob/master/other/majority_element.go)
+  - [严格众数·扩展摩尔投票](https://leetcode.cn/problems/majority-element/solutions/3978521/xiao-bai-si-lu-mo-er-tou-piao-fu-misra-g-18fe/)
