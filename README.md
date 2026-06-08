@@ -109,7 +109,9 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - [凸包优化](https://github.com/Youyu-eyes/algorithm_go/blob/master/DP/Convex_Hull_Trick.go)
       - [例题](https://leetcode.cn/problems/minimum-partition-score/description/)
     - 矩阵快速幂优化
-    - [WQS 二分优化](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/solutions/536396/yi-chong-ji-yu-wqs-er-fen-de-you-xiu-zuo-x36r/)
+    - [WQS 二分优化](https://github.com/Youyu-eyes/algorithm_go/blob/master/DP/WQS.go)
+      - [例题](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/solutions/536396/yi-chong-ji-yu-wqs-er-fen-de-you-xiu-zuo-x36r/)
+      - [笔记]()
     - CDQ 分治优化
 
 - [图论](https://github.com/Youyu-eyes/algorithm_go/tree/master/graph)
