@@ -111,7 +111,7 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - 矩阵快速幂优化
     - [WQS 二分优化](https://github.com/Youyu-eyes/algorithm_go/blob/master/DP/WQS.go)
       - [例题](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/solutions/536396/yi-chong-ji-yu-wqs-er-fen-de-you-xiu-zuo-x36r/)
-      - [笔记](https://github.com/Youyu-eyes/algorithm_go/blob/master/Go_NOTE/WQS.md)
+      - [笔记](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-v/solutions/3981282/xiao-bai-si-lu-bi-ji-xi-lie-qian-xi-wqse-nhw1/)
     - CDQ 分治优化
 
 - [图论](https://github.com/Youyu-eyes/algorithm_go/tree/master/graph)
