@@ -20,7 +20,7 @@ func WQS(limit int) int {
 	for left + 1 < right {
 		mid := left + (right - left) >> 1
 		res = dp(mid)
-		if res.b <= limit {
+		if res.x <= limit {
 			ans = mid * limit + res.b
 			right = mid
 		} else {
