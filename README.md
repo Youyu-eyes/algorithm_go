@@ -150,6 +150,7 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
   - [DFS 时间戳](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/DFS_time_stamp.go)
 
 - [数学](https://github.com/Youyu-eyes/algorithm_go/blob/master/math/math.go)
+  - [模运算的世界](https://leetcode.cn/discuss/post/3584387/fen-xiang-gun-mo-yun-suan-de-shi-jie-dan-7xgu/)
   - 预处理
     - 素数（埃氏筛）
     - 质因数分解
