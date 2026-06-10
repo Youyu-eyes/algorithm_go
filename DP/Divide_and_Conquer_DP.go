@@ -4,7 +4,7 @@ func Divide_and_Conquer(n int) {
 	f := make([]int, n + 1)
     nf := make([]int, n + 1)
 
-	w := func(j, i int) int {
+	w := func(j, i int) int {  // 表示从 j 转移到 i
 		return j + i  // **根据题目修改**
 	}
 
