@@ -1,8 +1,8 @@
 package Data_Structrue
 
-type NumMatrix [][]int
+type Matrix [][]int
 
-func Constructor(matrix [][]int) NumMatrix {
+func Build(matrix [][]int) Matrix {
     m, n := len(matrix), len(matrix[0])
     sum := make([][]int, m+1)
     sum[0] = make([]int, n+1)
@@ -16,6 +16,6 @@ func Constructor(matrix [][]int) NumMatrix {
 }
 
 // 返回左上角在 (r1, c1)，右下角在 (r2, c2) 的子矩阵元素和
-func (s NumMatrix) SumRegion(r1, c1, r2, c2 int) int {
+func (s Matrix) SumRegion(r1, c1, r2, c2 int) int {
     return s[r2+1][c2+1] - s[r2+1][c1] - s[r1][c2+1] + s[r1][c1]
 }
