@@ -43,6 +43,7 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - [英文字符与位运算](https://github.com/Youyu-eyes/codeforces-classification/blob/main/bitwise_operation/conclusion/string_bit.md)
 
 - [数据结构](https://github.com/Youyu-eyes/algorithm_go/tree/master/Data_Structrue)
+  - [二维前缀和](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/prefix_2D.go)
   - [双端队列](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/deque.go)
   - [单调栈](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/monotonic_stack.go)
   - [懒删除堆](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/lazy_heap.go)
