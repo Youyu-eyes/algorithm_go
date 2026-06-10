@@ -83,6 +83,11 @@ if !vis[x] {
 
 `&^` 位清空运算，`c &^32` 等价于 `c & ~32`，~表示补码
 
+# 数据结构
+
+## 堆
+Go 语言堆的库函数需要首先实现 $5$ 个函数，具体见 [堆与队列库函数合集（Python/Go）](https://leetcode.cn/discuss/post/3708255/python-dui-he-dui-lie-de-ku-han-shu-he-j-dbgn/)
+
 # 杂项 & 技巧
 
 ## leetcode 函数题
