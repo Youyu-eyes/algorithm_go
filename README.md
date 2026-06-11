@@ -109,6 +109,10 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
           - [例题](https://leetcode.cn/problems/climbing-stairs-ii/solutions/3968349/xiao-bai-si-lu-jian-dan-dp-li-chao-xian-rxrkg/)
     - [凸包优化](https://github.com/Youyu-eyes/algorithm_go/blob/master/DP/Convex_Hull_Trick.go)
       - [例题](https://leetcode.cn/problems/minimum-partition-score/description/)
+    - [决策单调性优化](https://github.com/Youyu-eyes/algorithm_go/tree/master/DP/Decision_Monotonicity)
+      - [带你入门](https://leetcode.cn/problems/VdG6tT/solutions/3982470/xiao-bai-si-lu-dai-ni-ru-men-jue-ce-dan-uxvod/)
+      - [分治优化](https://github.com/Youyu-eyes/algorithm_go/blob/master/DP/Decision_Monotonicity/Divide_and_Conquer_DP.go)
+      - [二分栈优化](https://github.com/Youyu-eyes/algorithm_go/blob/master/DP/Decision_Monotonicity/binary_search_stack.go)
     - 矩阵快速幂优化
     - [WQS 二分优化](https://github.com/Youyu-eyes/algorithm_go/blob/master/DP/WQS.go)
       - [例题](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/solutions/536396/yi-chong-ji-yu-wqs-er-fen-de-you-xiu-zuo-x36r/)
