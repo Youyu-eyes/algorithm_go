@@ -10,7 +10,7 @@ import (
 
 const (
 	MOD = 1_000_000_007
-	inf = 0x3f3f3f3f
+	inf = 1 << 60
 )
 
 var (
