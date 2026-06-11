@@ -16,8 +16,8 @@ func BinaryStack(n int) int {
 	}
 
 	better := func(i, j, x int) bool {
-		resI := f[j] + w(j, x)
-		resJ := f[i] + w(i, x)
+		resI := f[i] + w(i, x)
+		resJ := f[j] + w(j, x)
 		return resI < resJ  // **根据题目修改**
 	}
 
