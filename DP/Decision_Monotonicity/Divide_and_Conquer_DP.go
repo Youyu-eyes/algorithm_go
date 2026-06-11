@@ -1,6 +1,8 @@
+// 分治优化 DP
+
 package dp
 
-func Divide_and_Conquer(n int) {
+func DivideConquer(n int) {
 	f := make([]int, n + 1)
     nf := make([]int, n + 1)
 
