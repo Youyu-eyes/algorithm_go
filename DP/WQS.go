@@ -1,8 +1,5 @@
 package dp
 
-// 本模板 解决的是 至多 选择 limit 次的最优答案
-// 并且是 f(x) 是上凸壳
-
 func WQS(limit int) int {
 	dp := func(k int) pair {
 		res := pair{0, 0}
@@ -10,21 +7,24 @@ func WQS(limit int) int {
 		return res
 	}
 
-	res := dp(0)
-	if res.x <= limit {  // 至多 limit
-		return res.b
-	}
+	var res pair
+
+	// 如果是 至多/至少 k 个，需要加上优化
+	// res = dp(0)
+	// if res.x <= limit {  // 至少改成 >=
+	// 	return res.b
+	// }
 
 	ans := 0
-	left, right := 0, 1_000_005
+	left, right := -1_000_005, 1_000_005
 	for left + 1 < right {
 		mid := left + (right - left) >> 1
 		res = dp(mid)
 		if res.x <= limit {
 			ans = mid * limit + res.b
-			right = mid
+			right = mid  // left = mid  // 下凸壳
 		} else {
-			left = mid
+			left = mid   // right = mid // 下凸壳
 		}
 	}
 
