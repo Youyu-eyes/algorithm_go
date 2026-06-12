@@ -173,6 +173,7 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
 - 贪心
   - [相邻不同系列问题·结论](https://leetcode.cn/problems/minimum-amount-of-time-to-fill-cups/description/)
   - [中位数贪心](https://leetcode.cn/problems/minimum-amount-of-time-to-fill-cups/description/)
+    - [点集距离和](https://leetcode.cn/problems/allocate-mailboxes/solutions/3982690/xiao-bai-si-lu-jue-ce-dan-diao-xing-you-uzj2m/)
   - [交换论证法](https://leetcode.cn/problems/minimum-processing-time/description/)
   - 反悔贪心
 
