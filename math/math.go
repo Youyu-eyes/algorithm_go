@@ -191,51 +191,9 @@ func convexHull(points []Vec) []Vec {
 	return q
 }
 
-// ------- 矩阵 ------- //
+// ------- 快速幂模板，支持负指数计算逆元 ------- //
+// 必须要传 MOD 参数，如果不取模传 MOD = 0
 
-type matrix [][]int
-
-// 返回矩阵 a 和矩阵 b 相乘的结果，若 mod > 0 则取模
-func matMul(a, b matrix, mod int) matrix {
-	n, m := len(a), len(b[0])
-	c := make(matrix, n)
-	for i := 0; i < n; i++ {
-		c[i] = make([]int, m)
-		for k := 0; k < len(a[0]); k++ {
-			if a[i][k] == 0 {
-				continue
-			}
-			aik := a[i][k]
-			for j := 0; j < m; j++ {
-				c[i][j] += aik * b[k][j]
-				if mod > 0 {
-					c[i][j] %= mod
-				}
-			}
-		}
-	}
-	return c
-}
-
-// 计算 A^n * f0，若 mod > 0 则所有乘法取模
-func matQpow(a matrix, n int, f0 matrix, mod int) matrix {
-	res := make(matrix, len(f0))
-	for i := range f0 {
-		res[i] = make([]int, len(f0[i]))
-		copy(res[i], f0[i])
-	}
-
-	for n > 0 {
-		if n&1 == 1 {
-			res = matMul(a, res, mod) // 左乘 A
-		}
-		a = matMul(a, a, mod) // A 自乘
-		n >>= 1
-	}
-	return res
-}
-
-// 快速幂模板，支持负指数计算逆元
 func qpow(x, n, mod int) int {
 	ans := 1
 	base := x
