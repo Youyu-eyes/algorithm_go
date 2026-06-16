@@ -124,7 +124,7 @@ func kitamasa(coef, a []int, n int) (ans int) {
 		return
 	}
 	if k == 1 {
-		return a[0] * qpow(coef[0], n, 0)
+		return a[0] * qpow(coef[0], n, MOD) % MOD
 	}
 
 	// 已知 f(n) 的各项系数为 a，f(m) 的各项系数为 b
