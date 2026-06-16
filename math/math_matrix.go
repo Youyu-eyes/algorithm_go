@@ -8,10 +8,11 @@ import (
 
 type matrix [][]int
 
-func newMatrix(n, m int) matrix {
-	a := make(matrix, n)
+// 生成 m × n 的矩阵 a
+func newMatrix(m, n int) matrix {
+	a := make(matrix, m)
 	for i := range a {
-		a[i] = make([]int, m)
+		a[i] = make([]int, n)
 	}
 	return a
 }
