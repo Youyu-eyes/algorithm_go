@@ -8,6 +8,14 @@ import (
 
 type matrix [][]int
 
+func newMatrix(n, m int) matrix {
+	a := make(matrix, n)
+	for i := range a {
+		a[i] = make([]int, m)
+	}
+	return a
+}
+
 // 返回矩阵 a 和矩阵 b 相乘的结果，若 mod > 0 则取模
 func matMul(a, b matrix, mod int) matrix {
 	n, m := len(a), len(b[0])
