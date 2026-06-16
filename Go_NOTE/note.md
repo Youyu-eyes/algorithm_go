@@ -33,6 +33,7 @@
 # 内部函数
 没有 `accumulate`，`sum`，`abs`
 对整个切片取 `max` 为 `slices.Max`
+没有 `pop` 函数，需要自己实现
 
 # 翻转
 切片：`slices.Reverse(nums)`
@@ -75,6 +76,8 @@ if !vis[x] {
 
 `strings.Repeat(a, n)`：相当于 python 字符串乘法，生成长度为 $n$ 的 `a` 字符串，注意 `a` 是 **string** 而非 **byte**，需要 "" 而不是 ''；
 `unicode.IsUpper(c)`：判断 `c` 是否为大写字母，注意 `c` 的数据类型是 `rune` 而非 `byte`
+
+`string(slices)`：将切片转换成 `string`，注意切片类型一定是 `byte` 切片
 
 # 位运算
 
