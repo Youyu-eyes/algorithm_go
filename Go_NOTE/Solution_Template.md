@@ -5,7 +5,7 @@
 
 $$
 \begin{aligned}
-
+& 
 \end{aligned}
 $$
 
