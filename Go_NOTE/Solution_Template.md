@@ -3,6 +3,18 @@
 
 ![lc-3942_1.png](https://pic.leetcode.cn/1779793224-XeMahd-lc-3942_1.png){:width=500px}
 
+$$
+\begin{aligned}
+
+\end{aligned}
+$$
+
+$$
+M = \begin{bmatrix}
+
+\end{bmatrix}
+$$
+
 ## Code
 ```py [sol-Python3]
 
