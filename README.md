@@ -91,6 +91,8 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - 区间合法数字个数
     - 区间合法数字总价值
   - 树形 DP
+    - 树上最大独立集
+    - 树上最小支配集
     - [换根 DP](https://leetcode.cn/problems/maximum-subgraph-score-in-a-tree/solutions/3850874/huan-gen-dppythonjavacgo-by-endlesscheng-y5tw/)
   - 状压 DP
     - SOS DP 高维前缀和
