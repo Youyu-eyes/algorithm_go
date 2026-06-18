@@ -33,6 +33,8 @@ func matMul(a, b matrix, mod int) matrix {
 				if mod > 0 {
 					c[i][j] %= mod
 				}
+				// 如果溢出
+				// c[i][j] = int((uint64(c[i][j]) + uint64(aik)*uint64(b[k][j])) % uint64(mod))
 			}
 		}
 	}
