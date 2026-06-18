@@ -39,7 +39,7 @@ func matMul(a, b matrix, mod int) matrix {
 	return c
 }
 
-// 计算 A^n * f0，若 mod > 0 则所有乘法取模
+// 计算 A^n，若 mod > 0 则所有乘法取模
 func matQpow(a matrix, n int, mod int) matrix {
 	size := len(a)
 	res := make(matrix, size)
