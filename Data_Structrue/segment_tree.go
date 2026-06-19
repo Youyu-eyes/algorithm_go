@@ -97,6 +97,8 @@ func (st *SegmentTree) findLastNode(node, l, r, ql, qr int, f func(SegT) bool) i
 	return st.findLastNode(node<<1, l, m, ql, qr, f)
 }
 
+// ----- 外部接口 ----- //
+
 // NewSegmentTreeBySize 线段树维护一个长为 n 的数组（下标从 0 到 n-1），元素初始值为 init_val
 func NewSegmentTreeBySize(n int, initVal SegT) *SegmentTree {
 	a := make([]SegT, n)
@@ -121,8 +123,6 @@ func NewSegmentTree(a []SegT) *SegmentTree {
 	return st
 }
 
-// ----- 外部接口 ----- //
-//
 // Update 单点更新 将 tree[node] 改成 merge_val(tree[node], val)，需要直接覆盖要修改私有函数
 func (st *SegmentTree) update(i int, val SegT) {
 	st.updateNode(1, 0, st.n-1, i, val)
@@ -136,6 +136,10 @@ func (st *SegmentTree) query(ql, qr int) SegT {
 func (st *SegmentTree) get(i int) SegT {
 	return st.queryNode(1, 0, st.n-1, i, i)
 }
+
+// 线段树二分：返回 [l,r] 内最后一个满足 f 的下标，如果不存在，返回 -1
+// 例如查询 [l,r] 内最后一个小于等于 target 的元素下标，需要线段树维护区间最小值
+// t.findLast(l, r, func(nodeMin int) bool { return nodeMin <= target })
 
 func (st *SegmentTree) findfirst(ql, qr int, f func(SegT) bool) int {
 	return st.findFirstNode(1, 0, st.n-1, ql, qr, f)
