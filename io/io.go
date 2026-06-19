@@ -109,6 +109,15 @@ func ReverseString(s string) string {
     return b.String()
 }
 
+func accumulate(nums []int) []int {
+	n := len(nums)
+	s := make([]int, n + 1)
+	for i, x := range s {
+		s[i + 1] = s[i] + x
+	}
+	return s
+}
+
 // ----------------- io 模板结束 ----------------- //
 // ----------------- 主函数部分  ----------------- //
 
