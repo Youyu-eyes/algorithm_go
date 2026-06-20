@@ -1,4 +1,4 @@
-package Data_Structrue
+package Data_Structure
 
 import (
 	"container/heap"

@@ -1,4 +1,4 @@
-package Data_Structrue
+package Data_Structure
 
 // 泛型双端队列，T 可以是任意类型
 type deque[T any] struct{ l, r []T }

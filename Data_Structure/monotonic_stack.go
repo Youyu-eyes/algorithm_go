@@ -1,4 +1,4 @@
-package Data_Structrue
+package Data_Structure
 
 // 返回 left，其中 left[i] 是 nums[i] 左侧最近的严格大于 nums[i] 的数的下标，若不存在则为 -1
 func leftGreater(nums []int) []int {

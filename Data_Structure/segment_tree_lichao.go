@@ -1,4 +1,4 @@
-package Data_Structrue
+package Data_Structure
 
 // ------- 李超线段树 (浮点数版) ------- //
 // 初始化：tree := newLiChaoSegmentTree(n)
