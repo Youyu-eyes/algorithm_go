@@ -137,6 +137,37 @@ func (uh *UpperHull) queryBinary(p vec) int {
 	return p.dot(uh.hull.get(l))
 }
 
+// addFront 向下凸包头部插入元素（用于启发式合并）
+func (uh *UpperHull) addFront(p vec) {
+	for uh.hull.size() > 1 {
+		front := uh.hull.front()
+		next := uh.hull.get(1)
+		
+		if front.sub(p).detCmp(next.sub(front)) >= 0 {
+			uh.hull.popFront()
+		} else {
+			break
+		}
+	}
+	uh.hull.pushFront(p)
+}
+
+// mergeUpper 启发式合并两个上凸包
+// 要求：uh1 中的所有点的 x 坐标 严格小于 uh2 中所有点的 x 坐标
+func mergeUpper(uh1, uh2 UpperHull) UpperHull {
+	if uh1.hull.size() <= uh2.hull.size() {
+		for !uh1.empty() {
+			uh2.addFront(uh1.hull.popBack())
+		}
+		return uh2
+	} else {
+		for !uh2.empty() {
+			uh1.add(uh2.hull.popFront())
+		}
+		return uh1
+	}
+}
+
 func (uh *UpperHull) empty() bool {
 	return uh.hull.empty()
 }
@@ -195,6 +226,37 @@ func (lh *LowerHull) queryBinary(p vec) int {
 		}
 	}
 	return p.dot(lh.hull.get(l))
+}
+
+// addFront 向下凸包头部插入元素（用于启发式合并）
+func (lh *LowerHull) addFront(p vec) {
+	for lh.hull.size() > 1 {
+		front := lh.hull.front()
+		next := lh.hull.get(1)
+
+		if front.sub(p).detCmp(next.sub(front)) <= 0 {
+			lh.hull.popFront()
+		} else {
+			break
+		}
+	}
+	lh.hull.pushFront(p)
+}
+
+// merge 启发式合并两个下凸包
+// 要求：lh1 中的所有点的 x 坐标 严格小于 lh2 中所有点的 x 坐标
+func mergeLower(lh1, lh2 LowerHull) LowerHull {
+	if lh1.hull.size() <= lh2.hull.size() {
+		for !lh1.empty() {
+			lh2.addFront(lh1.hull.popBack())
+		}
+		return lh2
+	} else {
+		for !lh2.empty() {
+			lh1.add(lh2.hull.popFront())
+		}
+		return lh1
+	}
 }
 
 func (lh *LowerHull) empty() bool {
