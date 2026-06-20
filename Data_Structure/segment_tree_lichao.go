@@ -279,3 +279,127 @@ func (st *DynamicLiChaoTree) merge(other *DynamicLiChaoTree) {
 	st.root = st.mergeNodes(st.root, other.root, st.minX, st.maxX)
 	other.root = nil
 }
+
+
+// ------- 可持久化李超线段树 (浮点数版) ------- //
+// 初始化：tree := NewPersistentLiChaoTree(minX, maxX)
+
+type PersistLiChaoNode struct {
+	lc, rc *PersistLiChaoNode
+	line   Line
+}
+
+type PersistentLiChaoTree struct {
+	minX, maxX int
+	history    []*PersistLiChaoNode // 维护历史版本根节点
+}
+
+func NewPersistentLiChaoTree(minX, maxX int) *PersistentLiChaoTree {
+	return &PersistentLiChaoTree{
+		minX:    minX,
+		maxX:    maxX,
+		history: []*PersistLiChaoNode{nil}, // 初始第 0 个版本为空树 (nil)
+	}
+}
+
+func (st *PersistentLiChaoTree) better(a, b Line, x int) bool {
+	if a.id == 0 {
+		return false
+	}
+	if b.id == 0 {
+		return true
+	}
+	va, vb := a.calc(x), b.calc(x)
+	if va-vb < -eps {
+		return true
+	}
+	// 最大值：if va - vb > eps { return true }
+	if vb-va < -eps {
+		return false
+	}
+	// 最大值：if vb - va > eps { return false }
+	return a.id < b.id
+}
+
+func (st *PersistentLiChaoTree) insertNode(p *PersistLiChaoNode, l, r int, newLine Line) *PersistLiChaoNode {
+	// 可持久化核心：不修改原节点，而是创建一个新节点（拷贝旧节点的状态）
+	curr := &PersistLiChaoNode{}
+	if p != nil {
+		*curr = *p // 浅拷贝左右儿子指针和当前线段
+	} else {
+		curr.line = newLineDefault()
+	}
+
+	mid := (l + r) >> 1
+	leftBetter := st.better(newLine, curr.line, l)
+	midBetter := st.better(newLine, curr.line, mid)
+
+	if midBetter {
+		curr.line, newLine = newLine, curr.line // swap
+		midBetter = st.better(newLine, curr.line, mid)
+		leftBetter = st.better(newLine, curr.line, l)
+	}
+
+	if l == r {
+		return curr
+	}
+
+	// 下放处于劣势的线段到对应的子树，并更新新节点的子节点指针
+	if leftBetter != midBetter {
+		curr.lc = st.insertNode(curr.lc, l, mid, newLine)
+	} else {
+		curr.rc = st.insertNode(curr.rc, mid+1, r, newLine)
+	}
+
+	return curr
+}
+
+func (st *PersistentLiChaoTree) queryNode(p *PersistLiChaoNode, l, r, x int) float64 {
+	if p == nil {
+		return inf
+		// 最大值：return -inf
+	}
+	res := float64(inf)
+	// 最大值：res := float64(-inf)
+	if p.line.id != 0 {
+		res = p.line.calc(x)
+	}
+	if l == r {
+		return res
+	}
+	mid := (l + r) >> 1
+	if x <= mid {
+		return min(res, st.queryNode(p.lc, l, mid, x))
+	}
+	return min(res, st.queryNode(p.rc, mid+1, r, x))
+	// 最大值：return max(res, ...)
+}
+
+// ----- 外部接口 ----- //
+
+// insert 插入一条全局直线，生成一个新版本
+// 时空复杂度：O(log C)
+func (st *PersistentLiChaoTree) insert(line Line) {
+	root := st.history[len(st.history)-1]
+	newRoot := st.insertNode(root, st.minX, st.maxX, line)
+	st.history = append(st.history, newRoot)
+}
+
+// query 查询点 x 的最值（在最新版本上查询）
+// 时间复杂度：O(log C)
+func (st *PersistentLiChaoTree) query(x int) float64 {
+	root := st.history[len(st.history)-1]
+	return st.queryNode(root, st.minX, st.maxX, x)
+}
+
+// rollBack 返回上一个版本（撤销最后一次插入的直线）
+// 时间复杂度：O(1)
+func (st *PersistentLiChaoTree) rollBack() {
+	if len(st.history) > 1 {
+		st.history = st.history[:len(st.history)-1]
+	}
+}
+
+func (st *PersistentLiChaoTree) clear() {
+	st.history = []*PersistLiChaoNode{nil}
+}
