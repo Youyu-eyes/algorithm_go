@@ -112,7 +112,7 @@ func ReverseString(s string) string {
 func accumulate(nums []int) []int {
 	n := len(nums)
 	s := make([]int, n + 1)
-	for i, x := range s {
+	for i, x := range nums {
 		s[i + 1] = s[i] + x
 	}
 	return s
