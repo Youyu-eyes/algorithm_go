@@ -6,8 +6,7 @@ func bfs_01(n int, edges [][]int, start int) []int {
 	for _, e := range edges {
 		x, y, w := e[0], e[1], e[2]
 		g[x] = append(g[x], edge{y, w})
-		// 无向图加上这句
-		// g[y] = append(g[y], edge{x, w})
+		// g[y] = append(g[y], edge{x, w}) // 无向图加上这句
 	}
 
 	dis := make([]int, n)
@@ -16,6 +15,7 @@ func bfs_01(n int, edges [][]int, start int) []int {
 	}
 	dis[start] = 0
 	q := &deque{}
+	q.pushBack(start)
 
 	for !q.empty() {
 		x := q.front()
