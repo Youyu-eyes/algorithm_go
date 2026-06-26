@@ -8,6 +8,7 @@ leetcode 周赛 2300 Guardian，详见周赛号 [三笠](https://leetcode.cn/u/m
 codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](https://github.com/Youyu-eyes/codeforces-classification)
 
 > 大部分是基础算法\
+  DP 包括优化的部分会比较齐全\
   图论，高级数据结构，数论与计算几何（除凸包外）没有涉及\
   字符串算法完全没有涉及
 
