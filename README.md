@@ -44,6 +44,9 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
 
 - [数据结构](https://github.com/Youyu-eyes/algorithm_go/tree/master/Data_Structrue)
   - [二维前缀和](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/prefix_2D.go)
+  - [平衡二叉树 treap](https://github.com/Youyu-eyes/algorithm_go/tree/master/Data_Structure/treap)
+    - [有序集合 SortedSet](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/treap/set/set.go)
+    - [有序列表 SortedList](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/treap/multiset/multiset.go)
   - [双端队列](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/deque.go)
   - [单调栈](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/monotonic_stack.go)
   - [懒删除堆](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/lazy_heap.go)
