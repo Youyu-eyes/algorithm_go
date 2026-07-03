@@ -1,6 +1,6 @@
 package graph
 
-func bfs_01(n int, edges [][]int, start int) []int {
+func bfs01(n int, edges [][]int, start int) []int {
 	type edge struct{ to, wt int }
 	g := make([][]edge, n)
 	for _, e := range edges {
