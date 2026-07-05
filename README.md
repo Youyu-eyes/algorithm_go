@@ -89,7 +89,7 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - 求最多划分数
     - 约束划分个数
   - 状态机 DP
-    - [买卖股票问题 · 系列](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/description/)
+    - [买卖股票问题 · 系列](https://leetcode.cn/problem-list/qEMSqfaw/)
   - [数位 DP](https://github.com/Youyu-eyes/algorithm_go/blob/master/DP/digitDP.go)
     - 区间合法数字个数
     - 区间合法数字总价值
