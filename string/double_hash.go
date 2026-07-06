@@ -65,3 +65,51 @@ func (h *DoubleHash) GetHash(l, r int) HashVal {
 	
 	return HashVal{hash1, hash2}
 }
+
+// CompareSubstrings 比较 arr[l1: r1+1] 和 arr[l2: r2+1] 的字典序
+// 返回 -1 表示 子串1 < 子串2
+// 返回  0 表示 子串1 == 子串2
+// 返回  1 表示 子串1 > 子串2
+func CompareSubstrings[T IntegerHash](h *DoubleHash, arr []T, l1, r1, l2, r2 int) int {
+	len1 := r1 - l1 + 1
+	len2 := r2 - l2 + 1
+	
+	minLen := len1
+	if len2 < minLen {
+		minLen = len2
+	}
+
+	// 双开区间二分 (l, r)
+	left := 0          // l 维护“匹配成功”的边界，初始 0 必定成功
+	right := minLen + 1 // r 维护“匹配失败”的边界，初始 minLen+1 必定失败
+	
+	for left + 1 < right {
+		mid := left + (right - left) >> 1
+		
+		// 检查长度为 mid 的前缀哈希是否相等
+		if h.GetHash(l1, l1 + mid - 1) == h.GetHash(l2, l2 + mid - 1) {
+			left = mid
+		} else {
+			right = mid
+		}
+	}
+	
+	lcp := left
+
+	if lcp == len1 && lcp == len2 {
+		return 0
+	}
+
+	if lcp == len1 {
+		return -1
+	}
+
+	if lcp == len2 {
+		return 1
+	}
+
+	if arr[l1 + lcp] < arr[l2 + lcp] {
+		return -1
+	}
+	return 1
+}
