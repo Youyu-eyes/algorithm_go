@@ -10,6 +10,7 @@ type IntegerManacher interface {
 // - 当 i 为奇数时，表示以 s[i/2] 和 s[i/2+1] 之间为中心的最长偶回文子串（或子数组）的长度
 // 左端点：start = (i - L + 1) / 2
 // 右端点：end   = (i + L - 1) / 2
+// s 下标 [l, r] 区间的中点，对应 ans 下标为 l + r
 
 func Manacher[T IntegerManacher](s []T) []int {
 	n := len(s)
