@@ -27,7 +27,9 @@
 | **使用静态映射表进行稳定排序**<br>（如按元音出现次数的负值排序） | 使用 `slices.SortStableFunc`：<br>`slices.SortStableFunc(vowels, func(a, b byte) int {`<br> `return cmp.Compare(-cnt[mp[a]], -cnt[mp[b]])`<br>`})`<br> |
 
 # 二分
-`slices.BinarySearch(s, v)`
+$s$ 中 $\le v$ 的第一个数
+`sort.SearchInts(s, v) -> int`
+`slices.BinarySearch(s, v) -> (int, bool)`
 手写二分注意写成 `left + (right - left) >> 1` 防止溢出
 
 # 内部函数
