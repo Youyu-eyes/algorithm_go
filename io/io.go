@@ -43,6 +43,19 @@ func II() int {
     return n
 }
 
+// n := IB()
+func IB() byte {
+    for {
+        b, err := in.ReadByte()
+        if err != nil {
+            return 0 // 或 panic，按需求处理
+        }
+        if b != ' ' && b != '\n' && b != '\t' && b != '\r' {
+            return b
+        }
+    }
+}
+
 // n := IF()
 func IF() (x float64) {
 	fmt.Fscan(in, &x)
