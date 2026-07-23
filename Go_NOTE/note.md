@@ -85,8 +85,8 @@ if !vis[x] {
 
 # 位运算
 
-`bit.Len(uint(x))`       位长度
-`bit.OnesCount(uint(x))` 置位数
+`bits.Len(uint(x))`       位长度
+`bits.OnesCount(uint(x))` 置位数
 
 `&^` 位清空运算，`c &^32` 等价于 `c & ~32`，~表示补码
 
