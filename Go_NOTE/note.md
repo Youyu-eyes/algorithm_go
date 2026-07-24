@@ -8,7 +8,7 @@
 | --- | --- |
 | FormatInt(i int64, base int) string | 整数按进制转字符串 |
 | FormatFloat(f float64, fmt byte, prec, bitSize int) string | 浮点数格式化 |
-| Itoa(i int) string | int → 十进制字符串 |
+| strconv.Itoa(i int) string | int → 十进制字符串 |
 | Atoi(s string) (int, error) | 十进制字符串 → int |
 | ParseInt(s string, base int, bitSize int) (int64, error) | 解析整数（带进制、位宽） |
 | ParseFloat(s string, bitSize int) (float64, error) | 解析浮点数 |
