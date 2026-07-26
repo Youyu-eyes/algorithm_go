@@ -8,7 +8,6 @@ import (
 const (
 	MOD    = 1_000_000_007
 	inf    = math.MaxInt
-	ll_inf = math.MaxInt
 	MX     = 1_000_001   // 根据题目调整大小
 )
 
