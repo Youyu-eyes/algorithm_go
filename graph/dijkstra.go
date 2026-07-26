@@ -60,3 +60,60 @@ func (h hp) Less(i, j int) bool { return h[i].dis < h[j].dis }
 func (h hp) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
 func (h *hp) Push(v any)        { *h = append(*h, v.(pair)) }
 func (h *hp) Pop() (v any)      { a := *h; *h, v = a[:len(a)-1], a[len(a)-1]; return }
+
+
+/* 网格图
+var DIRS = [][]int{{0, 1}, {1, 0}, {0, -1}, {-1, 0}}
+
+func Dijkstra(grid [][]int) int {
+	m, n := len(grid), len(grid[0])
+	dis := make([]int, m * n)
+	for i := range dis {
+		dis[i] = inf
+	}
+
+	dis[0] = grid[0][0]
+	h := &hp{{grid[0][0], 0, 0}}
+
+	for h.Len() > 0 {
+		cur := heap.Pop(h).(pair)
+		disOld, i, j := cur.dis, cur.r, cur.c
+
+        if i == m - 1 && j == n - 1 {
+            return disOld
+        }
+
+        old := i * n + j
+		if disOld > dis[old] {
+			continue
+		}
+        
+		for _, dir := range DIRS {
+			x, y := i + dir[0], j + dir[1]
+            if x < 0 || x == m || y < 0 || y == n {
+                continue
+            }
+
+            disNew := disOld + grid[x][y]
+
+            new := x * n + y
+            if disNew < dis[new] {
+                dis[new] = disNew
+                heap.Push(h, pair{disNew, x, y})
+            }
+		}
+	}
+
+	return -1
+}
+
+type pair struct{ dis, r, c int }
+type hp []pair
+
+func (h hp) Len() int           { return len(h) }
+func (h hp) Less(i, j int) bool { return h[i].dis < h[j].dis }
+func (h hp) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
+func (h *hp) Push(v any)        { *h = append(*h, v.(pair)) }
+func (h *hp) Pop() (v any)      { a := *h; *h, v = a[:len(a)-1], a[len(a)-1]; return }
+
+*/
