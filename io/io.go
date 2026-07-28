@@ -68,6 +68,10 @@ func IS() (x string) {
 	return
 }
 
+// 读入带空格的字符串 
+// s, _ := in.ReadString('\n')
+// s = strings.TrimRight(s, "\n\r")
+
 func Print(a ...any)            { fmt.Fprint(out, a...) }
 func Println(a ...any)          { fmt.Fprintln(out, a...) }
 func Printf(f string, a ...any) { fmt.Fprintf(out, f, a...) }
