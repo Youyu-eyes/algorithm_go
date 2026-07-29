@@ -37,7 +37,7 @@ $s$ 中 $\ge v$ 的第一个数
 | 最后一个 $< v$ 的数 | `sort.SearchInts(s, v) - 1` |
 | 最后一个 $\le v$ 的数  | `sort.SearchInts(s, v + 1) - 1` |
 
-$s$ 中 $\le v$ 的第一个数
+$s$ 中 $\le v$ 的最后一个数
 `slices.BinarySearch(s, v) -> (int, bool)`
 手写二分注意写成 `left + (right - left) >> 1` 防止溢出
 
