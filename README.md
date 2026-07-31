@@ -30,7 +30,7 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - 二分答案（最小化最大/最大化最小）
   - 双指针
     - 分组循环
-    - [双指针优化二分](https://leetcode.cn/problems/longest-balanced-substring-after-one-swap/solutions/3950956/xiao-bai-si-lu-qian-zhui-he-fen-lei-tao-2e77c/)
+    - [双指针优化二分](https://leetcode.cn/problems/longest-balanced-substring-after-one-swap/solutions/4004481/xiao-bai-si-lu-qian-zhui-he-zong-he-ti-f-ccrp/)
 
 - [位运算](https://github.com/Youyu-eyes/algorithm_go/tree/master/bitwise)
   - [位运算与集合论](https://leetcode.cn/discuss/post/3571304/cong-ji-he-lun-dao-wei-yun-suan-chang-ji-enve/)
