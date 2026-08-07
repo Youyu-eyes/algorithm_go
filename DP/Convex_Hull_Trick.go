@@ -177,7 +177,7 @@ func (uh *UpperHull) clear() {
 }
 
 // --- 下凸包（求最小值） --- //
-// lh := LowerHull
+// lh := LowerHull{}
 
 type LowerHull struct {
 	hull deque[vec]
