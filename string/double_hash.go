@@ -25,6 +25,8 @@ type HashVal struct {
 // 支持 int，byte，rune 类型
 // O(1) 时间返回任意子数组的双哈希值 HashVal
 
+// 可以用于判断两个不同字符串的子串是否相等
+
 func NewDoubleHash[T IntegerHash](arr []T) *DoubleHash {
 	n := len(arr)
 	h := &DoubleHash{
