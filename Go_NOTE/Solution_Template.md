@@ -10,6 +10,14 @@ $$
 $$
 
 $$
+\begin{cases}
+x & \text{if } x>0 
+\\
+0 & \text{otherwise} 
+\end{cases}
+$$
+
+$$
 M = \begin{bmatrix}
 
 \end{bmatrix}
