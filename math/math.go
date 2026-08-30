@@ -1,13 +1,12 @@
 package math
 
 import (
-	"math"
 	"sort"
 )
 
 const (
 	MOD    = 1_000_000_007
-	inf    = math.MaxInt
+	inf    = 1 << 60
 	MX     = 1_000_001   // 根据题目调整大小
 )
 
