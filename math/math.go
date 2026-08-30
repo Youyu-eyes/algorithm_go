@@ -17,6 +17,7 @@ var (
 	primes     []int
 	lpf        []int
 	divisors   [][]int
+	primeFactors [][]int
 	F          []int
 	INV_F      []int
 )
@@ -27,6 +28,7 @@ func init() {
 	isPrimeArr = make([]bool, MX)
 	lpf = make([]int, MX)
 	divisors = make([][]int, MX)
+	primeFactors = make([][]int, MX)
 	F = make([]int, MX)
 	INV_F = make([]int, MX)
 
@@ -59,6 +61,15 @@ func init() {
 	for i := 1; i < MX; i++ {
 		for j := i; j < MX; j += i { // 枚举 i 的倍数 j
 			divisors[j] = append(divisors[j], i) // i 是 j 的因子
+		}
+	}
+
+	// 4.1 预处理质因子
+		for i := 2; i < MX; i++ {
+		if primeFactors[i] == nil { // i 是质数
+			for j := i; j < MX; j += i { // i 的倍数 j 有质因子 i
+				primeFactors[j] = append(primeFactors[j], i)
+			}
 		}
 	}
 
