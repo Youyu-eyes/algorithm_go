@@ -130,6 +130,9 @@ func (st *SegmentTree) update(i int, val SegT) {
 
 // [ql, qr] 双闭
 func (st *SegmentTree) query(ql, qr int) SegT {
+	if ql > qr {
+		return -1  // **根据题目修改**
+	}
 	return st.queryNode(1, 0, st.n-1, ql, qr)
 }
 

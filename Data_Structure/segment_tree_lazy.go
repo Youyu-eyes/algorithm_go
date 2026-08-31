@@ -169,6 +169,9 @@ func (st *LazySegmentTree) update(ql, qr int, f LazyF) {
 }
 
 func (st *LazySegmentTree) query(ql, qr int) LazyT {
+	if ql > qr {
+		return 0  // **根据题目修改** 
+	}
 	return st.queryNode(1, 0, st.n-1, ql, qr)
 }
 
@@ -179,6 +182,7 @@ func (st *LazySegmentTree) findfirst(ql, qr int, f func(LazyT) bool) int {
 func (st *LazySegmentTree) findlast(ql, qr int, f func(LazyT) bool) int {
 	return st.findLastNode(1, 0, st.n-1, ql, qr, f)
 }
+
 
 // ------- 动态开点 Lazy线段树 ------- //
 type DynLazyT = int
