@@ -90,7 +90,7 @@ if !vis[x] {
 
 `unicode.IsUpper(c)`：判断 `c` 是否为大写字母，注意 `c` 的数据类型是 `rune` 而非 `byte`
 
-`string(slices)`：将切片转换成 `string`，注意切片类型一定是 `byte` 切片
+`string([]byte{})`：将 `byte` 切片转换成 `string`
 
 `strings.Fields(string)`：将一个字符串按照 空格，制表符，换行等符号 划分，中间有多个空格也会自动忽略
 `strings.Split(string, string)`：将一个字符串按照指定的字符串划分，如果指定 `" "`，中间多个空格 **不会** 自动忽略
