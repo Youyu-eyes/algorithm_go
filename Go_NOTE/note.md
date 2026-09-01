@@ -85,7 +85,9 @@ if !vis[x] {
 
 # 字符串
 
-`strings.Repeat(a, n)`：相当于 python 字符串乘法，生成长度为 $n$ 的 `a` 字符串，注意 `a` 是 **string** 而非 **byte**，需要 "" 而不是 ''；
+`strings.Repeat(a, n)`：相当于 python 字符串乘法，生成长度为 $n$ 的 $a$ 字符串，注意 `"a"` 是 **string** 而非 **byte**
+`bytes.Repeat([]byte{'a'}, n)`：生成长度为 $n$ 的 $a$ byte 类型的切片
+
 `unicode.IsUpper(c)`：判断 `c` 是否为大写字母，注意 `c` 的数据类型是 `rune` 而非 `byte`
 
 `string(slices)`：将切片转换成 `string`，注意切片类型一定是 `byte` 切片
