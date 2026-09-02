@@ -88,7 +88,7 @@ func berlekampMassey(a []int) (coef []int) {
 			coef = slices.Grow(coef, newLen-oldLen)[:newLen]
 		}
 
-		delta := d * qpow(preD, -1, MOD) % MOD
+		delta := d * qpow(preD, MOD-2) % MOD
 		coef[bias-1] = (coef[bias-1] + delta) % MOD
 		for j, c := range preC {
 			coef[bias+j] = (coef[bias+j] - delta*c) % MOD
@@ -126,7 +126,7 @@ func kitamasa(coef, a []int, n int) (ans int) {
 		return
 	}
 	if k == 1 {
-		return a[0] * qpow(coef[0], n, MOD) % MOD
+		return a[0] * qpow(coef[0], n) % MOD
 	}
 
 	// 已知 f(n) 的各项系数为 a，f(m) 的各项系数为 b

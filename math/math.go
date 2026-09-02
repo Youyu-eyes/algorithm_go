@@ -77,7 +77,7 @@ func init() {
 	for i := 1; i < MX; i++ {
 		F[i] = F[i-1] * i % MOD
 	}
-	INV_F[MX-1] = qpow(F[MX-1], MOD-2, MOD)
+	INV_F[MX-1] = qpow(F[MX-1], MOD-2)
 	for i := MX - 1; i > 0; i-- {
 		INV_F[i-1] = INV_F[i] * i % MOD
 	}
@@ -200,47 +200,19 @@ func convexHull(points []Vec) []Vec {
 	return q
 }
 
-// ------- 快速幂模板，支持负指数计算逆元 ------- //
+// ------- 快速幂模板 ------- //
 // 必须要传 MOD 参数，如果不取模传 MOD = 0
+// 负指数用费马小定理
 
-func qpow(x, n, mod int) int {
+func qpow(x, n int) int {
 	ans := 1
-	base := x
-	exp := n
+	x %= MOD
 
-	if mod > 0 {
-		base %= mod
-	}
-
-	if exp < 0 {
-		if mod == 0 {
-			return 0
+	for ; n > 0; n >>= 1 {
+		if n&1 == 1 {
+			ans = ans * x % MOD
 		}
-		// 模质数下求逆元（费马小定理）
-		inv, b, p := 1, base, mod-2
-		for p > 0 {
-			if p&1 == 1 {
-				inv = (inv * b) % mod
-			}
-			b = (b * b) % mod
-			p >>= 1
-		}
-		base = inv
-		exp = -exp
-	}
-
-	for exp > 0 {
-		if exp&1 == 1 {
-			ans *= base
-			if mod > 0 {
-				ans %= mod
-			}
-		}
-		base *= base
-		if mod > 0 {
-			base %= mod
-		}
-		exp >>= 1
+		x = x * x % MOD
 	}
 	return ans
 }
@@ -262,6 +234,6 @@ func catalan(n int) int {
 	}
 	// C_n = C(2n, n) / (n+1)
 	C_2n_n := comb(2*n, n)
-	inv_n1 := qpow(n+1, -1, MOD) // 求 (n+1) 的逆元
+	inv_n1 := qpow(n+1, MOD-2) // 求 (n+1) 的逆元
 	return C_2n_n * inv_n1 % MOD
 }
