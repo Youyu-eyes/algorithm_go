@@ -137,7 +137,7 @@ func (uh *UpperHull) queryBinary(p vec) int {
 	return p.dot(uh.hull.get(l))
 }
 
-// addFront 向下凸包头部插入元素（用于启发式合并）
+// addFront 向凸包头部插入元素（用于启发式合并）
 func (uh *UpperHull) addFront(p vec) {
 	for uh.hull.size() > 1 {
 		front := uh.hull.front()
@@ -228,7 +228,7 @@ func (lh *LowerHull) queryBinary(p vec) int {
 	return p.dot(lh.hull.get(l))
 }
 
-// addFront 向下凸包头部插入元素（用于启发式合并）
+// addFront 向凸包头部插入元素（用于启发式合并）
 func (lh *LowerHull) addFront(p vec) {
 	for lh.hull.size() > 1 {
 		front := lh.hull.front()
