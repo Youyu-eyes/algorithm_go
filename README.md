@@ -1,6 +1,5 @@
 # 三笠 の 算法模板
 
-
 leetcode 入门一年，leetcode 搜索 [忧郁小眼神](https://leetcode.cn/u/youyu-eyes/) \
 leetcode 周赛 2300 Guardian，详见周赛号 [三笠](https://leetcode.cn/u/mikasha/)
 
