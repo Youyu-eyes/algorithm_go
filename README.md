@@ -193,3 +193,4 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
   - [io模板](https://github.com/Youyu-eyes/algorithm_go/blob/master/io/io.go)
   - [严格众数·扩展摩尔投票](https://leetcode.cn/problems/majority-element/solutions/3978521/xiao-bai-si-lu-mo-er-tou-piao-fu-misra-g-18fe/)
   - [调和级数枚举复杂度证明](https://github.com/Youyu-eyes/codeforces-classification/blob/main/math/2193E_Product_Queries/proof.md)
+  - [洗牌套算法](https://github.com/Youyu-eyes/algorithm_go/blob/master/other/Fisher-Yates_Shuffle.go)
