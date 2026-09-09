@@ -10,7 +10,7 @@ func bfs01(n int, edges [][]int, start int) []int {
 	}
 
 	dis := make([]int, n)
-	for i := 0; i < n; i++ {
+	for i := range n {
 		dis[i] = inf
 	}
 	dis[start] = 0
