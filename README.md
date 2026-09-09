@@ -77,7 +77,7 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
   - 背包问题
     - [0 - 1背包](https://leetcode.cn/problems/target-sum/description/)
     - [完全背包](https://leetcode.cn/problems/coin-change/description/)
-    - [分组背包](https://leetcode.cn/problems/number-of-dice-rolls-with-target-sum/description/)
+    - [分组背包](https://leetcode.cn/problems/minimum-operations-to-form-subset-sum-i/solutions/4019830/fen-zu-bei-bao-pythonjavacgo-by-endlessc-o7ao/)
     - [树形背包](https://leetcode.cn/problems/maximum-profit-from-trading-stocks-with-discounts/description/)
   - 经典线性 DP
     - [LIS 最长递增子序列](https://leetcode.cn/problems/longest-increasing-subsequence/description/?envType=problem-list-v2&envId=HUyjbQzI)
