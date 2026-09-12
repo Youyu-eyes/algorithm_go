@@ -123,14 +123,14 @@ func discretize(arr []int) ([]int, int) {
 	sort.Ints(sortedUnique)
 
 	// unique 去重
-	n := 0
+	N := 0
 	for i := 0; i < len(sortedUnique); i++ {
 		if i == 0 || sortedUnique[i] != sortedUnique[i-1] {
-			sortedUnique[n] = sortedUnique[i]
-			n++
+			sortedUnique[N] = sortedUnique[i]
+			N++
 		}
 	}
-	sortedUnique = sortedUnique[:n]
+	sortedUnique = sortedUnique[:N]
 	m := len(sortedUnique)
 
 	discretized := make([]int, len(arr))
