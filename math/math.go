@@ -118,26 +118,26 @@ func primeFactorization(x int) []Pair {
 
 // 返回离散化后的数组以及去重后的元素个数 m
 func discretize(arr []int) ([]int, int) {
-	sortedUnique := make([]int, len(arr))
-	copy(sortedUnique, arr)
-	sort.Ints(sortedUnique)
+	unique := make([]int, len(arr))
+	copy(unique, arr)
+	sort.Ints(unique)
 
 	// unique 去重
 	N := 0
-	for i := 0; i < len(sortedUnique); i++ {
-		if i == 0 || sortedUnique[i] != sortedUnique[i-1] {
-			sortedUnique[N] = sortedUnique[i]
+	for i := 0; i < len(unique); i++ {
+		if i == 0 || unique[i] != unique[i-1] {
+			unique[N] = unique[i]
 			N++
 		}
 	}
-	sortedUnique = sortedUnique[:N]
-	m := len(sortedUnique)
+	unique = unique[:N]
+	m := len(unique)
 
-	discretized := make([]int, len(arr))
+	rank := make([]int, len(arr))
 	for i, x := range arr {
-		discretized[i] = sort.SearchInts(sortedUnique, x)
+		rank[i] = sort.SearchInts(unique, x)
 	}
-	return discretized, m
+	return rank, m
 }
 
 // ------- 计算几何：凸包 ------- //
