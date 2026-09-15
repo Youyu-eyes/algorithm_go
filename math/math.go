@@ -201,7 +201,6 @@ func convexHull(points []Vec) []Vec {
 }
 
 // ------- 快速幂模板 ------- //
-// 必须要传 MOD 参数，如果不取模传 MOD = 0
 // 负指数用费马小定理
 
 func qpow(x, n int) int {
