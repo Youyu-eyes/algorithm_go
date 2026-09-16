@@ -2,6 +2,7 @@ package math
 
 import (
 	"sort"
+	"slices"
 )
 
 const (
