@@ -113,3 +113,6 @@ Go 语言堆的库函数需要首先实现 $5$ 个函数，具体见 [堆与队�
 如果在循环内一定有输出，不一定需要最后 `return`，则需要在最后加上 `panic("impossible")`，详见 [lc3613](https://leetcode.cn/problems/minimize-maximum-component-cost/description/)
 
 请不要用哈希表统计数字出现次数，请一定一定用数组！！！哈希表的常数达到无法想象
+
+# todo 模板题
+[（洛谷）2026联合省选·模板题](https://www.luogu.com.cn/contest/312809#problems)
