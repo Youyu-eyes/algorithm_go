@@ -118,25 +118,16 @@ func primeFactorization(x int) []Pair {
 
 // 返回离散化后的数组以及去重后的元素个数 m
 func discretize(arr []int) ([]int, int) {
-	unique := make([]int, len(arr))
-	copy(unique, arr)
-	sort.Ints(unique)
+    unique := slices.Clone(arr)
+	slices.Sort(unique)
+	unique = slices.Compact(unique)
 
-	// unique 去重
-	N := 0
-	for i := 0; i < len(unique); i++ {
-		if i == 0 || unique[i] != unique[i-1] {
-			unique[N] = unique[i]
-			N++
-		}
-	}
-	unique = unique[:N]
-	m := len(unique)
-
-	rank := make([]int, len(arr))
+    m := len(unique)
+    rank := make([]int, len(arr))
 	for i, x := range arr {
 		rank[i] = sort.SearchInts(unique, x)
 	}
+
 	return rank, m
 }
 
