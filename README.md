@@ -72,6 +72,8 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
       - 带修莫队
       - 树上莫队
       - [回滚莫队](https://leetcode.cn/problems/threshold-majority-queries/description/)
+  - 分治
+    - [CDQ 分治：三维偏序 / 陌上花开](https://github.com/Youyu-eyes/codeforces-classification/blob/main/Data_Structure/divide_and_conquer/luogu_P3810/solution.md)
 
 - [动态规划](https://github.com/Youyu-eyes/algorithm_go/tree/master/DP)
   - 背包问题
