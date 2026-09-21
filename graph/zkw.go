@@ -4,6 +4,9 @@ import (
 	"container/heap"
 )
 
+// zkw = dinic + dijkstra + 势能函数
+// 贪心地想，每次在最短路上增广
+
 func zkw(n int, edges [][]int, s, t int) (maxFlow int, minCost int) {
 	type edge struct{ to, wt, ct, rev int }
 	g := make([][]edge, n)
