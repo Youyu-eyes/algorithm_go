@@ -83,7 +83,7 @@ func main() {
 
 	T := II() // 1
 
-	for t := 0; t < T; t++ {
+	for range T {
 		solve()
 	}
 }
