@@ -9,6 +9,9 @@ package graph
 // 返回值:
 //   []int : 距离数组 dist
 //   bool  : 是否存在对应的环 (short=true 时返回是否有负环，short=false 时返回是否有正环)
+
+// ~~SPFA 已死~~
+
 func SPFA(n int, edges [][]int, start int, short bool) ([]int, bool) {
 	dist := make([]int, n)
 	if short {
