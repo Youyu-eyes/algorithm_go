@@ -73,7 +73,8 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
       - 树上莫队
       - [回滚莫队](https://leetcode.cn/problems/threshold-majority-queries/description/)
   - 分治
-    - [CDQ 分治：三维偏序 / 陌上花开](https://github.com/Youyu-eyes/codeforces-classification/blob/main/Data_Structure/divide_and_conquer/luogu_P3810/solution.md)
+    - [CDQ 分治](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/CDQ.go)
+      - [CDQ 分治：三维偏序 / 陌上花开](https://github.com/Youyu-eyes/codeforces-classification/blob/main/Data_Structure/divide_and_conquer/luogu_P3810/solution.md)
 
 - [动态规划](https://github.com/Youyu-eyes/algorithm_go/tree/master/DP)
   - 背包问题
@@ -152,7 +153,8 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - Tarjan
   - [最小生成树](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/minimum_spanning_tree.go)
   - 网络流
-    - 最大最小费用流
+    - 最大流与最小割
+      - [dinic 算法](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/dinic.go)
     - 二分图最大匹配
     - 带权二分图最大完美匹配
   - LCA 最近公共祖先
