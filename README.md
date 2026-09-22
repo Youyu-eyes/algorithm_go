@@ -188,7 +188,7 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - [平面任意两点斜率的相关性质](https://github.com/Youyu-eyes/codeforces-classification/blob/main/Other_Competation/2025.HZCU/B/solve.md)
 
 - 贪心
-  - [相邻不同系列问题·结论](https://leetcode.cn/problems/minimum-amount-of-time-to-fill-cups/description/)
+  - [一些常用结论](https://github.com/Youyu-eyes/algorithm_go/blob/master/other/conclusion.md)
   - [中位数贪心](https://leetcode.cn/problems/minimum-amount-of-time-to-fill-cups/description/)
     - [点集距离和](https://leetcode.cn/problems/allocate-mailboxes/solutions/3982690/xiao-bai-si-lu-jue-ce-dan-diao-xing-you-uzj2m/)
   - [交换论证法](https://leetcode.cn/problems/minimum-processing-time/description/)
