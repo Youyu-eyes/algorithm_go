@@ -76,17 +76,8 @@ func Print(a ...any)            { fmt.Fprint(out, a...) }
 func Println(a ...any)          { fmt.Fprintln(out, a...) }
 func Printf(f string, a ...any) { fmt.Fprintf(out, f, a...) }
 
-func main() {
-	in = bufio.NewReader(os.Stdin)
-	out = bufio.NewWriter(os.Stdout)
-	defer out.Flush()
 
-	T := II() // 1
-
-	for range T {
-		solve()
-	}
-}
+// ------- 轮子开始 ------- //
 
 func abs[T int | int64 | float64](x T) T {
 	if x >= 0 { return x }
@@ -134,6 +125,21 @@ func accumulate(nums []int) []int {
 	}
 	return s
 }
+
+// ------- 轮子结束 ------- //
+
+func main() {
+	in = bufio.NewReader(os.Stdin)
+	out = bufio.NewWriter(os.Stdout)
+	defer out.Flush()
+
+	T := II() // 1
+
+	for range T {
+		solve()
+	}
+}
+
 
 // ----------------- io 模板结束 ----------------- //
 // ----------------- 主函数部分  ----------------- //
