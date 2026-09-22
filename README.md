@@ -50,6 +50,7 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
   - [单调栈](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/monotonic_stack.go)
   - [懒删除堆](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/lazy_heap.go)
   - [树状数组](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/fenwick_tree.go)
+    - [树状数组求逆序对](https://leetcode.cn/problems/count-subarrays-with-even-odd-ratio-ii/solutions/4005441/xiao-bai-si-lu-shu-zhuang-shu-zu-qiu-ni-d9vqk/)
   - 线段树
     - [普通线段树](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/segment_tree.go)
     - [Lazy 线段树](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/segment_tree_lazy.go)
