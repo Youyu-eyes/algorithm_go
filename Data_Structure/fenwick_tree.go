@@ -30,6 +30,25 @@ func (f fenwick) query(l, r int) int {
 	return f.pre(r) - f.pre(l-1)
 }
 
+// 返回最小的 0-based 下标 i，满足 a[0] + ... + a[i] >= k
+// 若总和 < k，返回 n
+func (f fenwick) kth(k int) int {
+	n := len(f) - 1
+	bit := 1
+	for bit<<1 <= n {
+		bit <<= 1
+	}
+	idx := 0
+	for ; bit > 0; bit >>= 1 {
+		nxt := idx + bit
+		if nxt <= n && f[nxt] < k {
+			k -= f[nxt]
+			idx = nxt
+		}
+	}
+	return idx
+}
+
 
 // ======= 值域树状数组 ======= //
 
