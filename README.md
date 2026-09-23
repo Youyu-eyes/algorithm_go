@@ -156,6 +156,8 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
   - 网络流
     - 最大流与最小割
       - [dinic 算法](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/dinic.go)
+      - [最小费用最大流](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/zkw.go)
+      - 有源汇上下界最大流
     - 二分图最大匹配
       - 带权二分图最大完美匹配
       - 二分图最大支配集
