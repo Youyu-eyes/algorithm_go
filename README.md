@@ -157,7 +157,9 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - 最大流与最小割
       - [dinic 算法](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/dinic.go)
     - 二分图最大匹配
-    - 带权二分图最大完美匹配
+      - 带权二分图最大完美匹配
+      - 二分图最大支配集
+      - 带权二分图最小边覆盖
   - LCA 最近公共祖先
     - [树上倍增](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/LCA_tree.go)
     - 树链剖分
