@@ -6,7 +6,7 @@ func dinic(n int, edges [][]int, s, t int) (maxFlow int) {
 	for _, e := range edges {
 		u, v, wt := e[0], e[1], e[2]
 		g[u] = append(g[u], edge{v, wt, len(g[v])})
-		g[v] = append(g[v], edge{u, 0, len(g[u]) - 1})
+		g[v] = append(g[v], edge{u, 0, len(g[u]) - 1}) // 无向图将 0 改成 wt
 	}
 
 	level := make([]int, n)
