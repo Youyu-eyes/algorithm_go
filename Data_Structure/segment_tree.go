@@ -111,7 +111,6 @@ func NewSegmentTreeBySize(n int, initVal SegT) *SegmentTree {
 // NewSegmentTree 线段树维护数组 a
 func NewSegmentTree(a []SegT) *SegmentTree {
 	n := len(a)
-	// 2 << bits.Len(uint(len(a)-1)) 等同于 C++ 中的 2 << bit_width(a.size() - 1)
 	treeSize := 2 << bits.Len(uint(n-1))
 	st := &SegmentTree{
 		n:    n,
