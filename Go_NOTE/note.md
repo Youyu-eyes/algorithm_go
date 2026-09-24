@@ -125,6 +125,8 @@ Go 语言堆的库函数需要首先实现 $5$ 个函数，具体见 [堆与队�
 ## leetcode 函数题
 如果在循环内一定有输出，不一定需要最后 `return`，则需要在最后加上 `panic("impossible")`，详见 [lc3613](https://leetcode.cn/problems/minimize-maximum-component-cost/description/)
 
+如果是 `for {}` 相当于 `while True` 循环，可以不在末尾加 `return`，否则需要
+
 请不要用哈希表统计数字出现次数，请一定一定用数组！！！哈希表的常数达到无法想象
 
 # todo 模板题
