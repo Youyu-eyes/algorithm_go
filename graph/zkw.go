@@ -19,6 +19,29 @@ func zkw(n int, edges [][]int, s, t int) (maxFlow int, minCost int) {
 	dis := make([]int, n)
 	hi := make([]int, n)
 
+    // spfa 求初始势能函数
+    for i := range hi {
+        hi[i] = inf
+    }
+    hi[s] = 0
+    inq := make([]bool, n)
+    q := []int{s}
+    inq[s] = true
+    for len(q) > 0 {
+        u := q[0]
+        q = q[1:]
+        inq[u] = false
+        for _, e := range g[u] {
+            if e.wt > 0 && hi[u]+e.ct < hi[e.to] {
+                hi[e.to] = hi[u] + e.ct
+                if !inq[e.to] {
+                    q = append(q, e.to)
+                    inq[e.to] = true
+                }
+            }
+        }
+    }
+
 	dijkstra := func() bool {
 		for i := range dis {
 			dis[i] = inf
