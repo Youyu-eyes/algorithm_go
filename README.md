@@ -154,12 +154,16 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - Tarjan
   - [最小生成树](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/minimum_spanning_tree.go)
   - 网络流
+    - [笔记·建图技巧](https://leetcode.cn/problems/maximum-and-sum-of-array/solutions/4035908/xiao-bai-si-lu-bi-ji-zui-xiao-fei-yong-z-mzoa/)
     - 最大流与最小割
       - [dinic 算法](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/dinic.go)
       - [最小费用最大流](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/zkw.go)
       - 有源汇上下界最大流
     - 二分图最大匹配
+      - 二分图最大匹配
+      - 带权二分图最大匹配
       - 带权二分图最大完美匹配
+      - 带权二分图最大 k 权匹配
       - 二分图最大支配集
       - 带权二分图最小边覆盖
   - LCA 最近公共祖先
