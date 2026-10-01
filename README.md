@@ -160,9 +160,9 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
       - [二分图最大支配集](https://leetcode.cn/problems/maximum-students-taking-exam/solutions/4037184/xiao-bai-si-lu-er-fen-tu-zui-da-du-li-ji-1mre/)
     - [费用流](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/zkw.go)
       - 带权二分图最大匹配
-        - 带权二分图最大完美匹配
-        - 带权二分图最大 k 权匹配
-      - 带权二分图最小边覆盖
+      - 带权二分图最大完美匹配
+      - [带权二分图最大 k 权匹配](https://leetcode.cn/problems/maximum-value-sum-by-placing-three-rooks-ii/solutions/4036466/xiao-bai-si-lu-er-fen-tu-pi-pei-fei-yong-nmi3/)
+      - [带权二分图最小边覆盖](https://leetcode.cn/problems/minimum-cost-to-connect-two-groups-of-points/solutions/4037471/xiao-bai-si-lu-er-fen-tu-zui-xiao-bian-f-bbjr/)
     - 有源汇上下界最大流
   - LCA 最近公共祖先
     - [树上倍增](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/LCA_tree.go)
