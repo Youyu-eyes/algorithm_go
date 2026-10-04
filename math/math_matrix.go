@@ -17,8 +17,8 @@ func newMatrix(m, n int) matrix {
 	return a
 }
 
-// 返回矩阵 a 和矩阵 b 相乘的结果，若 mod > 0 则取模
-func matMul(a, b matrix, mod int) matrix {
+// 返回矩阵 a 和矩阵 b 相乘的结果，对 MOD 取模
+func matMul(a, b matrix) matrix {
 	n, m := len(a), len(b[0])
 	c := make(matrix, n)
 	for i := range n {
@@ -29,20 +29,17 @@ func matMul(a, b matrix, mod int) matrix {
 			}
 			aik := a[i][k]
 			for j := range m {
-				c[i][j] += aik * b[k][j]
-				if mod > 0 {
-					c[i][j] %= mod
-				}
+				c[i][j] = (c[i][j] + aik * b[k][j]) % MOD
 				// 如果溢出
-				// c[i][j] = int((uint64(c[i][j]) + uint64(aik)*uint64(b[k][j])) % uint64(mod))
+				// c[i][j] = int((uint64(c[i][j]) + uint64(aik)*uint64(b[k][j])) % uint64(MOD))
 			}
 		}
 	}
 	return c
 }
 
-// 计算 A^n，若 mod > 0 则所有乘法取模
-func matQpow(a matrix, n int, mod int) matrix {
+// 计算 A^n，对 MOD 取模
+func matQpow(a matrix, n int) matrix {
 	size := len(a)
 	res := make(matrix, size)
 	for i := range size {
@@ -52,9 +49,9 @@ func matQpow(a matrix, n int, mod int) matrix {
 
 	for n > 0 {
 		if n&1 == 1 {
-			res = matMul(a, res, mod)
+			res = matMul(a, res)
 		}
-		a = matMul(a, a, mod)
+		a = matMul(a, a)
 		n >>= 1
 	}
 	return res
