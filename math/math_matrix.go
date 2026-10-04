@@ -21,14 +21,14 @@ func newMatrix(m, n int) matrix {
 func matMul(a, b matrix, mod int) matrix {
 	n, m := len(a), len(b[0])
 	c := make(matrix, n)
-	for i := 0; i < n; i++ {
+	for i := range n {
 		c[i] = make([]int, m)
-		for k := 0; k < len(a[0]); k++ {
+		for k := range len(a) {
 			if a[i][k] == 0 {
 				continue
 			}
 			aik := a[i][k]
-			for j := 0; j < m; j++ {
+			for j := range m {
 				c[i][j] += aik * b[k][j]
 				if mod > 0 {
 					c[i][j] %= mod
@@ -45,7 +45,7 @@ func matMul(a, b matrix, mod int) matrix {
 func matQpow(a matrix, n int, mod int) matrix {
 	size := len(a)
 	res := make(matrix, size)
-	for i := 0; i < size; i++ {
+	for i := range size {
 		res[i] = make([]int, size)
 		res[i][i] = 1
 	}
