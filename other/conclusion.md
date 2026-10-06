@@ -27,3 +27,10 @@
 
 **答**：最少操作  $\max(\left\lceil \dfrac{n}{2} \right\rceil, m)$ 次
 
+## HH 的项链
+**问**：给定一个数组，查询任意子数组中出现不同元素的个数
+
+**做法**：将询问按照右端点排序，用 $last$ 数组维护值域内元素最后一次出现的下标，将 $last[x]$ 下标处的数视为 $1$，其左侧的 $x$ 视为 $0$
+用树状数组维护区间和，即为答案
+
+[leetcode 4033. 有效 K 个不同元素子数组 I 我的题解](https://leetcode.cn/problems/valid-k-unique-subarrays-i/solutions/4016712/xiao-bai-si-lu-chi-xian-cha-xun-mo-dui-s-y7h7/)
