@@ -34,3 +34,9 @@
 用树状数组维护区间和，即为答案
 
 [leetcode 4033. 有效 K 个不同元素子数组 I 我的题解](https://leetcode.cn/problems/valid-k-unique-subarrays-i/solutions/4016712/xiao-bai-si-lu-chi-xian-cha-xun-mo-dui-s-y7h7/)
+
+## 范德蒙德卷积
+$$
+\sum_{i = 0}^{k}\binom{n}{i}\binom{m}{k-i} = \binom{m + n}{k}
+$$
+[证明及推论](https://oi-wiki.org/math/combinatorics/vandermonde-convolution/)
