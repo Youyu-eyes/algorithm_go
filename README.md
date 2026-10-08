@@ -52,9 +52,9 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
   - [树状数组](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/fenwick_tree.go)
     - [树状数组求逆序对](https://leetcode.cn/problems/count-subarrays-with-even-odd-ratio-ii/solutions/4005441/xiao-bai-si-lu-shu-zhuang-shu-zu-qiu-ni-d9vqk/)
   - 线段树
-    - [普通线段树](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/segment_tree.go)
-    - [Lazy 线段树](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/segment_tree_lazy.go)
-    - [李超线段树](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/segment_tree_lichao.go)
+    - [普通线段树](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/segment_tree/segment_tree.go)
+    - [Lazy 线段树](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/segment_tree/segment_tree_lazy.go)
+    - [李超线段树](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/segment_tree/segment_tree_lichao.go)
     - 线段树动态开点
     - [可持久化线段树（主席树）](https://leetcode.cn/problems/minimum-operations-to-equalize-subarrays/solutions/3845357/zhong-wei-shu-tan-xin-ke-chi-jiu-hua-xia-etpv/)
   - [ST 表](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/sparse_table.go)
