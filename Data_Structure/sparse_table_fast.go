@@ -21,7 +21,7 @@ func buildSTMax(nums []int) {
 	n := len(nums)
 	w := bits.Len(uint(n))
 
-	for i := 0; i < n; i++ {
+	for i := range n {
 		stMax[i] = nums[i]
 	}
 
@@ -33,11 +33,7 @@ func buildSTMax(nums []int) {
 		for i := 0; i + step + (1 << (k - 1)) <= n; i++ {
 			v1 := stMax[prevOffset + i]
 			v2 := stMax[prevOffset + i + step]
-			if v1 > v2 {
-				stMax[currOffset + i] = v1
-			} else {
-				stMax[currOffset + i] = v2
-			}
+			stMax[currOffset + i] = max(v1, v2)
 		}
 	}
 }
@@ -48,10 +44,7 @@ func queryMax(l, r int) int {
 	
 	v1 := stMax[offset + l]
 	v2 := stMax[offset + r - (1 << k)]
-	if v1 > v2 {
-		return v1
-	}
-	return v2
+	return max(v1, v2)
 }
 
 
@@ -65,7 +58,7 @@ func buildSTMin(nums []int) {
 	n := len(nums)
 	w := bits.Len(uint(n))
 
-	for i := 0; i < n; i++ {
+	for i := range n {
 		stMin[i] = nums[i] 
 	}
 
@@ -77,11 +70,7 @@ func buildSTMin(nums []int) {
 		for i := 0; i + step + (1 << (k - 1)) <= n; i++ {
 			v1 := stMin[prevOffset + i]
 			v2 := stMin[prevOffset + i + step]
-			if v1 < v2 {
-				stMin[currOffset + i] = v1
-			} else {
-				stMin[currOffset + i] = v2
-			}
+			stMin[currOffset + i] = min(v1, v2)
 		}
 	}
 }
@@ -93,10 +82,7 @@ func queryMin(l, r int) int {
 	v1 := stMin[offset + l]
 	v2 := stMin[offset + r - (1 << k)]
 
-	if v1 < v2 {
-		return v1
-	}
-	return v2
+	return min(v1, v2)
 }
 
 
@@ -117,7 +103,7 @@ func buildSTGcd(nums []int) {
 	n := len(nums)
 	w := bits.Len(uint(n))
 
-	for i := 0; i < n; i++ {
+	for i := range n {
 		stGcd[i] = nums[i] 
 	}
 
@@ -156,7 +142,7 @@ func buildSTMaxIdx(nums []int) {
 	n := len(nums)
 	w := bits.Len(uint(n))
 
-	for i := 0; i < n; i++ {
+	for i := range n {
 		arrMaxIdx[i] = nums[i]
 		stMaxIdx[i] = i
 	}
@@ -203,7 +189,7 @@ func buildSTMinIdx(nums []int) {
 	n := len(nums)
 	w := bits.Len(uint(n))
 
-	for i := 0; i < n; i++ {
+	for i := range n {
 		arrMinIdx[i] = nums[i]
 		stMinIdx[i] = i
 	}
@@ -263,8 +249,8 @@ func buildSTMax2D(matrix [][]int) {
 	wR := bits.Len(uint(m))
 	wC := bits.Len(uint(n))
 
-	for i := 0; i < m; i++ {
-		for j := 0; j < n; j++ {
+	for i := range m {
+		for j := range n {
 			stMax2D[i*maxC+j] = matrix[i][j]
 		}
 	}
@@ -274,15 +260,11 @@ func buildSTMax2D(matrix [][]int) {
 		currLOffset := l * pageSize
 		prevLOffset := (l - 1) * pageSize
 
-		for i := 0; i < m; i++ {
+		for i := range m {
 			for j := 0; j+stepC+(1<<(l-1)) <= n; j++ {
 				v1 := stMax2D[prevLOffset+i*maxC+j]
 				v2 := stMax2D[prevLOffset+i*maxC+j+stepC]
-				if v1 > v2 {
-					stMax2D[currLOffset+i*maxC+j] = v1
-				} else {
-					stMax2D[currLOffset+i*maxC+j] = v2
-				}
+				stMax2D[currLOffset+i*maxC+j] = max(v1, v2)
 			}
 		}
 	}
@@ -292,7 +274,7 @@ func buildSTMax2D(matrix [][]int) {
 		currKOffset := k * kStride
 		prevKOffset := (k - 1) * kStride
 
-		for l := 0; l < wC; l++ {
+		for l := range wC {
 			lOffset := l * pageSize
 			currBase := currKOffset + lOffset
 			prevBase := prevKOffset + lOffset
@@ -301,11 +283,7 @@ func buildSTMax2D(matrix [][]int) {
 				for j := 0; j+(1<<l) <= n; j++ {
 					v1 := stMax2D[prevBase+i*maxC+j]
 					v2 := stMax2D[prevBase+(i+stepR)*maxC+j]
-					if v1 > v2 {
-						stMax2D[currBase+i*maxC+j] = v1
-					} else {
-						stMax2D[currBase+i*maxC+j] = v2
-					}
+					stMax2D[currBase+i*maxC+j] = max(v1, v2)
 				}
 			}
 		}
@@ -325,18 +303,10 @@ func queryMax2D(r1, r2, c1, c2 int) int {
 	v3 := stMax2D[offset+r1*maxC+(c2-lenC)]
 	v4 := stMax2D[offset+(r2-lenR)*maxC+(c2-lenC)]
 
-	max1 := v1
-	if v2 > max1 {
-		max1 = v2
-	}
-	max2 := v3
-	if v4 > max2 {
-		max2 = v4
-	}
-	if max2 > max1 {
-		return max2
-	}
-	return max1
+	max1 := max(v1, v2)
+	max2 := max(v3, v4)
+
+	return max(max1, max2)
 }
 
 
@@ -355,8 +325,8 @@ func buildSTMin2D(matrix [][]int) {
 	wR := bits.Len(uint(m))
 	wC := bits.Len(uint(n))
 
-	for i := 0; i < m; i++ {
-		for j := 0; j < n; j++ {
+	for i := range m {
+		for j := range n {
 			stMin2D[i*maxC+j] = matrix[i][j]
 		}
 	}
@@ -366,15 +336,11 @@ func buildSTMin2D(matrix [][]int) {
 		currLOffset := l * pageSize
 		prevLOffset := (l - 1) * pageSize
 
-		for i := 0; i < m; i++ {
+		for i := range m {
 			for j := 0; j+stepC+(1<<(l-1)) <= n; j++ {
 				v1 := stMin2D[prevLOffset+i*maxC+j]
 				v2 := stMin2D[prevLOffset+i*maxC+j+stepC]
-				if v1 < v2 {
-					stMin2D[currLOffset+i*maxC+j] = v1
-				} else {
-					stMin2D[currLOffset+i*maxC+j] = v2
-				}
+				stMin2D[currLOffset+i*maxC+j] = min(v1, v2)
 			}
 		}
 	}
@@ -384,7 +350,7 @@ func buildSTMin2D(matrix [][]int) {
 		currKOffset := k * kStride
 		prevKOffset := (k - 1) * kStride
 
-		for l := 0; l < wC; l++ {
+		for l := range wC {
 			lOffset := l * pageSize
 			currBase := currKOffset + lOffset
 			prevBase := prevKOffset + lOffset
@@ -393,11 +359,7 @@ func buildSTMin2D(matrix [][]int) {
 				for j := 0; j+(1<<l) <= n; j++ {
 					v1 := stMin2D[prevBase+i*maxC+j]
 					v2 := stMin2D[prevBase+(i+stepR)*maxC+j]
-					if v1 < v2 {
-						stMin2D[currBase+i*maxC+j] = v1
-					} else {
-						stMin2D[currBase+i*maxC+j] = v2
-					}
+					stMin2D[currBase+i*maxC+j] = min(v1, v2)
 				}
 			}
 		}
@@ -417,18 +379,10 @@ func queryMin2D(r1, r2, c1, c2 int) int {
 	v3 := stMin2D[offset+r1*maxC+(c2-lenC)]
 	v4 := stMin2D[offset+(r2-lenR)*maxC+(c2-lenC)]
 
-	min1 := v1
-	if v2 < min1 {
-		min1 = v2
-	}
-	min2 := v3
-	if v4 < min2 {
-		min2 = v4
-	}
-	if min2 < min1 {
-		return min2
-	}
-	return min1
+	min1 := min(v1, v2)
+	min2 := min(v3, v4)
+
+	return min(min1, min2)
 }
 
 
@@ -449,8 +403,8 @@ func buildSTGcd2D(matrix [][]int) {
 	wR := bits.Len(uint(m))
 	wC := bits.Len(uint(n))
 
-	for i := 0; i < m; i++ {
-		for j := 0; j < n; j++ {
+	for i := range m {
+		for j := range n {
 			stGcd2D[i*maxC+j] = matrix[i][j]
 		}
 	}
@@ -460,7 +414,7 @@ func buildSTGcd2D(matrix [][]int) {
 		currLOffset := l * pageSize
 		prevLOffset := (l - 1) * pageSize
 
-		for i := 0; i < m; i++ {
+		for i := range m {
 			for j := 0; j+stepC+(1<<(l-1)) <= n; j++ {
 				v1 := stGcd2D[prevLOffset+i*maxC+j]
 				v2 := stGcd2D[prevLOffset+i*maxC+j+stepC]
@@ -474,7 +428,7 @@ func buildSTGcd2D(matrix [][]int) {
 		currKOffset := k * kStride
 		prevKOffset := (k - 1) * kStride
 
-		for l := 0; l < wC; l++ {
+		for l := range wC {
 			lOffset := l * pageSize
 			currBase := currKOffset + lOffset
 			prevBase := prevKOffset + lOffset
