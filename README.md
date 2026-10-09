@@ -190,6 +190,7 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - [矩阵快速幂](https://github.com/Youyu-eyes/algorithm_go/blob/master/math/math_matrix.go)
   - 组合数学
     - 卡特兰数
+    - [范德蒙德卷积](https://github.com/Youyu-eyes/codeforces-classification/blob/main/math/Combinatorics/785D_Anton_and_School-2/solution.md)
   - 计算几何
     - [平面任意两点斜率的相关性质](https://github.com/Youyu-eyes/codeforces-classification/blob/main/Other_Competation/2025.HZCU/B/solve.md)
 
