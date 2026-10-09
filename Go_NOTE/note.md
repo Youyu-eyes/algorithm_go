@@ -132,6 +132,10 @@ Go 语言堆的库函数需要首先实现 $5$ 个函数，具体见 [堆与队�
 请不要用哈希表统计数字出现次数，请一定一定用数组！！！哈希表的常数达到无法想象
 
 ```go
+import (
+    "runtime/debug"
+)
+
 func init() { debug.SetGCPercent(-1) } 
 ```
 
