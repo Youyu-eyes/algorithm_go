@@ -247,14 +247,17 @@ func (o *pNode) maintain() {
 	o.pInfo = o.mergeInfo(o.lo.pInfo, o.ro.pInfo)
 }
 
-func buildPst(l, r int) *pNode {
+func buildPst(a []pInfo, l, r int) *pNode {
 	o := &pNode{l: l, r: r}
 	if l == r {
+		if a != nil {
+			o.pInfo = a[l]
+		}
 		return o
 	}
 	m := (l + r) >> 1
-	o.lo = buildPst(l, m)
-	o.ro = buildPst(m+1, r)
+	o.lo = buildPst(a, l, m)
+	o.ro = buildPst(a, m+1, r)
 	o.maintain()
 	return o
 }
@@ -309,7 +312,7 @@ func newPst(a []int) ([]*pNode, []int) {
 	unique = slices.Compact(unique)
 
 	t := make([]*pNode, len(a)+1)
-	t[0] = buildPst(0, len(unique)-1)
+	t[0] = buildPst(nil, 0, len(unique)-1)
 	for i, v := range a {
 		j := sort.SearchInts(unique, v)
 		t[i+1] = t[i].update(j, v)
