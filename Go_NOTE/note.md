@@ -147,7 +147,7 @@ func init() { debug.SetGCPercent(-1) }
 有源汇上下界最大流
 logtrick
 带修莫队/树上莫队
-整体二分
+整体二分：灵茶の试炼 9.22
 可持久化线段树
 树链剖分
 
