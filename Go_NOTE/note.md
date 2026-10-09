@@ -61,6 +61,8 @@ $$
 
 `maps.Copy(a, b)` 表示对将 $b$ 哈希表复制给 $a$
 
+`delete(map, k)` 表示哈希表删除键为 $k$ 的键值对
+
 # 翻转
 切片：`slices.Reverse(nums)`
 字符串没有相关内置函数，手动实现一个
