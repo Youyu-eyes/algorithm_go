@@ -291,6 +291,7 @@ func (o *pNode) query(old *pNode, ql, qr int) pInfo {
 	return o.mergeInfo(lRes, rRes)
 }
 
+// k 从 0 开始
 func (o *pNode) kth(old *pNode, k int) int {
 	if o.l == o.r {
 		return o.l
