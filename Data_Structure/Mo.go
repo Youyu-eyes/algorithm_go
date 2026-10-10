@@ -42,32 +42,40 @@ func Mo(a []int, queries [][]int) {
 		return cmp.Compare(a.r, b.r)
 	})
 
+	add := func(x int) {
+
+	}
+
+	del := func(x int) {
+
+	}
+
 	// 初始化左右端点
 	l, r, res := -1, 0, 0
 
 	for _, b := range qs {		
 		// 右端点右移
 		for ; r < b.r; r++ {
-
+			add(a[r])
 		}
 
 		// 左端点左移
 		for ; l > b.l; l-- {
-
+			add(a[l])
 		}
 
 		// 右端点左移
 		// 开区间，先左移再删除
 		for r > b.r {
 			r--
-
+			del(a[r])
 		}
 
 		// 左端点右移
 		// 开区间，先右移再删除
 		for l < b.l {
 			l++
-
+			del(a[l])
 		}
 
 		ans[b.qIdx] = res
