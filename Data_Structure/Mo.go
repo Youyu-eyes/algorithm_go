@@ -11,9 +11,9 @@ import (
 
 func Mo(a []int, queries [][]int) {
 	n := len(a)
-	q := len(queries)
+	m := len(queries)
 
-	B := int(math.Ceil(float64(n) / math.Sqrt(float64(q))))
+	B := int(math.Ceil(float64(n) / math.Sqrt(float64(m))))
 
 	// 双开区间莫队
 	type query struct {
@@ -21,13 +21,13 @@ func Mo(a []int, queries [][]int) {
 		l, r int // (l, r)
 		qIdx int
 	}
-	qs := []query{}
+	qs := make([]query, m)
 
 	
-	ans := make([]int, q)
-	for Q := range q {
-		l, r := queries[Q][0], queries[Q][1] + 1
-		qs = append(qs, query{l / B, l - 1, r, Q})
+	ans := make([]int, m)
+	for qi := range m {
+		l, r := queries[qi][0], queries[qi][1] + 1
+		qs[qi] = query{l / B, l - 1, r, qi}
 	}
 
 	// 奇偶排序优化
@@ -89,9 +89,9 @@ func Mo(a []int, queries [][]int) {
 
 func RollbackMo(a []int, queries [][]int) {
 	n := len(a)
-	q := len(queries)
+	m := len(queries)
 
-	B := int(math.Ceil(float64(n) / math.Sqrt(float64(q))))
+	B := int(math.Ceil(float64(n) / math.Sqrt(float64(m))))
 
 	// 双开区间莫队
 	type query struct {
@@ -102,13 +102,13 @@ func RollbackMo(a []int, queries [][]int) {
 	qs := []query{}
 
 	var res int
-	ans := make([]int, q)
-	for Q := range q {
-		l, r := queries[Q][0], queries[Q][1] + 1
+	ans := make([]int, m)
+	for qi := range m {
+		l, r := queries[qi][0], queries[qi][1] + 1
 
 		// 大区间离线
 		if r - l > B {
-			qs = append(qs, query{l / B, l - 1, r, Q})
+			qs = append(qs, query{l / B, l - 1, r, qi})
 			continue
 		}
 
@@ -155,5 +155,94 @@ func RollbackMo(a []int, queries [][]int) {
 		for j := b.l + 1; j <= l; j++ {
 			
 		}
+	}
+}
+
+
+// 带修莫队
+
+func ModifyMo(a []int, queries [][]int) {
+	n, m := len(a), len(queries)
+
+	B := int(max(1, math.Pow(float64(n), 2.0/3.0)))
+
+	type query struct {
+		lid, rid int
+		l, r, t     int
+		qIdx     int
+	}
+	type version struct {
+		pos, color int
+	}
+
+	qs := []query{}
+	vs := []version{}
+	curQ := 0
+
+	for qi := range m {
+		op := queries[qi][0]
+		if op == 1 {
+			l, r := queries[qi][0], queries[qi][1]
+			qs = append(qs, query{l/B, r/B, l - 1, r + 1, qi - curQ, curQ})
+			curQ++
+		} else {
+			idx, val := queries[qi][0], queries[qi][1]
+			vs = append(vs, version{idx, val})
+		}
+	}
+
+	slices.SortFunc(qs, func(a, b query) int {
+		if a.lid != b.lid {
+			return cmp.Compare(a.lid, b.lid)
+		}
+		if a.rid != b.rid {
+			return cmp.Compare(a.rid, b.rid)
+		}
+		return cmp.Compare(a.t, b.t)
+	})
+
+	res := 0
+	add := func(x int) {
+
+	}
+
+	del := func(x int) {
+
+	}
+
+	upd := func(q query, t int) {
+		pos, color := vs[t].pos, vs[t].color
+		if q.l < pos && pos < q.r {
+			del(a[pos])
+			add(color)
+		}
+		a[pos], vs[t].color = vs[t].color, a[pos]
+	}
+
+	ans := make([]int, curQ)
+	l, r, t := -1, 0, 0
+	for _, b := range qs {
+		for ; r < b.r; r++ {
+			add(a[r])
+		}
+		for ; l > b.l; l-- {
+			add(a[l])
+		}
+		for r > b.r {
+			r--
+			del(a[r])
+		}
+		for l < b.l {
+			l++
+			del(a[l])
+		}
+		for ; t < b.t; t++ {
+			upd(b, t)
+		}
+		for t > b.t {
+			t--
+			upd(b, t)
+		}
+		ans[b.qIdx] = res
 	}
 }
