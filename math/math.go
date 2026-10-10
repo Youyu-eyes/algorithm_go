@@ -117,19 +117,17 @@ func primeFactorization(x int) []Pair {
 
 // ------- 离散化 ------- //
 
-// 返回离散化后的数组以及去重后的元素个数 m
-func discretize(arr []int) ([]int, int) {
+func discretize(arr []int) ([]int, []int) {
     unique := slices.Clone(arr)
 	slices.Sort(unique)
 	unique = slices.Compact(unique)
 
-    m := len(unique)
     rank := make([]int, len(arr))
 	for i, x := range arr {
 		rank[i] = sort.SearchInts(unique, x)
 	}
 
-	return rank, m
+	return rank, unique
 }
 
 // ------- 计算几何：凸包 ------- //
