@@ -42,6 +42,8 @@ func Mo(a []int, queries [][]int) {
 		return cmp.Compare(a.r, b.r)
 	})
 
+	res := 0
+
 	add := func(x int) {
 
 	}
@@ -51,7 +53,7 @@ func Mo(a []int, queries [][]int) {
 	}
 
 	// 初始化左右端点
-	l, r, res := -1, 0, 0
+	l, r := -1, 0
 
 	for _, b := range qs {		
 		// 右端点右移
