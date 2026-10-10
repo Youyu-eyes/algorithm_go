@@ -70,7 +70,7 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - [分块](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/sqrt_decomposition.go)
     - [莫队算法](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/Mo.go)
       - 普通莫队
-      - 带修莫队
+      - [带修莫队](https://github.com/Youyu-eyes/codeforces-classification/blob/main/Data_Structure/sqrt_decomposition/luogu_P1903/solution.md)
       - 树上莫队
       - [回滚莫队](https://leetcode.cn/problems/threshold-majority-queries/description/)
   - 分治
