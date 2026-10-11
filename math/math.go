@@ -11,7 +11,6 @@ const (
 	MX     = 1_000_001   // 根据题目调整大小
 )
 
-// ------- 全局预处理变量 ------- //
 var (
 	isPrimeArr []bool
 	primes     []int
@@ -22,9 +21,8 @@ var (
 	INV_F      []int
 )
 
-// func init() 会在 main 函数之前自动执行，用于预处理各类数据
 func init() {
-	// 1. 初始化预处理数组大小
+	// 1. 初始化
 	isPrimeArr = make([]bool, MX)
 	lpf = make([]int, MX)
 	divisors = make([][]int, MX)
@@ -32,7 +30,7 @@ func init() {
 	F = make([]int, MX)
 	INV_F = make([]int, MX)
 
-	// 2. 埃氏筛预处理质数
+	// 2. 埃氏筛
 	for i := range isPrimeArr {
 		isPrimeArr[i] = true
 	}
@@ -41,7 +39,7 @@ func init() {
 		if isPrimeArr[i] {
 			primes = append(primes, i)
 			for j := i * i; j < MX; j += i {
-				isPrimeArr[j] = false // j 是质数 i 的倍数
+				isPrimeArr[j] = false
 			}
 		}
 	}
