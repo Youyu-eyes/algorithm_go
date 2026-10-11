@@ -206,7 +206,7 @@ func qpow(x, n int) int {
 
 // ------- 组合数学 ------- //
 
-// 从 n 个数中选 m 个数的方案数
+// comb(n, m) = n! / (m! * (n - m)!)
 func comb(n, m int) int {
 	if m < 0 || m > n {
 		return 0
