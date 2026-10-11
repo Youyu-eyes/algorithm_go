@@ -157,7 +157,7 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - [笔记·建图技巧](https://leetcode.cn/problems/maximum-and-sum-of-array/solutions/4035908/xiao-bai-si-lu-bi-ji-zui-xiao-fei-yong-z-mzoa/)
     - [最大流](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/dinic.go)
       - 二分图最大匹配
-      - [二分图最大支配集](https://leetcode.cn/problems/maximum-students-taking-exam/solutions/4037184/xiao-bai-si-lu-er-fen-tu-zui-da-du-li-ji-1mre/)
+      - [二分图最大独立集](https://leetcode.cn/problems/maximum-students-taking-exam/solutions/4037184/xiao-bai-si-lu-er-fen-tu-zui-da-du-li-ji-1mre/)
     - [费用流](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/zkw.go)
       - 带权二分图最大匹配
       - 带权二分图最大完美匹配
