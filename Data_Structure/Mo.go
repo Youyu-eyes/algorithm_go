@@ -152,7 +152,7 @@ func RollbackMo(a []int, queries [][]int) {
 		// 回滚
 		res = tmp
 		l = start - 1
-		for j := b.l + 1; j <= l; j++ {
+		for j := b.l + 1; j < start; j++ {
 			
 		}
 	}
