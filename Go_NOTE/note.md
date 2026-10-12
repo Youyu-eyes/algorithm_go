@@ -63,6 +63,11 @@ $$
 
 `delete(map, k)` 表示哈希表删除键为 $k$ 的键值对
 
+没有排列和组合库函数，见 leetcode 母题
+- [46.全排列](https://leetcode.cn/problems/permutations/description/?envType=problem-list-v2&envId=HUyjbQzI)
+- [77.组合](https://leetcode.cn/problems/combinations/description/?envType=problem-list-v2&envId=HUyjbQzI)
+- [78.子集](https://leetcode.cn/problems/subsets/description/?envType=problem-list-v2&envId=HUyjbQzI)
+
 # 翻转
 切片：`slices.Reverse(nums)`
 字符串没有相关内置函数，手动实现一个
