@@ -3,6 +3,18 @@
 [Codeforces 13E-Holes](https://codeforces.com/problemset/problem/13/E)\
 [Codeforces 372C-Watching Fireworks is Fun](https://codeforces.com/contest/372/problem/C)
 
+在 zufeoj 里，II() 函数可能出现死循环（具体原因我也不知），可以临时改成
+```go
+func II() int {
+	var x int
+	_, err := fmt.Fscan(in, &x)
+	if err != nil {
+		return 0
+	}
+	return x
+}
+```
+
 # 类型转换
 | 函数 | 作用 |
 | --- | --- |
