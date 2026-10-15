@@ -19,27 +19,38 @@ var (
 
 // n := II()
 func II() int {
-    n := 0
-    neg := false
-    b, _ := in.ReadByte()
+	n := 0
+	neg := false
 
-    for b < '0' || b > '9' {
-        if b == '-' {
-            neg = true
-            b, _ = in.ReadByte()
-            break
-        }
-        b, _ = in.ReadByte()
-    }
+	b, err := in.ReadByte()
 
-    for b >= '0' && b <= '9' {
-        n = n*10 + int(b&15)
-        b, _ = in.ReadByte()
-    }
-    if neg {
-        n = -n
-    }
-    return n
+	for err == nil && (b < '0' || b > '9') {
+		if b == '-' {
+			neg = true
+			b, err = in.ReadByte()
+			break
+		}
+		b, err = in.ReadByte()
+	}
+
+	if err != nil {
+		return 0
+	}
+
+	for b >= '0' && b <= '9' {
+		n = n*10 + int(b-'0')
+
+		b, err = in.ReadByte()
+		if err != nil {
+			break
+		}
+	}
+
+	if neg {
+		n = -n
+	}
+
+	return n
 }
 
 // n := IB()
