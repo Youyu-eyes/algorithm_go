@@ -173,3 +173,6 @@ logtrick
 组合数学
 - 卡特兰数
 - 斯特林数
+
+[摆渡车问题](https://www.luogu.com.cn/problem/P5017) 与 $m$ 和 $T_max$ 无关的 $n\log n$ 做法
+KTT 线段树
