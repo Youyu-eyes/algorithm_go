@@ -37,9 +37,9 @@ func (u *unionFind) merge(from, to int) bool {
 	}
 
 	// 按秩合并
-	if u.sz[x] > u.sz[y] {
-		x, y = y, x
-	}
+	// if u.sz[x] > u.sz[y] {
+	//     x, y = y, x
+	// }
 
 	u.fa[x] = y
 	u.sz[y] += u.sz[x]
