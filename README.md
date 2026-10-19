@@ -68,14 +68,15 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - 可持久化字典树
   - 根号算法
     - [分块](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/sqrt_decomposition.go)
+  - 离线算法
+    - [CDQ 分治](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/CDQ.go)
+      - [CDQ 分治：三维偏序 / 陌上花开](https://github.com/Youyu-eyes/codeforces-classification/blob/main/Data_Structure/offline/cdq/luogu_P3810/solution.md)
+    - 整体二分
     - [莫队算法](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/Mo.go)
       - 普通莫队
-      - [带修莫队](https://github.com/Youyu-eyes/codeforces-classification/blob/main/Data_Structure/sqrt_decomposition/luogu_P1903/solution.md)
+      - [带修莫队](https://github.com/Youyu-eyes/codeforces-classification/blob/main/Data_Structure/offline/mo/luogu_P1903/solve.go)
       - 树上莫队
       - [回滚莫队](https://leetcode.cn/problems/threshold-majority-queries/description/)
-  - 分治
-    - [CDQ 分治](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/CDQ.go)
-      - [CDQ 分治：三维偏序 / 陌上花开](https://github.com/Youyu-eyes/codeforces-classification/blob/main/Data_Structure/divide_and_conquer/luogu_P3810/solution.md)
 
 - [动态规划](https://github.com/Youyu-eyes/algorithm_go/tree/master/DP)
   - 背包问题
