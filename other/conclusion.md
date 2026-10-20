@@ -50,8 +50,12 @@
 - 如果 $sz$ 为偶数，则一边有 $\dfrac{sz}{2}$ 个元素，$0$ 到 $\dfrac{sz}{2} - 1$ 共 $\dfrac{sz}{2}$ 个元素，因此下标 $\dfrac{sz}{2}$ 表示上中位数。
 - 如果 $sz$ 为奇数，则 $\lfloor \dfrac{sz}{2}\rfloor = \dfrac{sz-1}{2}$，一边 $\dfrac{sz-1}{2}$ 个元素，因此下标 $\dfrac{sz}{2}$ 表示中位数。
 
-**距离和**：见 [点集距离和](https://leetcode.cn/problems/allocate-mailboxes/solutions/3982690/xiao-bai-si-lu-jue-ce-dan-diao-xing-you-uzj2m/)
- 
+**距离和**：数组有序见 [点集距离和](https://leetcode.cn/problems/allocate-mailboxes/solutions/3982690/xiao-bai-si-lu-jue-ce-dan-diao-xing-you-uzj2m/)，有直接公式
+
+数组无序，则如图 ![点集距离和.png](https://pic.leetcode.cn/1792505363-lZiZuQ-%E7%82%B9%E9%9B%86%E8%B7%9D%E7%A6%BB%E5%92%8C.png){:width=400}
+
+我们需要求出左侧比 $q$ 小的数的和，以及比 $q$ 小的元素个数
+
 ## HH 的项链
 **问**：给定一个数组，查询任意子数组中出现不同元素的个数
 
