@@ -71,39 +71,6 @@ func (uh *UpperHull) queryBinary(p vec) int {
 	return p.dot(uh.hull[l])
 }
 
-func (uh *UpperHull) addFront(p vec) {
-	for len(uh.hull) > 1 {
-		front := uh.hull[0]
-		next := uh.hull[1]
-
-		if front.sub(p).detCmp(next.sub(front)) >= 0 {
-			uh.hull = uh.hull[1:]
-		} else {
-			break
-		}
-	}
-	uh.hull = append([]vec{p}, uh.hull...)
-}
-
-// uh1 max(x) < uh2 min(x)
-func mergeUpper(uh1, uh2 UpperHull) UpperHull {
-	if len(uh1.hull) <= len(uh2.hull) {
-		for len(uh1.hull) > 0 {
-			p := uh1.hull[len(uh1.hull)-1]
-			uh1.hull = uh1.hull[:len(uh1.hull)-1]
-			uh2.addFront(p)
-		}
-		return uh2
-	} else {
-		for len(uh2.hull) > 0 {
-			p := uh2.hull[0]
-			uh2.hull = uh2.hull[1:]
-			uh1.add(p)
-		}
-		return uh1
-	}
-}
-
 // --- 下凸包 --- //
 // lh := LowerHull{}
 
@@ -151,37 +118,4 @@ func (lh *LowerHull) queryBinary(p vec) int {
 		}
 	}
 	return p.dot(lh.hull[l])
-}
-
-func (lh *LowerHull) addFront(p vec) {
-	for len(lh.hull) > 1 {
-		front := lh.hull[0]
-		next := lh.hull[1]
-
-		if front.sub(p).detCmp(next.sub(front)) <= 0 {
-			lh.hull = lh.hull[1:]
-		} else {
-			break
-		}
-	}
-	lh.hull = append([]vec{p}, lh.hull...)
-}
-
-// uh1 max(x) < uh2 min(x)
-func mergeLower(lh1, lh2 LowerHull) LowerHull {
-	if len(lh1.hull) <= len(lh2.hull) {
-		for len(lh1.hull) > 0 {
-			p := lh1.hull[len(lh1.hull)-1]
-			lh1.hull = lh1.hull[:len(lh1.hull)-1]
-			lh2.addFront(p)
-		}
-		return lh2
-	} else {
-		for len(lh2.hull) > 0 {
-			p := lh2.hull[0]
-			lh2.hull = lh2.hull[1:]
-			lh1.add(p)
-		}
-		return lh1
-	}
 }
