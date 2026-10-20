@@ -55,7 +55,7 @@ markdown 中插入数学公式
 |\ne|不等号|$\ne$|
 |a \equiv b \pmod{n}|$a,b$ 同余|$a \equiv b \pmod{n}$|
 |\binom{n}{m}|组合，$n$ 个数选 $m$ 个|$\binom{n}{m}$|
-|\begin{cases} x & \text{if } x>0 \\ 0 & \text{otherwise} \end{cases}|分段函数|$\begin{cases} x & \text{if } x>0 \\ 0 & \text{otherwise} \end{cases}$|
+|\begin{cases} x & \text{if } x>0 \\\ 0 & \text{otherwise} \end{cases}|分段函数|$\begin{cases} x & \text{if } x>0 \\ 0 & \text{otherwise} \end{cases}$|
 |\int f(x) \, dx|积分|$\int f(x) \, dx$|
 |\int_{a}^{b} f(x) \, dx|定积分|$\int_{a}^{b} f(x) \, dx$|
 |M = \begin{bmatrix} \end{bmatrix}|矩阵|$M = \begin{bmatrix}\end{bmatrix}$|
