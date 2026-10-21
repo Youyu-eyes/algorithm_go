@@ -70,6 +70,7 @@ $$
 $$
 
 相当于分组循环去重
+`slices.IsSorted(arr) -> bool` 表示 $arr$ 是否有序
 
 `maps.Copy(a, b)` 表示对将 $b$ 哈希表复制给 $a$
 
