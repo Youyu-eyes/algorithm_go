@@ -3,19 +3,15 @@ package Data_Structure
 type fenwick []int
 
 func newFenwickTree(n int) fenwick {
-	return make(fenwick, n+1) // 使用下标 1 到 n
+	return make(fenwick, n+1)
 }
 
-// a[i] 增加 val
-// 时间复杂度 O(log n)
 func (f fenwick) update(i, val int) {
 	for i++; i < len(f); i += i & -i {
 		f[i] += val
 	}
 }
 
-// 求前缀和 a[1] + ... + a[i]
-// 时间复杂度 O(log n)
 func (f fenwick) pre(i int) (res int) {
 	for i++; i > 0; i &= i - 1 {
 		res += f[i]
@@ -23,9 +19,6 @@ func (f fenwick) pre(i int) (res int) {
 	return
 }
 
-// 求区间和 a[l] + ... + a[r]
-// 时间复杂度 O(log n)
-// 0 <= l <= r < n
 func (f fenwick) query(l, r int) int {
 	return f.pre(r) - f.pre(l-1)
 }
