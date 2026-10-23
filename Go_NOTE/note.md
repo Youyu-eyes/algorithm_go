@@ -118,6 +118,19 @@ if !vis[x] {
 ```
 这里的 $y$ 只能在这个 `if` 分支中成立
 
+`switch-case` 代替连续 `if-else`
+
+``` go
+switch s[i] {
+case 'R':
+    sgt.update(1, i, info{r: x})
+case 'G':
+    sgt.update(1, i, info{g: x})
+case 'B':
+    sgt.update(1, i, info{b: x})
+}
+```
+
 # 字符串
 
 `strings.Repeat(a, n)`：相当于 python 字符串乘法，生成长度为 $n$ 的 $a$ 字符串，注意 `"a"` 是 **string** 而非 **byte**
