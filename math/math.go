@@ -12,7 +12,7 @@ const (
 )
 
 var (
-	isPrimeArr []bool
+	isPrime []bool
 	primes     []int
 	lpf        []int
 	divisors   [][]int
@@ -23,7 +23,7 @@ var (
 
 func init() {
 	// 1. 初始化
-	isPrimeArr = make([]bool, MX)
+	isPrime = make([]bool, MX)
 	lpf = make([]int, MX)
 	divisors = make([][]int, MX)
 	primeFactors = make([][]int, MX)
@@ -31,15 +31,15 @@ func init() {
 	INV_F = make([]int, MX)
 
 	// 2. 埃氏筛
-	for i := range isPrimeArr {
-		isPrimeArr[i] = true
+	for i := range isPrime {
+		isPrime[i] = true
 	}
-	isPrimeArr[0], isPrimeArr[1] = false, false
+	isPrime[0], isPrime[1] = false, false
 	for i := 2; i < MX; i++ {
-		if isPrimeArr[i] {
+		if isPrime[i] {
 			primes = append(primes, i)
 			for j := i * i; j < MX; j += i {
-				isPrimeArr[j] = false
+				isPrime[j] = false
 			}
 		}
 	}
@@ -85,7 +85,7 @@ func init() {
 // ------- 基础数论 ------- //
 
 // 时间复杂度 O(sqrt(n))
-func isPrime(n int) bool {
+func isPrimeSqrt(n int) bool {
 	for i := 2; i*i <= n; i++ {
 		if n%i == 0 {
 			return false
