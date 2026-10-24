@@ -19,10 +19,11 @@ var (
 	primeFactors [][]int
 	F          []int
 	INV_F      []int
+	palindromes []int
 )
 
 func init() {
-	// 1. 初始化
+	// 0. 初始化
 	isPrime = make([]bool, MX)
 	lpf = make([]int, MX)
 	divisors = make([][]int, MX)
@@ -30,7 +31,7 @@ func init() {
 	F = make([]int, MX)
 	INV_F = make([]int, MX)
 
-	// 2. 埃氏筛
+	// 1. 埃氏筛
 	for i := range isPrime {
 		isPrime[i] = true
 	}
@@ -44,7 +45,7 @@ func init() {
 		}
 	}
 
-	// 3. 质因数分解 (LPF) 预处理
+	// 2. 质因数分解 (LPF) 预处理
 	for i := 2; i < MX; i++ {
 		if lpf[i] == 0 { // i 是质数
 			for j := i; j < MX; j += i {
@@ -55,14 +56,14 @@ func init() {
 		}
 	}
 
-	// 4. 预处理因子
+	// 3. 预处理因子
 	for i := 1; i < MX; i++ {
 		for j := i; j < MX; j += i { // 枚举 i 的倍数 j
 			divisors[j] = append(divisors[j], i) // i 是 j 的因子
 		}
 	}
 
-	// 4.1 预处理质因子
+	// 3.1 预处理质因子
 		for i := 2; i < MX; i++ {
 		if primeFactors[i] == nil { // i 是质数
 			for j := i; j < MX; j += i { // i 的倍数 j 有质因子 i
@@ -71,7 +72,7 @@ func init() {
 		}
 	}
 
-	// 5. 预处理阶乘及逆元
+	// 4. 预处理阶乘及逆元
 	F[0] = 1
 	for i := 1; i < MX; i++ {
 		F[i] = F[i-1] * i % MOD
@@ -80,6 +81,31 @@ func init() {
 	for i := MX - 1; i > 0; i-- {
 		INV_F[i-1] = INV_F[i] * i % MOD
 	}
+
+	// 5. 预处理回文数
+	for base := 1; ; base *= 10 {
+        for i := base; i < base*10; i++ {
+            x := i
+            for t := i / 10; t > 0; t /= 10 {
+                x = x*10 + t%10
+            }
+            if x > MX {
+                return
+            }
+            palindromes = append(palindromes, x)
+        }
+
+        for i := base; i < base*10; i++ {
+            x := i
+            for t := i; t > 0; t /= 10 {
+                x = x*10 + t%10
+            }
+            if x > MX {
+                return
+            }
+            palindromes = append(palindromes, x)
+        }
+    }
 }
 
 // ------- 基础数论 ------- //
@@ -91,7 +117,7 @@ func isPrimeSqrt(n int) bool {
 			return false
 		}
 	}
-	return n >= 2 // 1 不是质数
+	return n >= 2
 }
 
 type Pair struct {
@@ -99,7 +125,6 @@ type Pair struct {
 }
 
 // 质因数分解
-// 时间复杂度 O(log x)
 func primeFactorization(x int) []Pair {
 	var res []Pair
 	for x > 1 {
@@ -221,6 +246,6 @@ func catalan(n int) int {
 	}
 	// C_n = C(2n, n) / (n+1)
 	C_2n_n := comb(2*n, n)
-	inv_n1 := qpow(n+1, MOD-2) // 求 (n+1) 的逆元
+	inv_n1 := qpow(n+1, MOD-2)
 	return C_2n_n * inv_n1 % MOD
 }
