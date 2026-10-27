@@ -15,7 +15,7 @@ func WQS(limit int) int {
 	// 	return res.b
 	// }
 
-	ans := 0
+	var ans int
 	left, right := -1_000_005, 1_000_005
 	for left + 1 < right {
 		mid := left + (right - left) >> 1
