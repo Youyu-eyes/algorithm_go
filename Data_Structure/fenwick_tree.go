@@ -61,22 +61,19 @@ func (f fenwick) kth(k int) int {
 // 	}
 // }
 
-// // 添加 num 个 val，其中 val 离散化后的值为 i（i 从 1 开始）
-// // 如果 num < 0，表示减少 -num 个 val
-// // 注意 val = sorted[i-1]，无需手动传入
 // func (f *fenwick) update(i, num int) {
-// 	val := f.sorted[i-1]
-// 	for ; i < len(f.t); i += i & -i {
+// 	val := f.sorted[i]
+// 	for i++; i < len(f.t); i += i & -i {
 // 		f.t[i].cnt += num
 // 		f.t[i].sum += num * val
 // 	}
 // }
 
-// // 返回第 k 小的数（k 从 1 开始）
+// // 第 k 小（0-base）
 // func (f *fenwick) kth(k int) int {
 // 	i := 0
 // 	for b := f.highBit; b > 0; b >>= 1 {
-// 		if nxt := i | b; nxt < len(f.t) && f.t[nxt].cnt < k {
+// 		if nxt := i | b; nxt < len(f.t) && f.t[nxt].cnt <= k {
 // 			k -= f.t[nxt].cnt
 // 			i = nxt
 // 		}
@@ -84,7 +81,7 @@ func (f fenwick) kth(k int) int {
 // 	return f.sorted[i]
 // }
 
-// // 返回前 k 小的数之和（k 从 1 开始）
+// 前 k 小的和（1-base）
 // func (f *fenwick) preSum(k int) (s int) {
 // 	i := 0
 // 	for b := f.highBit; b > 0; b >>= 1 {
@@ -94,7 +91,6 @@ func (f fenwick) kth(k int) int {
 // 			i = nxt
 // 		}
 // 	}
-// 	// 加上等于第 k 小的数
 // 	s += f.sorted[i] * k
 // 	return
 // }
