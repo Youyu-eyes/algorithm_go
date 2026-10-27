@@ -81,7 +81,7 @@ func (f fenwick) kth(k int) int {
 // 	return f.sorted[i]
 // }
 
-// 前 k 小的和（1-base）
+// // 前 k 小的和（1-base）
 // func (f *fenwick) preSum(k int) (s int) {
 // 	i := 0
 // 	for b := f.highBit; b > 0; b >>= 1 {
