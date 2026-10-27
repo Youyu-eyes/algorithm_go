@@ -140,17 +140,17 @@ func primeFactorization(x int) []Pair {
 
 // ------- 离散化 ------- //
 
-func discretize(arr []int) ([]int, []int) {
-    unique := slices.Clone(arr)
-	slices.Sort(unique)
-	unique = slices.Compact(unique)
+func discretize(nums []int) ([]int, []int) {
+    sorted := slices.Clone(nums)
+	slices.Sort(sorted)
+	sorted = slices.Compact(sorted)
 
-    rank := make([]int, len(arr))
-	for i, x := range arr {
-		rank[i] = sort.SearchInts(unique, x)
+    rank := make([]int, len(nums))
+	for i, x := range nums {
+		rank[i] = sort.SearchInts(sorted, x)
 	}
 
-	return rank, unique
+	return rank, sorted
 }
 
 // ------- 计算几何：凸包 ------- //
