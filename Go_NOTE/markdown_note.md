@@ -53,7 +53,9 @@ markdown 中插入数学公式
 |\le|小于等于|$\le$|
 |\ge|大于等于|$\ge$|
 |\ne|不等号|$\ne$|
-|a \equiv b \pmod{n}|$a,b$ 同余|$a \equiv b \pmod{n}$|
+|a\equiv b\pmod{n}|$a,b$ 同余|$a\equiv b\pmod{n}$|
+|a\mid b|$a$ 整除 $b$|$a\mid b$|
+|a\nmid b|$a$ 不整除 $b$|$a\nmid b$|
 |\binom{n}{m}|组合，$n$ 个数选 $m$ 个|$\binom{n}{m}$|
 |\begin{cases} x & \text{if } x>0 \\\ 0 & \text{otherwise} \end{cases}|分段函数|$\begin{cases} x & \text{if } x>0 \\ 0 & \text{otherwise} \end{cases}$|
 |\int f(x) \, dx|积分|$\int f(x) \, dx$|
