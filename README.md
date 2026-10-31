@@ -106,16 +106,15 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
   - 前后缀分解
   - [DP 输出具体方案](https://codeforces.com/contest/474/problem/E)
   - DP 优化
-    - [滚动最值优化](https://github.com/Youyu-eyes/codeforces-classification/blob/main/DP/DP_Optimization/Rolling_Extremum_Optimization/1945D_Seraphim_the_Owl.py)
+    - [滚动最值优化](https://github.com/Youyu-eyes/codeforces-classification/blob/main/DP/DP_Optimization/Rolling_Extremum/1945D.py)
     - [前缀和优化](https://leetcode.cn/problems/find-the-count-of-monotonic-pairs-ii/solutions/3972184/xiao-bai-si-lu-dai-biao-ti-qian-zhui-he-mmtnj/)
     - 数据结构优化
-      - [ST 表优化 RMQ](https://github.com/Youyu-eyes/codeforces-classification/blob/main/DP/DP_Optimization/Data_Structrue_Optimization/372C_Watching_Fireworks_is_Fun.go)
+      - [ST 表优化 RMQ](https://github.com/Youyu-eyes/codeforces-classification/blob/main/DP/DP_Optimization/Data_Structrue/372C/solve_st.go)
       - 单调栈优化
       - [单调队列优化](https://leetcode.cn/problems/maximum-sum-of-m-non-overlapping-subarrays-i/)
       - 线段树/树状数组优化
         - [二维偏序](https://leetcode.cn/problems/best-team-with-no-conflicts/solutions/3970519/xiao-bai-si-lu-er-wei-pian-xu-pai-xu-xia-v3uc/)
-        - [李超线段树优化](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/segment_tree_lichao.go)
-          - [例题](https://leetcode.cn/problems/climbing-stairs-ii/solutions/3968349/xiao-bai-si-lu-jian-dan-dp-li-chao-xian-rxrkg/)
+        - [李超线段树优化](https://leetcode.cn/problems/climbing-stairs-ii/solutions/3968349/xiao-bai-si-lu-jian-dan-dp-li-chao-xian-rxrkg/)
     - [凸包优化](https://github.com/Youyu-eyes/algorithm_go/blob/master/DP/Convex_Hull_Trick.go)
       - [例题](https://leetcode.cn/problems/minimum-partition-score/description/)
     - [决策单调性优化](https://github.com/Youyu-eyes/algorithm_go/tree/master/DP/Decision_Monotonicity)
@@ -146,7 +145,7 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - 中介并查集
     - 带权并查集
     - 置换环问题
-      - [置换环分解](https://github.com/Youyu-eyes/codeforces-classification/blob/main/graph_theory/permutation_cycle/cycle_decomposition.md)
+      - [置换环分解](https://github.com/Youyu-eyes/codeforces-classification/blob/main/graph/permutation_cycle/cycle_decomposition.md)
   - [拓扑序](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/topo_sort.go)
   - [二分图染色](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/bipartite.go)
   - 欧拉路径/回路
@@ -155,10 +154,11 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - Tarjan
   - [最小生成树](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/minimum_spanning_tree.go)
   - 网络流
-    - [笔记·建图技巧](https://leetcode.cn/problems/maximum-and-sum-of-array/solutions/4035908/xiao-bai-si-lu-bi-ji-zui-xiao-fei-yong-z-mzoa/)
+    - [笔记·建图技巧](https://leetcode.cn/discuss/post/4047241/xiao-bai-bi-ji-wang-luo-liu-jian-tu-xi-j-6169/)
     - [最大流](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/dinic.go)
       - 二分图最大匹配
       - [二分图最大独立集](https://leetcode.cn/problems/maximum-students-taking-exam/solutions/4037184/xiao-bai-si-lu-er-fen-tu-zui-da-du-li-ji-1mre/)
+      - [最大权闭合子图](https://www.luogu.com.cn/problem/U103816)
     - [费用流](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/zkw.go)
       - 带权二分图最大匹配
       - 带权二分图最大完美匹配
@@ -191,7 +191,7 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - [矩阵快速幂](https://github.com/Youyu-eyes/algorithm_go/blob/master/math/math_matrix.go)
   - 组合数学
     - 卡特兰数
-    - [范德蒙德卷积](https://github.com/Youyu-eyes/codeforces-classification/blob/main/math/Combinatorics/785D_Anton_and_School-2/solution.md)
+    - [范德蒙德卷积](https://github.com/Youyu-eyes/codeforces-classification/blob/main/math/Combinatorics/785D/solution.md)
   - 计算几何
     - [平面任意两点斜率的相关性质](https://github.com/Youyu-eyes/codeforces-classification/blob/main/Other_Competation/2025.HZCU/B/solve.md)
 
@@ -205,5 +205,5 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
 - 其他
   - [io模板](https://github.com/Youyu-eyes/algorithm_go/blob/master/io/io.go)
   - [严格众数·扩展摩尔投票](https://leetcode.cn/problems/majority-element/solutions/3978521/xiao-bai-si-lu-mo-er-tou-piao-fu-misra-g-18fe/)
-  - [调和级数枚举复杂度证明](https://github.com/Youyu-eyes/codeforces-classification/blob/main/math/2193E_Product_Queries/proof.md)
+  - [调和级数枚举复杂度证明](https://github.com/Youyu-eyes/codeforces-classification/blob/main/math/2193E/proof.md)
   - [洗牌套算法](https://github.com/Youyu-eyes/algorithm_go/blob/master/other/Fisher-Yates_Shuffle.go)
