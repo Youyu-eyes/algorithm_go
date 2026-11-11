@@ -12,7 +12,7 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
 
 ## Go 语言基础
 [Go 语言快速入门](https://gobyexample-cn.github.io/)\
-[Go 语言常用函数](https://github.com/Youyu-eyes/algorithm_go/blob/master/Go_NOTE/note.md)\
+[Go 语言常用函数](https://github.com/Youyu-eyes/algorithm_go/blob/master/go_note/note.md)\
 [Go 语言数据结构](https://github.com/emirpasic/gods)
 
 ## 算法分类
@@ -34,51 +34,51 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
 - [位运算](https://github.com/Youyu-eyes/algorithm_go/tree/master/bitwise)
   - [位运算与集合论](https://leetcode.cn/discuss/post/3571304/cong-ji-he-lun-dao-wei-yun-suan-chang-ji-enve/)
   - [LogTrick](https://github.com/Youyu-eyes/algorithm_go/blob/master/bitwise/log_trick.go)
-  - [线性基](https://github.com/Youyu-eyes/algorithm_go/blob/master/bitwise/xorBasis.go)
+  - [线性基](https://github.com/Youyu-eyes/algorithm_go/blob/master/bitwise/xor_basis.go)
   - 拆位法
   - 试填法
   - 结论
     - [区间按位或](https://github.com/Youyu-eyes/codeforces-classification/blob/main/bitwise_operation/conclusion/bitwise_OR_of_interval.md)
     - [英文字符与位运算](https://github.com/Youyu-eyes/codeforces-classification/blob/main/bitwise_operation/conclusion/string_bit.md)
 
-- [数据结构](https://github.com/Youyu-eyes/algorithm_go/tree/master/Data_Structure)
-  - [二维前缀和](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/prefix_2D.go)
-  - [平衡二叉树 treap](https://github.com/Youyu-eyes/algorithm_go/tree/master/Data_Structure/treap)
-    - [有序集合 SortedSet](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/treap/set/set.go)
-    - [有序列表 SortedList](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/treap/multiset/multiset.go)
-  - [双端队列](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/deque.go)
-  - [单调栈](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/monotonic_stack.go)
-  - [懒删除堆](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/lazy_heap.go)
-  - [树状数组](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/fenwick_tree.go)
+- [数据结构](https://github.com/Youyu-eyes/algorithm_go/tree/master/data_structure)
+  - [二维前缀和](https://github.com/Youyu-eyes/algorithm_go/blob/master/data_structure/prefix_2d.go)
+  - 平衡二叉树
+    - [有序集合 SortedSet](https://github.com/Youyu-eyes/algorithm_go/blob/master/data_structure/set.go)
+    - [有序列表 SortedList](https://github.com/Youyu-eyes/algorithm_go/blob/master/data_structure/multiset.go)
+  - [双端队列](https://github.com/Youyu-eyes/algorithm_go/blob/master/data_structure/deque.go)
+  - [单调栈](https://github.com/Youyu-eyes/algorithm_go/blob/master/data_structure/monotonic_stack.go)
+  - [懒删除堆](https://github.com/Youyu-eyes/algorithm_go/blob/master/data_structure/lazy_heap.go)
+  - [树状数组](https://github.com/Youyu-eyes/algorithm_go/blob/master/data_structure/fenwick_tree.go)
     - [树状数组求逆序对](https://leetcode.cn/problems/count-subarrays-with-even-odd-ratio-ii/solutions/4005441/xiao-bai-si-lu-shu-zhuang-shu-zu-qiu-ni-d9vqk/)
   - 线段树
-    - [普通线段树](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/segment_tree/segment_tree.go)
-    - [Lazy 线段树](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/segment_tree/segment_tree_lazy.go)
-    - [李超线段树](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/segment_tree/segment_tree_lichao.go)
+    - [线段树](https://github.com/Youyu-eyes/algorithm_go/blob/master/data_structure/segment_tree.go)
+    - [Lazy 线段树](https://github.com/Youyu-eyes/algorithm_go/blob/master/data_structure/segment_tree_lazy.go)
+    - [李超线段树](https://github.com/Youyu-eyes/algorithm_go/blob/master/data_structure/segment_tree_lichao.go)
     - 线段树动态开点
     - [可持久化线段树（主席树）](https://leetcode.cn/problems/minimum-operations-to-equalize-subarrays/solutions/3845357/zhong-wei-shu-tan-xin-ke-chi-jiu-hua-xia-etpv/)
-  - [ST 表](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/sparse_table.go)
+  - [ST 表](https://github.com/Youyu-eyes/algorithm_go/blob/master/data_structure/sparse_table.go)
     - 一维 ST 表
     - 二维 ST 表
     - ST 表下标版本
-    - [fast ST 表](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structrue/sparse_table_fast.go)
-  - [字典树](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/Trie.go)
+    - [fast ST 表](https://github.com/Youyu-eyes/algorithm_go/blob/master/data_structure/sparse_table_fast.go)
+  - 字典树
     - 普通字典树
     - 01 字典树
     - 可持久化字典树
   - 根号算法
-    - [分块](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/sqrt_decomposition.go)
+    - [分块](https://github.com/Youyu-eyes/algorithm_go/blob/master/data_structure/sqrt_decomposition.go)
   - 离线算法
-    - [CDQ 分治](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/CDQ.go)
+    - [CDQ 分治](https://github.com/Youyu-eyes/algorithm_go/blob/master/data_structure/cdq.go)
       - [CDQ 分治：三维偏序 / 陌上花开](https://github.com/Youyu-eyes/codeforces-classification/blob/main/Data_Structure/offline/cdq/luogu_P3810/solution.md)
     - 整体二分
-    - [莫队算法](https://github.com/Youyu-eyes/algorithm_go/blob/master/Data_Structure/Mo.go)
+    - [莫队算法](https://github.com/Youyu-eyes/algorithm_go/blob/master/data_structure/mo.go)
       - 普通莫队
       - [带修莫队](https://github.com/Youyu-eyes/codeforces-classification/blob/main/Data_Structure/offline/mo/luogu_P1903/solve.go)
       - 树上莫队
       - [回滚莫队](https://leetcode.cn/problems/threshold-majority-queries/description/)
 
-- [动态规划](https://github.com/Youyu-eyes/algorithm_go/tree/master/DP)
+- [动态规划](https://github.com/Youyu-eyes/algorithm_go/tree/master/dp)
   - 背包问题
     - [0 - 1背包](https://leetcode.cn/problems/target-sum/description/)
     - [完全背包](https://leetcode.cn/problems/coin-change/description/)
@@ -94,7 +94,7 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - 约束划分个数
   - 状态机 DP
     - [买卖股票问题 · 系列](https://leetcode.cn/problem-list/qEMSqfaw/)
-  - [数位 DP](https://github.com/Youyu-eyes/algorithm_go/blob/master/DP/digitDP.go)
+  - [数位 DP](https://github.com/Youyu-eyes/algorithm_go/blob/master/dp/digit_dp.go)
     - 区间合法数字个数
     - 区间合法数字总价值
   - 树形 DP
@@ -115,15 +115,15 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
       - 线段树/树状数组优化
         - [二维偏序](https://leetcode.cn/problems/best-team-with-no-conflicts/solutions/3970519/xiao-bai-si-lu-er-wei-pian-xu-pai-xu-xia-v3uc/)
         - [李超线段树优化](https://leetcode.cn/problems/climbing-stairs-ii/solutions/3968349/xiao-bai-si-lu-jian-dan-dp-li-chao-xian-rxrkg/)
-    - [凸包优化](https://github.com/Youyu-eyes/algorithm_go/blob/master/DP/Convex_Hull_Trick.go)
+    - [凸包优化](https://github.com/Youyu-eyes/algorithm_go/blob/master/dp/convex_hull.go)
       - [例题](https://leetcode.cn/problems/minimum-partition-score/description/)
-    - [决策单调性优化](https://github.com/Youyu-eyes/algorithm_go/tree/master/DP/Decision_Monotonicity)
+    - 决策单调性优化
       - [带你入门](https://leetcode.cn/problems/VdG6tT/solutions/3982470/xiao-bai-si-lu-dai-ni-ru-men-jue-ce-dan-uxvod/)
-      - [分治优化](https://github.com/Youyu-eyes/algorithm_go/blob/master/DP/Decision_Monotonicity/Divide_and_Conquer_DP.go)
-      - [二分栈优化](https://github.com/Youyu-eyes/algorithm_go/blob/master/DP/Decision_Monotonicity/binary_search_stack.go)
+      - [分治优化](https://github.com/Youyu-eyes/algorithm_go/blob/master/dp/divide_and_conquer_dp.go)
+      - [二分栈优化](https://github.com/Youyu-eyes/algorithm_go/blob/master/dp/binary_search_stack.go)
     - [矩阵快速幂优化](https://leetcode.cn/problems/number-of-zigzag-arrays-ii/solutions/3985024/xiao-bai-si-lu-dai-ni-ru-men-zhuang-tai-5a8qv/)
       - BM + kitamasa 算法
-    - [WQS 二分优化](https://github.com/Youyu-eyes/algorithm_go/blob/master/DP/WQS.go)
+    - [WQS 二分优化](https://github.com/Youyu-eyes/algorithm_go/blob/master/dp/wqs.go)
       - [例题](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/solutions/536396/yi-chong-ji-yu-wqs-er-fen-de-you-xiu-zuo-x36r/)
       - [笔记](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-v/solutions/3981282/xiao-bai-si-lu-bi-ji-xi-lie-qian-xi-wqse-nhw1/)
     - CDQ 分治优化
@@ -131,10 +131,10 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
 - [图论](https://github.com/Youyu-eyes/algorithm_go/tree/master/graph)
   - 最短路
     - 单源最短路
-      - [0-1 BFS](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/bfs_01.go)
+      - [0-1 BFS](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/bfs01.go)
       - [Dijkstra](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/dijkstra.go)
       - [bellman-ford](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/bellman_ford.go)
-      - [SPFA](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/SPFA.go)
+      - [SPFA](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/spfa.go)
         - 差分约束系统
     - 全源最短路
       - [floyd](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/floyd.go)
