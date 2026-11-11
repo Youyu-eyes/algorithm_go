@@ -156,6 +156,20 @@ case 'B':
 `strings.Fields(string) -> string`：将一个字符串按照 空格，制表符，换行等符号 划分，中间有多个空格也会自动忽略
 `strings.Split(string, string)`：将一个字符串按照指定的字符串划分，如果指定 `" "`，中间多个空格 **不会** 自动忽略
 
+``` go
+for _, c := range s {
+    // ...
+}
+```
+
+这里的 $c$ 是 `rune` 类型
+
+```go
+c := s[i]
+```
+
+这里的 $c$ 是 `byte` 类型
+
 # 位运算
 
 `bits.Len(uint(x))`       位长度
