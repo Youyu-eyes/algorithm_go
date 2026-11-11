@@ -47,15 +47,15 @@ func newLcaBinaryLifting(edges [][]int) *lcaBinaryLifting {
 	}
 	dfs(0, -1)
 
-	for i := 0; i < m-1; i++ {
-		for v := 0; v < n; v++ {
+	for i := range m-1 {
+		for v := range n {
 			if p := pa[i][v]; p != -1 {
 				pa[i+1][v] = pa[i][p]
 			}
 		}
 	}
 
-	return &LcaBinaryLifting{
+	return &lcaBinaryLifting{
 		n:     n,
 		m:     m,
 		pa:    pa,
@@ -103,14 +103,14 @@ func (l *lcaBinaryLifting) getDis(x, y int) int {
 }
 
 // ------- 不带权 LCA 模板 ------- //
-type LcaBinaryLiftingUnweighted struct {
+type lcaBinaryLiftingUnweighted struct {
 	n     int
 	m     int
 	pa    [][]int
 	depth []int
 }
 
-func newLcaBinaryLiftingUnweighted(edges [][]int) *LcaBinaryLiftingUnweighted {
+func newLcaBinaryLiftingUnweighted(edges [][]int) *lcaBinaryLiftingUnweighted {
 	n := len(edges) + 1
 	m := bits.Len(uint(n))
 	g := make([][]int, n)
@@ -142,8 +142,8 @@ func newLcaBinaryLiftingUnweighted(edges [][]int) *LcaBinaryLiftingUnweighted {
 	}
 	dfs(0, -1)
 
-	for i := 0; i < m-1; i++ {
-		for v := 0; v < n; v++ {
+	for i := range m-1 {
+		for v := range n {
 			if p := pa[i][v]; p != -1 {
 				pa[i+1][v] = pa[i][p]
 			}
