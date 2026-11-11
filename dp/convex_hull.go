@@ -1,0 +1,121 @@
+package dp
+
+import (
+	"math/big"
+)
+
+// v0.y > 0
+// v1.x 单调递增
+
+type vec struct{ x, y int }
+
+func (a vec) sub(b vec) vec { return vec{a.x - b.x, a.y - b.y} }
+func (a vec) dot(b vec) int { return a.x*b.x + a.y*b.y }
+
+// a.det(b) > 0 => a 到 b 逆时针
+// a.det(b) < 0 => a 到 b 顺时针
+func (a vec) det(b vec) int { return a.x*b.y - a.y*b.x }
+
+func (a vec) detCmp(b vec) int {
+	v := new(big.Int).Mul(big.NewInt(int64(a.x)), big.NewInt(int64(b.y)))
+	w := new(big.Int).Mul(big.NewInt(int64(a.y)), big.NewInt(int64(b.x)))
+	return v.Cmp(w)
+}
+
+// --- 上凸包 --- //
+// uh := upperHull{}
+
+type upperHull struct {
+	hull []vec
+}
+
+func (uh *upperHull) add(p vec) {
+	for len(uh.hull) > 1 {
+		back := uh.hull[len(uh.hull)-1]
+		prev := uh.hull[len(uh.hull)-2]
+		if back.sub(prev).detCmp(p.sub(back)) >= 0 {
+			uh.hull = uh.hull[:len(uh.hull)-1]
+		} else {
+			break
+		}
+	}
+	uh.hull = append(uh.hull, p)
+}
+
+// v0.x 单调递增
+func (uh *upperHull) queryMonotonic(p vec) int {
+	for len(uh.hull) > 1 && p.dot(uh.hull[0]) <= p.dot(uh.hull[1]) {
+		uh.hull = uh.hull[1:]
+	}
+	return p.dot(uh.hull[0])
+}
+
+// v0.x 单调递减
+// func (uh *upperHull) queryMonotonic(p vec) int {
+//     for len(uh.hull) > 1 && p.dot(uh.hull[len(uh.hull)-1]) <= p.dot(uh.hull[len(uh.hull)-2]) {
+//         uh.hull = uh.hull[:len(uh.hull)-1]
+//     }
+//     return p.dot(uh.hull[len(uh.hull)-1])
+// }
+
+func (uh *upperHull) queryBinary(p vec) int {
+	l, r := 0, len(uh.hull)-1
+	for l < r {
+		mid := (l + r) >> 1
+		if p.dot(uh.hull[mid]) <= p.dot(uh.hull[mid+1]) {
+			l = mid + 1
+		} else {
+			r = mid
+		}
+	}
+	return p.dot(uh.hull[l])
+}
+
+// --- 下凸包 --- //
+// lh := lowerHull{}
+
+type lowerHull struct {
+	hull []vec
+}
+
+func (lh *lowerHull) add(p vec) {
+	for len(lh.hull) > 1 {
+		back := lh.hull[len(lh.hull)-1]
+		prev := lh.hull[len(lh.hull)-2]
+		if back.sub(prev).detCmp(p.sub(back)) <= 0 {
+			lh.hull = lh.hull[:len(lh.hull)-1]
+		} else {
+			break
+		}
+	}
+	lh.hull = append(lh.hull, p)
+}
+
+// v0.x 单调递减
+func (lh *lowerHull) queryMonotonic(p vec) int {
+	for len(lh.hull) > 1 && p.dot(lh.hull[0]) >= p.dot(lh.hull[1]) {
+		lh.hull = lh.hull[1:]
+	}
+	return p.dot(lh.hull[0])
+}
+
+// v0.x 单调递增
+// func (lh *lowerHull) queryMonotonic(p vec) int {
+//     for len(lh.hull) > 1 && p.dot(lh.hull[len(lh.hull)-1]) >= p.dot(lh.hull[len(lh.hull)-2]) {
+//         lh.hull = lh.hull[:len(lh.hull)-1]
+//     }
+//     return p.dot(lh.hull[len(lh.hull)-1])
+// }
+
+func (lh *lowerHull) queryBinary(p vec) int {
+	l, r := 0, len(lh.hull)-1
+	for l < r {
+		mid := (l + r) >> 1
+		if p.dot(lh.hull[mid]) >= p.dot(lh.hull[mid+1]) {
+			l = mid + 1
+		} else {
+			r = mid
+		}
+	}
+	return p.dot(lh.hull[l])
+}
