@@ -1,0 +1,251 @@
+package math
+
+import (
+	"sort"
+	"slices"
+)
+
+const (
+	MOD    = 1_000_000_007
+	inf    = 1 << 60
+	MX     = 1_000_001   // 根据题目调整大小
+)
+
+var (
+	isPrime []bool
+	primes     []int
+	lpf        []int
+	divisors   [][]int
+	primeFactors [][]int
+	F          []int
+	INV_F      []int
+	palindromes []int
+)
+
+func init() {
+	// 0. 初始化
+	isPrime = make([]bool, MX)
+	lpf = make([]int, MX)
+	divisors = make([][]int, MX)
+	primeFactors = make([][]int, MX)
+	F = make([]int, MX)
+	INV_F = make([]int, MX)
+
+	// 1. 埃氏筛
+	for i := range isPrime {
+		isPrime[i] = true
+	}
+	isPrime[0], isPrime[1] = false, false
+	for i := 2; i < MX; i++ {
+		if isPrime[i] {
+			primes = append(primes, i)
+			for j := i * i; j < MX; j += i {
+				isPrime[j] = false
+			}
+		}
+	}
+
+	// 2. 质因数分解 (LPF) 预处理
+	for i := 2; i < MX; i++ {
+		if lpf[i] == 0 { // i 是质数
+			for j := i; j < MX; j += i {
+				if lpf[j] == 0 { // 首次访问 j
+					lpf[j] = i
+				}
+			}
+		}
+	}
+
+	// 3. 预处理因子
+	for i := 1; i < MX; i++ {
+		for j := i; j < MX; j += i { // 枚举 i 的倍数 j
+			divisors[j] = append(divisors[j], i) // i 是 j 的因子
+		}
+	}
+
+	// 3.1 预处理质因子
+	for i := 2; i < MX; i++ {
+		if primeFactors[i] == nil { // i 是质数
+			for j := i; j < MX; j += i { // i 的倍数 j 有质因子 i
+				primeFactors[j] = append(primeFactors[j], i)
+			}
+		}
+	}
+
+	// 4. 预处理阶乘及逆元
+	F[0] = 1
+	for i := 1; i < MX; i++ {
+		F[i] = F[i-1] * i % MOD
+	}
+	INV_F[MX-1] = qpow(F[MX-1], MOD-2)
+	for i := MX - 1; i > 0; i-- {
+		INV_F[i-1] = INV_F[i] * i % MOD
+	}
+
+	// 5. 预处理回文数
+	for base := 1; ; base *= 10 {
+        for i := base; i < base*10; i++ {
+            x := i
+            for t := i / 10; t > 0; t /= 10 {
+                x = x*10 + t%10
+            }
+            if x > MX {
+                return
+            }
+            palindromes = append(palindromes, x)
+        }
+
+        for i := base; i < base*10; i++ {
+            x := i
+            for t := i; t > 0; t /= 10 {
+                x = x*10 + t%10
+            }
+            if x > MX {
+                return
+            }
+            palindromes = append(palindromes, x)
+        }
+    }
+}
+
+// ------- 基础数论 ------- //
+
+// 时间复杂度 O(sqrt(n))
+func isPrimeSqrt(n int) bool {
+	for i := 2; i*i <= n; i++ {
+		if n%i == 0 {
+			return false
+		}
+	}
+	return n >= 2
+}
+
+type Pair struct {
+	p, e int
+}
+
+// 质因数分解
+func primeFactorization(x int) []Pair {
+	var res []Pair
+	for x > 1 {
+		p := lpf[x]
+		e := 1
+		for x /= p; x%p == 0; x /= p {
+			e++
+		}
+		res = append(res, Pair{p, e})
+	}
+	return res
+}
+
+// ------- 离散化 ------- //
+
+func discretize(nums []int) ([]int, []int) {
+    sorted := slices.Clone(nums)
+	slices.Sort(sorted)
+	sorted = slices.Compact(sorted)
+
+    rank := make([]int, len(nums))
+	for i, x := range nums {
+		rank[i] = sort.SearchInts(sorted, x)
+	}
+
+	return rank, sorted
+}
+
+// ------- 计算几何：凸包 ------- //
+
+type Vec struct {
+	x, y int
+}
+
+func (v Vec) sub(b Vec) Vec {
+	return Vec{v.x - b.x, v.y - b.y}
+}
+
+// 注意：如果坐标范围超过 3 * 10^9，这里的乘法可能会超过 64位 int 上限，此时可以使用 math/bits.Mul64 处理
+// a.det(b) > 0 => a 到 b 逆时针
+// a.det(b) < 0 => a 到 b 顺时针
+func (v Vec) det(b Vec) int {
+	return v.x*b.y - v.y*b.x
+}
+
+func (v Vec) dot(b Vec) int {
+	return v.x*b.x + v.y*b.y
+}
+
+// Andrew 算法，计算 points 的凸包（逆时针顺序）
+// 时间复杂度 O(n log n)
+func convexHull(points []Vec) []Vec {
+	// 排序优先按 x，相同时按 y
+	sort.Slice(points, func(i, j int) bool {
+		if points[i].x != points[j].x {
+			return points[i].x < points[j].x
+		}
+		return points[i].y < points[j].y
+	})
+
+	var q []Vec
+
+	// 计算下凸包
+	for _, p := range points {
+		for len(q) > 1 && q[len(q)-1].sub(q[len(q)-2]).det(p.sub(q[len(q)-1])) <= 0 {
+			q = q[:len(q)-1]
+		}
+		q = append(q, p)
+	}
+
+	// 计算上凸包
+	lowerSize := len(q)
+	for i := len(points) - 2; i >= 0; i-- {
+		p := points[i]
+		for len(q) > lowerSize && q[len(q)-1].sub(q[len(q)-2]).det(p.sub(q[len(q)-1])) <= 0 {
+			q = q[:len(q)-1]
+		}
+		q = append(q, p)
+	}
+
+	// 此时首尾是同一个点 points[0]，需要去掉
+	if len(q) > 0 {
+		q = q[:len(q)-1]
+	}
+
+	return q
+}
+
+// ------- 快速幂模板 ------- //
+// 负指数用费马小定理
+
+func qpow(x, n int) int {
+	ans := 1
+	x %= MOD
+
+	for ; n > 0; n >>= 1 {
+		if n&1 == 1 {
+			ans = ans * x % MOD
+		}
+		x = x * x % MOD
+	}
+	return ans
+}
+
+// ------- 组合数学 ------- //
+
+// comb(n, m) = n! / (m! * (n - m)!)
+func comb(n, m int) int {
+	if m < 0 || m > n {
+		return 0
+	}
+	return F[n] * INV_F[m] % MOD * INV_F[n-m] % MOD
+}
+
+// 返回第 n 个卡特兰数 (C_n) 模 MOD
+func catalan(n int) int {
+	if n == 0 {
+		return 1
+	}
+	// C_n = C(2n, n) / (n+1)
+	C_2n_n := comb(2*n, n)
+	inv_n1 := qpow(n+1, MOD-2)
+	return C_2n_n * inv_n1 % MOD
+}
