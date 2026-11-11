@@ -1,0 +1,205 @@
+[Go 语言快速入门](https://gobyexample-cn.github.io/)
+# io 效率测试
+[Codeforces 13E-Holes](https://codeforces.com/problemset/problem/13/E)\
+[Codeforces 372C-Watching Fireworks is Fun](https://codeforces.com/contest/372/problem/C)
+
+在 zufeoj 里，II() 函数可能出现死循环（具体原因我也不知），可以临时改成
+```go
+func II() int {
+	var x int
+	_, err := fmt.Fscan(in, &x)
+	if err != nil {
+		return 0
+	}
+	return x
+}
+```
+
+# 类型转换
+| 函数 | 作用 |
+| --- | --- |
+| FormatInt(i int64, base int) string | 整数按进制转字符串 |
+| FormatFloat(f float64, fmt byte, prec, bitSize int) string | 浮点数格式化 |
+| strconv.Itoa(i int) string | int → 十进制字符串 |
+| Atoi(s string) (int, error) | 十进制字符串 → int |
+| ParseInt(s string, base int, bitSize int) (int64, error) | 解析整数（带进制、位宽） |
+| ParseFloat(s string, bitSize int) (float64, error) | 解析浮点数 |
+| ParseBool(s string) (bool, error) | 解析布尔值 |
+
+# 排序
+| 功能 | Go 语言实现方式 (使用 `slices` 包，需要导入 `"cmp"` 包，Go 1.21+) |
+| :--- | :--- |
+| **普通排序** | `slices.Sort(nums)` |
+| **倒序排序** | `slices.Sort(nums); slices.Reverse(nums)` |
+| **按二维切片第一项升序排序** | `slices.SortFunc(nums, func(a, b []int) int { return cmp.Compare(a[0], b[0]) })` |
+| **按二维切片第一项降序排序** | `slices.SortFunc(nums, func(a, b []int) int { return cmp.Compare(b[0], a[0]) })` |
+| **双关键字排序**<br>（如第一项升序，第二项升序） | `slices.SortFunc(queries, func(a, b []int) int { ` <br> `return cmp.Or(` <br> `cmp.Compare(a[0], b[0]),` <br> `cmp.Compare(a[1], b[1]),`<br>`)`<br>`})` |
+| **元组（pair）双关键字排序**<br>（first 升序，second 降序）需要提前定义 pair 结构体 | `slices.SortFunc(pairs, func(a, b Pair) int {`<br> `if c := cmp.Compare(a.First, b.First); c != 0 { return c }`<br> `return cmp.Compare(b.Second, a.Second)`<br>`})` |
+| **两个切片一一对应，按 nums1 排序，nums2 同步移动** 需要提前定义 pair 结构体 | 构造 `pairs` 切片后：<br>`slices.SortFunc(pairs, func(a, b Pair) int { return cmp.Compare(a.First, b.First) })`<br>然后拆解回两个切片。 |
+| **使用静态映射表进行稳定排序**<br>（如按元音出现次数的负值排序） | 使用 `slices.SortStableFunc`：<br>`slices.SortStableFunc(vowels, func(a, b byte) int {`<br> `return cmp.Compare(-cnt[mp[a]], -cnt[mp[b]])`<br>`})`<br> |
+
+# 二分
+$s$ 中 $\ge v$ 的第一个数
+`sort.SearchInts(s, v) -> int`
+
+| 功能 | 代码 |
+| --- | --- |
+| 第一个 $\ge v$ 的数 | `sort.SearchInts(s, v)` |
+| 第一个 $> v$ 的数 | `sort.SearchInts(s, v + 1)` |
+| 最后一个 $< v$ 的数 | `sort.SearchInts(s, v) - 1` |
+| 最后一个 $\le v$ 的数  | `sort.SearchInts(s, v + 1) - 1` |
+
+$s$ 中 $\le v$ 的最后一个数
+`slices.BinarySearch(s, v) -> (int, bool)`
+手写二分注意写成 `left + (right - left) >> 1` 防止溢出
+
+# 内部函数
+没有 `accumulate`，`sum`，`abs`
+对整个切片取 `max` 为 `slices.Max`
+没有 `pop` 函数，需要自己实现
+
+`nums := slices.Clone(arr)` 表示对 $arr$ 切片进行克隆
+`nums := slices.Compact(arr)` 表示对 $arr$ 切片进行去重，注意，这里的去重是相邻项去重，不相邻但相等的数保留，如
+$$
+1\ 2\ 2\ 3\ 3\ 4\ 2\ 1\ 3\ 3\ 3
+$$
+
+去重后为
+$$
+1\ 2\ 3\ 4\ 2\ 1\ 3
+$$
+
+相当于分组循环去重
+`slices.IsSorted(arr) -> bool` 表示 $arr$ 是否有序
+
+`maps.Copy(a, b)` 表示对将 $b$ 哈希表复制给 $a$
+
+`delete(map, k)` 表示哈希表删除键为 $k$ 的键值对
+
+没有排列和组合库函数，见 leetcode 母题
+- [46.全排列](https://leetcode.cn/problems/permutations/description/?envType=problem-list-v2&envId=HUyjbQzI)
+- [77.组合](https://leetcode.cn/problems/combinations/description/?envType=problem-list-v2&envId=HUyjbQzI)
+- [78.子集](https://leetcode.cn/problems/subsets/description/?envType=problem-list-v2&envId=HUyjbQzI)
+
+`sort.IntSlice` 等价于 `[]int`，但是已经定义了 `Len/Less/Swap` 函数，适用于定义只包含整数的最小堆
+
+`(*e).to` 和 `e.to` 完全等价，即使 $e$ 是指针变量，go 语言语法糖会自动解引用\
+但 `*e.to` 会报错，原因是计算优先级会先运行 `e.to` 再运行 `*` 解引用
+
+|代码|含义|区别|
+|---|---|---|
+|`type hp sort.IntSlice`| 新定义一个类型 | 原 `sort.IntSlice` 的内置方法不被继承 |
+|`type hp = sort.IntSlice`| 赋予 `sort.IntSlice` 一个新名字 | 内置方法继承，但是不能创建新的方法 |
+|`type hp struct { sort.IntSlice }`| 给予 $\textit{hp}$ 一个新的字段 | 可以对 `hp` 调用 `sort.IntSlice` 的内置方法，且无关 `hp` 里是否有其余字段，如 `type hp struct { sort.IntSlice; t int }` 也可以调用 `sort.IntSlice` 的方法 |
+
+``
+
+# 翻转
+切片：`slices.Reverse(nums)`
+字符串没有相关内置函数，手动实现一个
+```go
+func ReverseString(s string) string {
+    var b strings.Builder
+    b.Grow(len(s))
+    for i := len(s) - 1; i >= 0; i-- {
+        b.WriteByte(s[i])
+    }
+    return b.String()
+}
+```
+
+# 运算优先级
+在 Go 中，位运算符与算术运算符的优先级从高到低排列如下：
+
+| 优先级 | 包含的运算符 | 说明 |
+|:---:|:---|:---|
+| 最高（乘除级）| `*` `/` `%` `<<` `>>` `&` `&^` | 移位、按位与、按位清除与乘除同级 |
+| 中间（加减级） | `+` `-` `\|` `^` | 按位或、按位异或与加减同级 |
+| 比较级 | `==` `!=` `<` `<=` `>` `>=` | |
+| 逻辑与 | `&&` | |
+| 最低（逻辑或）| `\|\|` | |
+
+所有二元运算符都是**左结合**（同优先级时从左向右计算）。建议在混合使用算术与位运算时用括号明确运算顺序。
+
+# 分支变量
+
+go 的变量，如果是在分支中初始化的，如
+``` go
+if !vis[x] {
+    y := g[x]
+}
+```
+这里的 $y$ 只能在这个 `if` 分支中成立
+
+`switch-case` 代替连续 `if-else`
+
+``` go
+switch s[i] {
+case 'R':
+    sgt.update(1, i, info{r: x})
+case 'G':
+    sgt.update(1, i, info{g: x})
+case 'B':
+    sgt.update(1, i, info{b: x})
+}
+```
+
+# 字符串
+
+`strings.Repeat(a, n) -> string`：相当于 python 字符串乘法，生成长度为 $n$ 的 $a$ 字符串，注意 `"a"` 是 **string** 而非 **byte**
+`bytes.Repeat([]byte{'a'}, n)`：生成长度为 $n$ 的 $a$ byte 类型的切片
+
+`unicode.IsUpper(c)`：判断 `c` 是否为大写字母，注意 `c` 的数据类型是 `rune` 而非 `byte`
+
+`string([]byte{}) -> string`：将 `byte` 切片转换成 `string`
+
+`strings.Fields(string) -> string`：将一个字符串按照 空格，制表符，换行等符号 划分，中间有多个空格也会自动忽略
+`strings.Split(string, string)`：将一个字符串按照指定的字符串划分，如果指定 `" "`，中间多个空格 **不会** 自动忽略
+
+# 位运算
+
+`bits.Len(uint(x))`       位长度
+`bits.OnesCount(uint(x))` 置位数
+
+`&^` 位清空运算，`c &^32` 等价于 `c & ~32`，~表示补码
+
+# 数据结构
+
+## 堆
+Go 语言堆的库函数需要首先实现 $5$ 个函数，具体见 [堆与队列库函数合集（Python/Go）](https://leetcode.cn/discuss/post/3708255/python-dui-he-dui-lie-de-ku-han-shu-he-j-dbgn/)
+
+# 杂项 & 技巧
+
+## leetcode 函数题
+如果在循环内一定有输出，不一定需要最后 `return`，则需要在最后加上 `panic("impossible")`，详见 [lc3613](https://leetcode.cn/problems/minimize-maximum-component-cost/description/)
+
+如果是 `for {}` 相当于 `while True` 循环，可以不在末尾加 `return`，否则需要
+
+请不要用哈希表统计数字出现次数，请一定一定用数组！！！哈希表的常数达到无法想象
+
+```go
+import (
+    "runtime/debug"
+)
+
+func init() { debug.SetGCPercent(-1) } 
+```
+
+关闭 GC，用于指针多的题目，如动态开点线段树，可持久化线段树
+
+# todo 模板题
+[（洛谷）2026联合省选·模板题](https://www.luogu.com.cn/contest/312809#problems)
+
+有源汇上下界最大流
+logtrick
+带修莫队/树上莫队
+整体二分：灵茶の试炼 9.22
+可持久化线段树
+树链剖分
+
+组合数学
+- 卡特兰数
+- 斯特林数
+
+[摆渡车问题](https://www.luogu.com.cn/problem/P5017) 与 $m$ 和 $T_max$ 无关的 $n\log n$ 做法
+KTT 线段树
