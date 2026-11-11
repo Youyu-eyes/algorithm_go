@@ -3,17 +3,13 @@
 [Codeforces 13E-Holes](https://codeforces.com/problemset/problem/13/E)\
 [Codeforces 372C-Watching Fireworks is Fun](https://codeforces.com/contest/372/problem/C)
 
-在 zufeoj 里，II() 函数可能出现死循环（具体原因我也不知），可以临时改成
-```go
-func II() int {
-	var x int
-	_, err := fmt.Fscan(in, &x)
-	if err != nil {
-		return 0
-	}
-	return x
-}
-```
+# 文件命名和变量名命名
+社区规定和约定俗成
+
+文件命名：小写字符+下划线+数字，不要用大写字母\
+变量名命名：小写字符+大写字符+数字，不要下划线，采用驼峰式命名，如 $segmentTree$\
+提供外部接口的函数，首字母大写。本模板采用首字母小写的命名规范\
+如果出现文件重命名后报错，**关闭文件** + `Ctrl+Shift+P` + `Go: Restart Language Server` + `Ctrl+Shift+P` + `Developer: Reload Window`
 
 # 类型转换
 | 函数 | 作用 |
