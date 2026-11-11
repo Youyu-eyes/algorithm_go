@@ -166,15 +166,15 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
       - [带权二分图最小边覆盖](https://leetcode.cn/problems/minimum-cost-to-connect-two-groups-of-points/solutions/4037471/xiao-bai-si-lu-er-fen-tu-zui-xiao-bian-f-bbjr/)
     - 有源汇上下界最大流
   - LCA 最近公共祖先
-    - [树上倍增](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/LCA_tree.go)
+    - [树上倍增](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/lca.go)
     - 树链剖分
       - 轻重链剖分
-  - [DFS 时间戳](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/DFS_time_stamp.go)
+  - [DFS 时间戳](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/dfs_time_stamp.go)
 
 - [字符串算法](https://github.com/Youyu-eyes/algorithm_go/tree/master/string)
-  - [KMP 算法](https://github.com/Youyu-eyes/algorithm_go/blob/master/string/KMP.go)
+  - [KMP 算法](https://github.com/Youyu-eyes/algorithm_go/blob/master/string/kmp.go)
     - [讲解](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/solutions/4054906/xiao-bai-si-lu-dai-ni-ru-men-kmp-suan-fa-ydpo/)
-  - [Z 函数](https://github.com/Youyu-eyes/algorithm_go/blob/master/string/Z_algorithm.go)
+  - [Z 函数](https://github.com/Youyu-eyes/algorithm_go/blob/master/string/z_algorithm.go)
     - [讲解](https://leetcode.cn/problems/sum-of-scores-of-built-strings/solutions/4055364/xiao-bai-si-lu-mo-ban-z-han-shu-cong-bao-cn48/)
   - [Manacher 算法](https://github.com/Youyu-eyes/algorithm_go/blob/master/string/manacher.go)
   - [字符串哈希](https://github.com/Youyu-eyes/algorithm_go/blob/master/string/double_hash.go)
@@ -200,7 +200,7 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - [平面任意两点斜率的相关性质](https://github.com/Youyu-eyes/codeforces-classification/blob/main/Other_Competation/2025.HZCU/B/solve.md)
 
 - 贪心
-  - [一些常用结论](https://github.com/Youyu-eyes/algorithm_go/blob/master/other/conclusion.md)
+  - [一些常用结论](https://github.com/Youyu-eyes/algorithm_go/blob/master/greedy/conclusion.md)
   - [中位数贪心](https://leetcode.cn/problems/minimum-amount-of-time-to-fill-cups/description/)
     - [点集距离和](https://leetcode.cn/problems/allocate-mailboxes/solutions/3982690/xiao-bai-si-lu-jue-ce-dan-diao-xing-you-uzj2m/)
   - [交换论证法](https://leetcode.cn/problems/minimum-processing-time/description/)
@@ -210,4 +210,4 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
   - [io模板](https://github.com/Youyu-eyes/algorithm_go/blob/master/io/io.go)
   - [严格众数·扩展摩尔投票](https://leetcode.cn/problems/majority-element/solutions/3978521/xiao-bai-si-lu-mo-er-tou-piao-fu-misra-g-18fe/)
   - [调和级数枚举复杂度证明](https://github.com/Youyu-eyes/codeforces-classification/blob/main/math/2193E/proof.md)
-  - [洗牌套算法](https://github.com/Youyu-eyes/algorithm_go/blob/master/other/Fisher-Yates_Shuffle.go)
+  - [洗牌套算法](https://github.com/Youyu-eyes/algorithm_go/blob/master/other/fisher_yates_shuffle.go)
