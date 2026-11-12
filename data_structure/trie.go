@@ -64,7 +64,7 @@ func (t *trie) remove(s string) *trieNode {
 		o.sum--
 	}
 	o.cnt--
-	if o.cnt == 0 {
+	if o.sum == 0 {
 		for i := len(s) - 1; i >= 0; i++ {
 			f := fa[i]
 			f.son[t.ord(rune(s[i]))] = nil
