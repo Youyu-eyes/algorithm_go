@@ -72,6 +72,7 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - [CDQ 分治](https://github.com/Youyu-eyes/algorithm_go/blob/master/data_structure/cdq.go)
       - [CDQ 分治：三维偏序 / 陌上花开](https://github.com/Youyu-eyes/codeforces-classification/blob/main/Data_Structure/offline/cdq/luogu_P3810/solution.md)
     - 整体二分
+      - [笔记](https://leetcode.cn/problems/minimum-operations-to-equalize-subarrays/solutions/4046542/xiao-bai-si-lu-mo-ban-ke-chi-jiu-hua-xia-gbq4/)
     - [莫队算法](https://github.com/Youyu-eyes/algorithm_go/blob/master/data_structure/mo.go)
       - 普通莫队
       - [带修莫队](https://github.com/Youyu-eyes/codeforces-classification/blob/main/Data_Structure/offline/mo/luogu_P1903/solve.go)
