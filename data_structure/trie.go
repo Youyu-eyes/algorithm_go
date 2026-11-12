@@ -47,7 +47,7 @@ func (t *trie) find(s string) (*trieNode, bool) {
 	return o, o.cnt != 0
 }
 
-func (t *trie) remove(s string) *trieNode {
+func (t *trie) del(s string) *trieNode {
 	o := t.root
 	for _, b := range s {
 		o = o.son[t.ord(b)]
