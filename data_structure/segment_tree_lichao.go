@@ -4,11 +4,6 @@ import (
 	"math/bits"
 )
 
-const (
-	inf = 1 << 60
-	eps = 1e-9
-)
-
 type line struct {
 	k, b float64
 	id   int
