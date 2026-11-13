@@ -132,3 +132,18 @@ outer:
 		panic("k is too large (make sure k is 0-base)")
 	}
 }
+
+// 可持久化字典树
+func (o trieNode) put(s []byte) *trieNode {
+	if len(s) == 0 {
+		o.cnt++
+		return &o
+	}
+	b := s[0] - 'a' //
+	if o.son[b] == nil {
+		o.son[b] = &trieNode{}
+	}
+	o.son[b] = o.son[b].put(s[1:])
+	//o.maintain()
+	return &o
+}
