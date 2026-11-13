@@ -38,11 +38,11 @@ func (t *trie) put(s string, val int) *trieNode {
 func (t *trie) find(s string) (*trieNode, bool) {
 	o := t.root
 	for _, b := range s {
-		nxt := o.son[t.ord(b)]
-		if nxt == nil {
+		b := t.ord(b)
+		if o.son[b] == nil {
 			return o, false
 		}
-		o = nxt
+		o = o.son[b]
 	}
 	return o, o.cnt != 0
 }
