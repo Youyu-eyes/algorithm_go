@@ -62,9 +62,8 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
     - 二维 ST 表
     - ST 表下标版本
     - [fast ST 表](https://github.com/Youyu-eyes/algorithm_go/blob/master/data_structure/sparse_table_fast.go)
-  - 字典树
-    - 普通字典树
-    - 01 字典树
+  - [字典树](https://github.com/Youyu-eyes/algorithm_go/blob/master/data_structure/trie.go)
+    - [01 字典树](https://github.com/Youyu-eyes/algorithm_go/blob/master/data_structure/trie01.go)
     - 可持久化字典树
   - 根号算法
     - [分块](https://github.com/Youyu-eyes/algorithm_go/blob/master/data_structure/sqrt_decomposition.go)
