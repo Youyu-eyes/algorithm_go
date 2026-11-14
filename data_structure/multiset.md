@@ -2,8 +2,8 @@
 
 | 功能 | 方法 |
 |------|------|
-| 创建（默认升序） | `newTreap[K]()` |
-| 创建（自定义比较） | `newTreapWith[K](comp func(a, b K) int)` |
+| 创建（默认升序） | `newmultiset[K]()` |
+| 创建（自定义比较） | `newmultisetWith[K](comp func(a, b K) int)` |
 | 插入元素（增加计数） | `put(key K)` |
 | 删除元素（减少计数，计数归零时移除） | `delete(key K)` |
 | 查找元素 | `find(key K) *node[K]` |

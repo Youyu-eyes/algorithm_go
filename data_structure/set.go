@@ -167,14 +167,14 @@ func (t *set[K]) find(key K) *setNode[K] {
 	return o
 }
 
-func newTreap[K cmp.Ordered]() *set[K] {
+func newSet[K cmp.Ordered]() *set[K] {
 	return &set[K]{
 		rd:         uint(time.Now().UnixNano()),
 		comparator: cmp.Compare[K],
 	}
 }
 
-func newTreapWith[K comparable](comp func(a, b K) int) *set[K] {
+func newSetWith[K comparable](comp func(a, b K) int) *set[K] {
 	return &set[K]{
 		rd:         uint(time.Now().UnixNano()),
 		comparator: comp,

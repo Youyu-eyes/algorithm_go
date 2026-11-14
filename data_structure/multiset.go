@@ -180,7 +180,7 @@ func newMultiset[K cmp.Ordered]() *multiset[K] {
 	}
 }
 
-func neMultisetWith[K comparable](comp func(a, b K) int) *multiset[K] {
+func newMultisetWith[K comparable](comp func(a, b K) int) *multiset[K] {
 	return &multiset[K]{
 		rd:         uint(time.Now().UnixNano()),
 		comparator: comp,
