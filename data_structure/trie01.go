@@ -40,7 +40,7 @@ func (t *trie01) minXor(v int) (ans int) {
 	o := t.root
 	for i := trieBitLen - 1; i >= 0; i-- {
 		b := v >> i & 1
-		if o.son[b] == nil {
+		if o.son[b] == nil || o.son[b].sum == 0 {
 			ans |= 1 << i
 			b ^= 1
 		}
@@ -85,7 +85,7 @@ func (t *trie01) maxXor(v int) (ans int) {
 	o := t.root
 	for i := trieBitLen - 1; i >= 0; i-- {
 		b := v >> i & 1
-		if o.son[b^1] != nil {
+		if o.son[b^1] != nil && o.son[b^1].sum > 0 {
 			ans |= 1 << i
 			b ^= 1
 		}
