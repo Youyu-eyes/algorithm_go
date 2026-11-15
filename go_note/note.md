@@ -200,12 +200,18 @@ func init() { debug.SetGCPercent(-1) }
 # todo 模板题
 [（洛谷）2026联合省选·模板题](https://www.luogu.com.cn/contest/312809#problems)
 
+异或字典树
+AC自动机
+后缀数组
+后缀自动机
+
+树链剖分
+
 有源汇上下界最大流
 logtrick
-带修莫队/树上莫队
-整体二分：灵茶の试炼 9.22
-可持久化线段树
-树链剖分
+树上莫队
+
+
 
 组合数学
 - 卡特兰数
