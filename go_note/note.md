@@ -141,7 +141,7 @@ case 'B':
 ```
 
 # 字符串
-
+## 常用库函数
 `strings.Repeat(a, n) -> string`：相当于 python 字符串乘法，生成长度为 $n$ 的 $a$ 字符串，注意 `"a"` 是 **string** 而非 **byte**
 `bytes.Repeat([]byte{'a'}, n)`：生成长度为 $n$ 的 $a$ byte 类型的切片
 
@@ -152,6 +152,7 @@ case 'B':
 `strings.Fields(string) -> string`：将一个字符串按照 空格，制表符，换行等符号 划分，中间有多个空格也会自动忽略
 `strings.Split(string, string)`：将一个字符串按照指定的字符串划分，如果指定 `" "`，中间多个空格 **不会** 自动忽略
 
+## 类型区别
 ``` go
 for _, c := range s {
     // ...
@@ -165,6 +166,8 @@ c := s[i]
 ```
 
 这里的 $c$ 是 `byte` 类型
+
+`[]byte = append([]byte, string...)` 合法
 
 # 位运算
 
