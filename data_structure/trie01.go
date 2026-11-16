@@ -8,7 +8,7 @@ type trie01Node struct {
 
 type trie01 struct{ root *trie01Node }
 
-func newTrie01() *trie01 { return &trie01{&trie01Node{min: -inf}} }
+func newTrie01() *trie01 { return &trie01{&trie01Node{min: inf}} }
 
 const trieBitLen = 31 // 30 for 1e9, 63 for int64, or bits.Len(MAX_VAL)
 
@@ -18,7 +18,7 @@ func (t *trie01) put(v int) *trie01Node {
 	for i := trieBitLen - 1; i >= 0; i-- {
 		b := v >> i & 1
 		if o.son[b] == nil {
-			o.son[b] = &trie01Node{}
+			o.son[b] = &trie01Node{min: inf}
 		}
 		o = o.son[b]
 		o.sum++
