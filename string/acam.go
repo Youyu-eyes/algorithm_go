@@ -1,4 +1,4 @@
-package dataStructure
+package string
 
 const acamNodeSize = 26
 
