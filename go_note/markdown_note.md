@@ -125,6 +125,12 @@ markdown 中插入数学公式
 |\sigma|小写|$\sigma$|
 |\varphi|小写|$\varphi$|
 
+## 统计学
+|代码|意义|符号|
+|---|---|---|
+|\bar{x}|平均值|$\bar{x}$|
+|\hat{x}|估计值|$\hat{x}$|
+
 ## 其他
 |代码|意义|符号|
 |---|---|---|
@@ -135,4 +141,10 @@ markdown 中插入数学公式
 \![图片名]\(链接){:width=500px}
 表示图片大小为 500，默认左对齐
 
-![lc-3942_1.png](https://pic.leetcode.cn/1779793224-XeMahd-lc-3942_1.png){:width=500px}
+也有
+\![图片名|size]\(链接) 的方式调整图片大小
+
+![lc-3942_1.png](https://pic.leetcode.cn/1779793224-XeMahd-lc-3942_1.png){:width=200px}
+
+
+![lc-3942_1.png|200](https://pic.leetcode.cn/1779793224-XeMahd-lc-3942_1.png)
