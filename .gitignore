@@ -19,3 +19,6 @@ go.work.sum
 # System
 .DS_Store
 Thumbs.db
+
+# Obsidian
+.obsidian/
