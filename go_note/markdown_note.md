@@ -50,6 +50,8 @@ markdown 中插入数学公式
 |\lceil x \rceil|上取整|$\lceil x \rceil$|
 |\lvert x \rvert|绝对值|$\lvert x \rvert$|
 |\infty|无穷|$\infty$|
+|\pm|正负|$\pm$|
+|\mp|负正|$\mp$|
 |\cdot|点积|$\cdot$|
 |\oplus|异或|$\oplus$|
 |\times|乘法，向量叉积|$\times$|
