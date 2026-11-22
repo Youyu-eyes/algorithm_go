@@ -186,8 +186,6 @@ Go 语言堆的库函数需要首先实现 $5$ 个函数，具体见 [堆与队�
 # 杂项 & 技巧
 
 ## leetcode 函数题
-如果在循环内一定有输出，不一定需要最后 `return`，则需要在最后加上 `panic("impossible")`，详见 [lc3613](https://leetcode.cn/problems/minimize-maximum-component-cost/description/)
-
 如果是 `for {}` 相当于 `while True` 循环，可以不在末尾加 `return`，否则需要
 
 请不要用哈希表统计数字出现次数，请一定一定用数组！！！哈希表的常数达到无法想象
@@ -205,18 +203,17 @@ func init() { debug.SetGCPercent(-1) }
 # todo 模板题
 [（洛谷）2026联合省选·模板题](https://www.luogu.com.cn/contest/312809#problems)
 
-异或字典树
-AC自动机
+AC自动机（doing）
+
+slope trick
+树链剖分
+logtrick
+
 后缀数组
 后缀自动机
 
-树链剖分
-
 有源汇上下界最大流
-logtrick
 树上莫队
-
-
 
 组合数学
 - 卡特兰数
