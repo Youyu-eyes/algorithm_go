@@ -36,6 +36,7 @@ markdown 中插入数学公式
 |\log_{} n|对数|$\log_{2} n$|
 |\ln，\log，\lg|特殊对数|$\ln$，$\log$，$\lg$|
 |\sqrt[]{}|根号|$\sqrt[n]{x}$|
+|\prod_{}^{}|连乘|$\prod\limits_{i}^{j}$|
 |\sum_{i}^{j}|区间求和|$\sum\limits_{i}^{j}$|
 |\max_{i}^{j}|区间最大|$\max\limits_{i}^{j}$|
 |\min_{i}^{j}|区间最小|$\min\limits_{i}^{j}$|
