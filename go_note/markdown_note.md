@@ -53,6 +53,10 @@ markdown 中插入数学公式
 |\le|小于等于|$\le$|
 |\ge|大于等于|$\ge$|
 |\ne|不等号|$\ne$|
+|\approx|约等于|$\approx$|
+|\simeq|近似|$\simeq$|
+|\sim|相似/同阶|$\sim$|
+|\equiv|等价|$\equiv$|
 |a\equiv b\pmod{n}|$a,b$ 同余|$a\equiv b\pmod{n}$|
 |a\mid b|$a$ 整除 $b$|$a\mid b$|
 |a\nmid b|$a$ 不整除 $b$|$a\nmid b$|
