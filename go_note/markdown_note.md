@@ -119,6 +119,7 @@ markdown 中插入数学公式
 |---|---|---|
 |\alpha|小写|$\alpha$|
 |\beta|小写|$\beta$|
+|\chi|小写|$\chi$|
 |\gamma|小写|$\gamma$|
 |\delta|小写|$\delta$|
 |\Delta|大写|$\Delta$|
