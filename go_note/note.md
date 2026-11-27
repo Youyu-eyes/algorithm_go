@@ -205,7 +205,6 @@ func init() { debug.SetGCPercent(-1) }
 
 AC自动机（doing）
 
-slope trick
 树链剖分
 logtrick
 
@@ -221,3 +220,5 @@ logtrick
 
 [摆渡车问题](https://www.luogu.com.cn/problem/P5017) 与 $m$ 和 $T_max$ 无关的 $n\log n$ 做法
 KTT 线段树
+
+slope trick（已做到 $\min_{y\in (x-a, x+b)}$），剩余难度大于省选
