@@ -37,18 +37,18 @@ func timeStamp(n int, g [][]int) {
 	in := make([]int, n)
 	out := make([]int, n)
 	clock := 0
-	var dfs func(int, int)
-	dfs = func(x, fa int) {
+	var sign func(int, int)
+	sign = func(x, fa int) {
 		clock++
 		in[x] = clock
 		for _, y := range g[x] {
 			if y != fa {
-				dfs(y, x)
+				sign(y, x)
 			}
 		}
 		out[x] = clock
 	}
-	dfs(0, -1)
+	sign(0, -1)
 
 	// 判断 x 是否为 y 的祖先
 	isAncestor := func(x, y int) bool {
