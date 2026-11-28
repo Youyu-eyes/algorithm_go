@@ -169,7 +169,8 @@ codeforces 题单 与 Python/C++ 部分模板见 [codeforces-classification](htt
   - LCA 最近公共祖先
     - [树上倍增](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/lca.go)
     - 树链剖分
-      - 轻重链剖分
+      - 重链剖分
+      - 长链剖分
   - [DFS 时间戳](https://github.com/Youyu-eyes/algorithm_go/blob/master/graph/dfs_time_stamp.go)
 
 - [字符串算法](https://github.com/Youyu-eyes/algorithm_go/tree/master/string)
