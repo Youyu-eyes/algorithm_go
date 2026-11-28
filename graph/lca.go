@@ -1,196 +1,79 @@
 package graph
 
-import "math/bits"
+import (
+	"math/bits"
+)
 
-// ------- 带权 LCA 模板 ------- //
-type lcaBinaryLifting struct {
-	n     int     // 节点个数
-	m     int     // 二进制提升层数
-	pa    [][]int // pa[k][v] 表示 v 的第 2^k 级祖先，-1 表示不存在
-	depth []int   // 节点深度（根深度为 0）
-	dis   []int   // 从根到节点的距离（路径权值和）
-}
+func lca(edges [][]int) {
+    n := len(edges) + 1
+    type edge struct{ to, wt int }
+    g := make([][]edge, n)
+    for _, e := range edges {
+        // 如果题目的节点编号从 1 开始，改成 x=e[0]-1 和 y=e[1]-1
+        x, y, wt := e[0], e[1], e[2]
+        g[x] = append(g[x], edge{y, wt})
+        g[y] = append(g[y], edge{x, wt})
+    }
 
-func newLcaBinaryLifting(edges [][]int) *lcaBinaryLifting {
-	n := len(edges) + 1
-	m := bits.Len(uint(n)) // 最多需要的二进制位数
-	type edge struct{ to, wt int }
-	g := make([][]edge, n)
-	for _, e := range edges {
-		x, y, w := e[0], e[1], e[2]
-		g[x] = append(g[x], edge{y, w})
-		g[y] = append(g[y], edge{x, w})
-	}
+    const mx = 17 // bits.Len(uint(n))
+    pa := make([][mx]int, n)
+    dep := make([]int, n)
+    dis := make([]int, n) // 如果是无权树（边权为 1），dis 可以去掉，用 dep 代替
 
-	pa := make([][]int, m)
-	for i := range pa {
-		pa[i] = make([]int, n)
-		for j := range pa[i] {
-			pa[i][j] = -1
-		}
-	}
-	depth := make([]int, n)
-	dis := make([]int, n)
+    var dfs func(int, int)
+    dfs = func(x, p int) {
+        pa[x][0] = p
+        for _, e := range g[x] {
+            y := e.to
+            if y == p {
+                continue
+            }
+            dep[y] = dep[x] + 1
+            dis[y] = dis[x] + e.wt
+            dfs(y, x)
+        }
+    }
+    dfs(0, -1)
 
-	var dfs func(x, p int)
-	dfs = func(x, p int) {
-		pa[0][x] = p
-		for _, e := range g[x] {
-			y, w := e.to, e.wt
-			if y == p {
-				continue
-			}
-			depth[y] = depth[x] + 1
-			dis[y] = dis[x] + w
-			dfs(y, x)
-		}
-	}
-	dfs(0, -1)
+    for i := range mx - 1 {
+        for x := range pa {
+            p := pa[x][i]
+            if p != -1 {
+                pa[x][i+1] = pa[p][i]
+            } else {
+                pa[x][i+1] = -1
+            }
+        }
+    }
 
-	for i := range m-1 {
-		for v := range n {
-			if p := pa[i][v]; p != -1 {
-				pa[i+1][v] = pa[i][p]
-			}
-		}
-	}
+	// kth(x, k int) = uptoDep(x, dep[x]-k int)
+    uptoDep := func(x, d int) int {
+        for k := uint32(dep[x] - d); k > 0; k &= k - 1 {
+            x = pa[x][bits.TrailingZeros32(k)]
+        }
+        return x
+    }
 
-	return &lcaBinaryLifting{
-		n:     n,
-		m:     m,
-		pa:    pa,
-		depth: depth,
-		dis:   dis,
-	}
-}
+    // 返回 x 和 y 的最近公共祖先（节点编号从 0 开始）
+    getLCA := func(x, y int) int {
+        if dep[x] > dep[y] {
+            x, y = y, x
+        }
+        y = uptoDep(y, dep[x]) // 使 y 和 x 在同一深度
+        if y == x {
+            return x
+        }
+        for i := mx - 1; i >= 0; i-- {
+            px, py := pa[x][i], pa[y][i]
+            if px != py {
+                x, y = px, py // 同时往上跳 2^i 步
+            }
+        }
+        return pa[x][0]
+    }
 
-// 返回 node 的第 k 个祖先节点，若不存在返回 -1
-func (l *lcaBinaryLifting) getKthAncestor(node int, k int) int {
-	for i := 0; i < l.m; i++ {
-		if k>>i&1 == 1 {
-			node = l.pa[i][node]
-			if node == -1 {
-				return -1
-			}
-		}
-	}
-	return node
-}
+    // 返回 x 到 y 的距离（最短路长度）
+    getDis := func(x, y int) int { return dis[x] + dis[y] - dis[getLCA(x, y)]*2 }
 
-// 返回 x 和 y 的最近公共祖先
-func (l *lcaBinaryLifting) getLca(x, y int) int {
-	if l.depth[x] > l.depth[y] {
-		x, y = y, x
-	}
-	// 将 y 提升到与 x 同深度
-	y = l.getKthAncestor(y, l.depth[y]-l.depth[x])
-	if y == x {
-		return x
-	}
-	for i := l.m - 1; i >= 0; i-- {
-		if l.pa[i][x] != l.pa[i][y] {
-			x = l.pa[i][x]
-			y = l.pa[i][y]
-		}
-	}
-	return l.pa[0][x]
-}
-
-// 返回 x 到 y 的距离（最短路径长度，仅适用于带权树）
-func (l *lcaBinaryLifting) getDis(x, y int) int {
-	lca := l.getLca(x, y)
-	return l.dis[x] + l.dis[y] - 2*l.dis[lca]
-}
-
-// ------- 不带权 LCA 模板 ------- //
-type lcaBinaryLiftingUnweighted struct {
-	n     int
-	m     int
-	pa    [][]int
-	depth []int
-}
-
-func newLcaBinaryLiftingUnweighted(edges [][]int) *lcaBinaryLiftingUnweighted {
-	n := len(edges) + 1
-	m := bits.Len(uint(n))
-	g := make([][]int, n)
-	for _, e := range edges {
-		x, y := e[0], e[1]
-		g[x] = append(g[x], y)
-		g[y] = append(g[y], x)
-	}
-
-	pa := make([][]int, m)
-	for i := range pa {
-		pa[i] = make([]int, n)
-		for j := range pa[i] {
-			pa[i][j] = -1
-		}
-	}
-	depth := make([]int, n)
-
-	var dfs func(x, p int)
-	dfs = func(x, p int) {
-		pa[0][x] = p
-		for _, y := range g[x] {
-			if y == p {
-				continue
-			}
-			depth[y] = depth[x] + 1
-			dfs(y, x)
-		}
-	}
-	dfs(0, -1)
-
-	for i := range m-1 {
-		for v := range n {
-			if p := pa[i][v]; p != -1 {
-				pa[i+1][v] = pa[i][p]
-			}
-		}
-	}
-
-	return &lcaBinaryLiftingUnweighted{
-		n:     n,
-		m:     m,
-		pa:    pa,
-		depth: depth,
-	}
-}
-
-// 返回 node 的第 k 个祖先节点，若不存在返回 -1
-func (l *lcaBinaryLiftingUnweighted) getKthAncestor(node int, k int) int {
-	for i := 0; i < l.m; i++ {
-		if k>>i&1 == 1 {
-			node = l.pa[i][node]
-			if node == -1 {
-				return -1
-			}
-		}
-	}
-	return node
-}
-
-// 返回 x 和 y 的最近公共祖先
-func (l *lcaBinaryLiftingUnweighted) getLca(x, y int) int {
-	if l.depth[x] > l.depth[y] {
-		x, y = y, x
-	}
-	y = l.getKthAncestor(y, l.depth[y]-l.depth[x])
-	if y == x {
-		return x
-	}
-	for i := l.m - 1; i >= 0; i-- {
-		if l.pa[i][x] != l.pa[i][y] {
-			x = l.pa[i][x]
-			y = l.pa[i][y]
-		}
-	}
-	return l.pa[0][x]
-}
-
-// 返回 x 到 y 的距离（无权重时即为树上边数，用深度差计算）
-func (l *lcaBinaryLiftingUnweighted) getDis(x, y int) int {
-	lca := l.getLca(x, y)
-	return l.depth[x] + l.depth[y] - 2*l.depth[lca]
+	_, _ = getDis, getLCA
 }
